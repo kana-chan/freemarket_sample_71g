@@ -27,7 +27,6 @@ sample_71g  DB設計
 |user_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
 ### Association
-- belongs_to :card
 - belongs_to :user
 - belongs_to :category
 - has_many :comments
@@ -46,8 +45,7 @@ sample_71g  DB設計
 |gender|string|null: false|
 |payment-method|string|null: false|
 |image|string|null: false|
-|favorite|string||
-|card_id|references|foreign_key: true|
+|favorite|string|
 ### Association
 - has_many :items
 - has_many  :comments
