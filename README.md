@@ -13,29 +13,6 @@ Things you may want to cover:
 
 * Database creation
 sample_71g  DB設計
-## adminsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_id|references|foreign_key: true|
-|user_id|references|foreign_key: true|
-|card_id|references|foreign_key: true|
-|like_id|references|foreign_key: true|
-|brand_id|references|foreign_key: true|
-|comment_id|references|foreign_key: true|
-|category_id|references|foreign_key: true|
-|address_id|references|foreign_key: true|
-|image_id|references|foreign_key: true|
-### Association
-- has_many :items
-- has_many :users
-- has_many :cards
-- has_many :likes
-- has_many :brands
-- has_many :comments
-- has_many :categories
-- has_many :addresses
-- has_many :images
-
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
