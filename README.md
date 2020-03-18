@@ -89,7 +89,6 @@ sample_71g  DB設計
 |user_id|references|foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :items
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -108,16 +107,16 @@ sample_71g  DB設計
 |item_id|references|foreign_key: true, null: false|
 ### Association
 - belongs_to :user
+- belongs_to :item
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|parent_id|references|foreign_key: true|
+|ancestry|string|null: false|
 ### Association
 has_many :items
 has_ancestry
-
 
 ## likesテーブル
 |Column|Type|Options|
@@ -142,15 +141,6 @@ has_ancestry
 |item_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
-
-## items_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_id|references|foreign_key: true|
-|category_id|references|foreign_key: true|
-### Association
-- belongs_to :item
-- belongs_to :category
 
 * Database initialization
 
