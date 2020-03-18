@@ -18,7 +18,7 @@ sample_71g  DB設計
 |------|----|-------|
 |item_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
-|money_id|references|foreign_key: true|
+|card_id|references|foreign_key: true|
 |like_id|references|foreign_key: true|
 |brand_id|references|foreign_key: true|
 |comment_id|references|foreign_key: true|
@@ -28,7 +28,7 @@ sample_71g  DB設計
 ### Association
 - has_many :items
 - has_many :users
-- has_many :moneys
+- has_many :cards
 - has_many :likes
 - has_many :brands
 - has_many :comments
@@ -46,25 +46,21 @@ sample_71g  DB設計
 |date|integer|null: false|
 |shipping-method|string|null: false|
 |cost|integer|null: false|
-|money_id|references|foreign_key: true|
-|comment_id|references|foreign_key: true|
+|card_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
-|like_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
 ### Association
-- belongs_to :money
+- belongs_to :card
 - belongs_to :user
+- belongs_to :category
 - has_many :comments
 - has_many :likes
-- has_many  :cotegories, through: :items_categories
-- has_many  :items_categories
 
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |nickname|string|null: false, unique: true|
-|address|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |profile|string|null: false|
@@ -74,25 +70,23 @@ sample_71g  DB設計
 |payment-method|string|null: false|
 |image|string|null: false|
 |favorite|string||
-|item_id|references|foreign_key: true|
-|comment_id|references|foreign_key: true|
-|like_id|references|foreign_key: true|
-|money_id|references|foreign_key: true|
-|address_id|references|foreign_key: true|
+|card_id|references|foreign_key: true|
 ### Association
 - has_many :items
 - has_many  :comments
 - has_many  :likes
 - has_many  :cards
-- belongs_to  :address
+- has_one :address
 
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |zip|integer|null: false|
-|address|string|null: false|
+|prefectures|string|null: false|
+|city|string|null: false|
+|street|string|null: false|
+|building-name|string|null: false|
 |user_id|references|foreign_key: true|
-|item_id|references|foreign_key: true|
 ### Association
 - belongs_to :user
 - has_many :items
@@ -110,11 +104,10 @@ sample_71g  DB設計
 |Column|Type|Options|
 |------|----|-------|
 |text|text|
-|user_id|references|foreign_key: true|
-|item_id|references|foreign_key: true|
+|user_id|references|foreign_key: true, null: false|
+|item_id|references|foreign_key: true, null: false|
 ### Association
 - belongs_to :user
-- belongs_to :item
 
 ## categoriesテーブル
 |Column|Type|Options|
@@ -122,8 +115,8 @@ sample_71g  DB設計
 |name|string|null: false|
 |parent_id|references|foreign_key: true|
 ### Association
-belongs_to :parent, class_name: :Categories
-has_many :children,class_name: :Categories,foreign_key: :parent_id
+has_many :items
+has_ancestry
 
 
 ## likesテーブル
@@ -139,15 +132,14 @@ has_many :children,class_name: :Categories,foreign_key: :parent_id
 |Column|Type|Options|
 |------|----|-------|
 |name|string|
-|item_id|references|foreign_key: true|
 ### Association
-- belongs_to :items
+- has_many :items
 
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text|null: false|
-|item_id|references|foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
 
