@@ -27,9 +27,14 @@
       height: 20%;
       display: flex;
       justify-content: space-between;
-      &--googlePlay,&--appStore{
-        width: 95%;
-        height: 100%;
+      &--googlePlay{
+        margin-top: 5px;
+        width: 195px;
+        height: 90px;
+      }
+      &--appStore{
+        width: 170px;
+        height: 100px;
       }
     }
   }
