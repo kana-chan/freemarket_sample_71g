@@ -1,0 +1,71 @@
+.header{
+  background-color:red;
+  height: 13vh;
+  width: 100vw;
+  &__headerBox{
+    margin: 0 auto;
+    background-color: white;
+    height: 100%;
+    width: 70%;
+  }
+}
+// 上半分------------------------------------------------
+.headerBox__upper{
+  background-color: blue;
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  &__logo{
+    background-color: gray;
+    height: 100%;
+    width: 20%;
+  }
+  &__formBox{
+    background-color:white;
+    height: 50%;
+    width: 80%;
+    &__text{
+      height: 100%;
+      width: 80%;
+    }
+  }
+}
+// 下半分------------------------------------------------
+.headerBox__lower{
+  background-color: white;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  &__left{
+    height: 100%;
+    width: 15%;
+    position: relative;
+    &__category{
+      position: absolute;
+        bottom: 30%;
+        left: 0;
+    }
+    &__brand{
+      position: absolute;
+        bottom: 30%;
+        right: 0;
+    }
+  }
+  &__right{
+    height: 100%;
+    width: 15%;
+    position: relative;
+    &__logIn{
+      position: absolute;
+        bottom: 30%;
+        left: 0;
+    }
+    &__signUp{
+      position: absolute;
+        bottom: 30%;
+        right: 0;
+    }
+  }
+}
