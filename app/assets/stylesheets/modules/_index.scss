@@ -1,19 +1,29 @@
-.itemsMain__visial{
+.itemsMain__visial {
   background-image: url(material/pict/bg-mainVisual-pict_pc.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: white;
   height: 560px;
+  padding: 60px;
   }
 
-.itemsMain__how{
-  background-color: white;
-  height: 20%;
+.itemsMain__how {
+  height: 560px;
+  padding :200px;
 }
 
 .itemsMain__pic {
-  background-color:gray;
-  height: 20%;
+  background-image: url(material/pict/bg-topMiddleDl-pict.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-size: 18px;
+  height: 400px;
+  padding: 200px;
+ 
+
 }
 
 .itemsMain__characteristic {
