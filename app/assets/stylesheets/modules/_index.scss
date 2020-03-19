@@ -6,7 +6,14 @@
   color: white;
   height: 560px;
   padding: 60px;
+
+  &__App {
+    background-color: blue;
+    height: 30px;
+    width: 30px;
   }
+
+}
 
 .itemsMain__how {
   height: 560px;
@@ -19,10 +26,33 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  font-size: 18px;
   height: 400px;
-  padding: 200px;
- 
+  padding-left: 200px;
+  padding-top: 90px;
+
+
+  &__picOne {
+    height: 50px;
+    width: 200px;
+    font-size: 28px;
+    text-shadow:2px 2px 4px black;
+  }
+
+  &__picTwo {
+    height: 100px;
+    width: 400px;
+    margin: 20px 0px 30px;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px black;
+    line-height: 1.5;
+  }
+
+  &__picBtn {
+
+  }
+
+
+
 
 }
 
