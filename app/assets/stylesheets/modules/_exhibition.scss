@@ -1,0 +1,22 @@
+.exhibition__box{
+  background-color:skyblue;
+  border-radius: 5%;
+  position: fixed;
+    bottom: 2%;
+    right: 2%;
+    transform: translateX(-2%)translateY(-2%);
+  width: 15vh;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  &__text{
+    color: white;
+    padding-bottom: 10px;
+  }
+  &__icon{
+    width: 40%;
+    height: 50%;
+  }
+}
