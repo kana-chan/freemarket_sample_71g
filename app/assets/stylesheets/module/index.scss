@@ -34,29 +34,24 @@
     &__categoryTop {
       padding-top: 100px;
     }
-    &__categoryMiddle {
-      
-    }
     &__categoryPic {
       
-      &__categoryPic__content {
-        height: 50%;
-        width: 50%;
-        margin: 35px 300px;
+      width: 100%;
+      background-color: blueviolet;
+      &__content {
+        margin: 0 auto;
+        height: 100%;
+        width: 60%;
         background-color: rosybrown;
-        color: black;
-        .contentLeft {
-          height: 30%;
-          width: 20%;
-          background-color: lightcoral;
+        &__contentLeft {
+          margin: 25px 0px;
+          height: 20px;
+          width: 20px;
+          background-color:white;
           &__top  {
-            height: 10%;
-            width: 10%;
             background-color: yellowgreen;
           }
           &__down {
-            height: 10%;
-            width: 10%;
             background-color: blue;
           }
 
