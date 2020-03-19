@@ -6,39 +6,66 @@
 
   &__visial{
     background-color: grey;
-    height: 90%;
+    height: 20%;
   }
 
   &__how {
     background-color: white;
-    height: 90%;
+    height: 20%;
     
 
   }
 
   &__pic {
     background-color:gray;
-    height: 90%;
+    height: 20%;
 
   }
   &__characteristic {
     background-color: white;
-    height: 90%;
+    height: 20%;
 
   }
 
   &__category {
     background-color: gray;
-    height: 90%;
+    height: 20%;
     text-align: center;
-    &__top {
+    &__categoryTop {
       padding-top: 100px;
-
     }
-    &__midle {
+    &__categoryMiddle {
       
     }
-    &__pic {
+    &__categoryPic {
+      
+      &__categoryPic__content {
+        height: 50%;
+        width: 50%;
+        margin: 35px 300px;
+        background-color: rosybrown;
+        color: black;
+        .contentLeft {
+          height: 30%;
+          width: 20%;
+          background-color: lightcoral;
+          &__top  {
+            height: 10%;
+            width: 10%;
+            background-color: yellowgreen;
+          }
+          &__down {
+            height: 10%;
+            width: 10%;
+            background-color: blue;
+          }
+
+        }
+
+
+      }
+      
+
 
     }
 
@@ -47,16 +74,16 @@
 
   &__bland {
     background-color: khaki;
-    height: 90%;
+    height: 20%;
     text-align: center;
-    &__top {
-      padding: 100px;
+    &__blandTop {
+      padding-top: 100px;
 
     }
-    &__midle {
+    &__blandMiddle {
 
     }
-    &__pic {
+    &__blandPic {
 
     }
 
