@@ -1,0 +1,85 @@
+.header{
+  height: 13vh;
+  width: 100vw;
+  &__headerBox{
+    margin: 0 auto;
+    height: 100%;
+    width: 73%;
+  }
+}
+// 上半分------------------------------------------------
+.headerBox__upper{
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  &__logo{
+    height: 100%;
+    width: 15%;
+    &--toplogo{
+      height: 40px;
+      width:140px;
+      margin-top: 8%;
+    }
+  }
+  &__formBox{
+    height: 50%;
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    &__text{
+      border: solid 1px gray;
+      margin-left:3% ;
+      height: 100%;
+      width: 96%;
+    }
+    &__icon{
+      background-color: skyblue;
+      height: 100%;
+      width: 4%;
+      &--serchIcon{
+        margin: 6px;
+        height: 55%;
+        width:55%;
+      }
+    }
+  }
+}
+// 下半分------------------------------------------------
+.headerBox__lower{
+  background-color: white;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  &__left{
+    height: 100%;
+    width: 15%;
+    position: relative;
+    &__category{
+      position: absolute;
+        bottom: 30%;
+        left: 0;
+    }
+    &__brand{
+      position: absolute;
+        bottom: 30%;
+        right: 0;
+    }
+  }
+  &__right{
+    height: 100%;
+    width: 15%;
+    position: relative;
+    &__logIn{
+      position: absolute;
+        bottom: 30%;
+        left: 0;
+    }
+    &__signUp{
+      position: absolute;
+        bottom: 30%;
+        right: 0;
+    }
+  }
+}

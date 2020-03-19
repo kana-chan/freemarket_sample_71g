@@ -1,0 +1,21 @@
+.header
+  .header__headerBox
+    .headerBox__upper
+      .headerBox__upper__logo
+        =link_to(root_path) do
+          =image_tag "material/logo/logo.png" ,class:"headerBox__upper__logo--toplogo"
+      .headerBox__upper__formBox
+        .headerBox__upper__formBox__text
+        .headerBox__upper__formBox__icon
+          =image_tag "material/icon/icon-search 1.png" ,class:"headerBox__upper__formBox__icon--serchIcon"
+    .headerBox__lower
+      .headerBox__lower__left
+        .headerBox__lower__left__category
+          カテゴリー
+        .headerBox__lower__left__brand
+          ブランド
+      .headerBox__lower__right
+        .headerBox__lower__right__logIn
+          =link_to('ログイン','#')
+        .headerBox__lower__right__signUp
+          =link_to('新規会員登録','#')
