@@ -1,0 +1,69 @@
+.main{
+  background-color: pink;
+  height: 500vh;
+  width: 100vw;
+  display: block;
+
+  .mainVisial {
+    background-color: grey;
+    height: 90%;
+  }
+
+  .mainHow {
+    background-color: white;
+    height: 90%;
+    
+
+  }
+
+  .mainPic{
+    background-color:gray;
+    height: 90%;
+
+  }
+  .mainCharacteristic {
+    background-color: white;
+    height: 90%;
+
+  }
+
+  .mainCategory {
+    background-color: gray;
+    height: 90%;
+    text-align: center;
+    &__top {
+      padding-top: 100px;
+
+    }
+    &__middle {
+      
+    }
+    &__pic {
+
+    }
+
+
+  }
+
+  .mainBland {
+    background-color: khaki;
+    height: 90%;
+    text-align: center;
+    &__top {
+      padding: 100px;
+
+    }
+    &__middle {
+
+    }
+    &__pic {
+
+    }
+
+
+  }
+  
+
+
+}
+
