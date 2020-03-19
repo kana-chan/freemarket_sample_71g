@@ -7,33 +7,33 @@
       =link_to("https://play.google.com/store")do
         =image_tag "material/icon/google-play-badge.png",class:"footer__upper__btn--googlePlay"
       =link_to("https://www.apple.com/jp/ios/app-store")do
-        =image_tag "material/icon/google-play-badge.png",class:"footer__upper__btn--appStore"
+        =image_tag "material/icon/appstore.svg",class:"footer__upper__btn--appStore"
   .footer__lower
     .footer__lower__contents
       %ul
         FURIMAについて
         %li
-          会社概要（運営会社）
+          =link_to("会社概要（運営会社）","#")
         %li
-          プライバシーポリシー
+          =link_to("プライバシーポリシー","#")
         %li
-          FURIMA利用規約
+          =link_to("FURIMA利用規約","#")
         %li
-          ポイントに関する特約
+          =link_to("ポイントに関する特約","#")
       %ul
         FURIMAを見る
         %li
-          カテゴリー一覧
+          =link_to("カテゴリー一覧","#")
         %li
-          ブランド一覧
+          =link_to("ブランド一覧","#")
       %ul
         ヘルプ＆ガイド
         %li
-          FURIMAガイド
+          =link_to("FURIMAガイド","#")
         %li
-          FURIMAロゴ利用ガイドライン
+          =link_to("FURIMAロゴ利用ガイドライン","#")
         %li
-          お知らせ
+          =link_to("お知らせ","#")
     =link_to(root_path) do
       =image_tag "material/logo/logo-white.png",class:"footer__lower__logo"
     .footer__lower__atMark
