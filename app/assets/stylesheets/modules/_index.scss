@@ -126,7 +126,7 @@
     text-shadow: 1px 1px 10px $black;
     line-height: 1.5;
   }
-  // padding: 200px;
+  
 }
 // 特徴------------------------------------------------
 .itemsMain__character {
@@ -208,39 +208,56 @@
   }
   &__pic {
     height: 300px;
-    background-color: pink;
     margin-top: 30px;
+    text-align: center;
     &__content {
-      padding-top: 30px;
-      background-color: $blue;
-      height: 50px;
-      //margin: 0 auto;
-      //&__left {
-        //margin: 25px 0px;
-        //height: 20px;
-        //width: 20px;
-        //background-color:white;
-        //&__top  {
-          //background-color: yellowgreen;
-        //}
-        //&__down {
-          //background-color: blue;
-        //}
-      //}
-    }     
+      height: 300px;
+      width: 780px;
+      margin: 26px auto; 
+      justify-content: space-around;
+      position: relative;
+      display: flex;
+
+      &__left1,&__left2,&__left3 {
+        background-color: white;
+        height: 100%;
+        width: 30%;
+      }
+    }  
   }
 }
-
 .itemsMain__bland {
-  background-color: khaki;
-  height: 20%;
+  background-color: #f8f8f8;
+  height: 500px;
   text-align: center;
   &__top {
-    padding-top: 100px;
+    padding-top: 80px;
+    font-size: 28px;
+    font-weight: bold;
   }
   &__middle {
+    padding-top: 10px;
+    font-size: 24px;
+    color: $blue;
   }
   &__pic {
+    height: 300px;
+    margin-top: 30px;
+    text-align: center;
+    &__product {
+      height: 300px;
+      width: 780px;
+      margin: 26px auto; 
+      justify-content: space-around;
+      position: relative;
+      display: flex;
+
+      &__left1,&__left2,&__left3 {
+        background-color: white;
+        height: 100%;
+        width: 30%;
+      }
+    }  
   }
 }
 
