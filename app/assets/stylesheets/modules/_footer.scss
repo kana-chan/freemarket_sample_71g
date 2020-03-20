@@ -29,16 +29,15 @@
       display: flex;
       justify-content: space-between;
       &--googlePlay{
-        margin-top: 5px;
-        width: 195px;
-        height: 90px;
+        width: 170px;
+        height: 60px;
         &:hover{
           opacity: 0.5;
         }
       }
       &--appStore{
         width: 170px;
-        height: 100px;
+        height: 60px;
         &:hover{
           opacity: 0.5;
         }
