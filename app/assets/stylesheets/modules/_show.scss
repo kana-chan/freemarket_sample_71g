@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+p.top {
+  font-size: 46px;
+  margin: 2px 0;
+}
+
+p.bottom {
+  font-size: 16px;
+}
+
+table {
+  height: 47px;
+  width: 620px;
+}
+
+tbody {
+  height: 46px;
+  width: 619px;
+}
+
+tr {
+  border: 1px solid #f8f8f8;
+}
+
+th {
+  font-size: 14px;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  padding: 15px 15px;
+}
+
+td {
+  font-size: 14px;
+  border: 1px solid #dedede;
+  padding: 15px 15px;
+}
+
+.categories{
+  line-height: 80px;
+}
+
+.category {
+  color: #3CCACE;
+}
+
+.city {
+  color: #3CCACE;
+}
+
+.related {
+  color: #3CCACE;
+  font-size: 24px;
+}
+
+.textarea {
+  height: 30px;
+  width: 650px;
+  margin: 20 auto;
+}
+
+.product {
+  color: #3CCACE;
+  font-size: 16px;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  padding: 50px 0;
+  background-color:whitesmoke;
+  overflow: scroll;
+  .mainContent{
+    height: 1330px;
+    width: 700px;
+    margin: 10px auto;
+    padding-top: 30px;
+    background-color: white;
+    &__box {
+      height: 443px;
+      width: 620px;
+      background-color: yellow;
+      margin: 16px auto;
+      &--image{
+      }
+    }
+    &__price {
+      height: 77px;
+      width: 620px;
+      margin: 16px auto;
+      padding: 5px 0;
+      text-align: center;
+    }
+    &__detail {
+      height: 162px;
+      width: 620px;
+      margin: 30px auto;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    &__table {
+      height: 426px;
+      width: 620px;
+      margin: 0px auto;
+    }
+    &__option {
+      height: 48px;
+      width: 620px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: space-between;
+      &__left {
+        height: 38px;
+        width: 134px;
+        border:1px solid orange;
+        border-radius: 40px;
+        color: #3CCACE;
+        line-height: 38px;
+        padding-left: 25px;
+        font-size: inherit;
+      }
+      &__right {
+        height: 38px;
+        width: 165px;
+        border: 1px solid black;
+      }
+      .alert {
+        line-height: 38px;
+        padding-left: 25px;
+      }
+    }
+  }
+  .mainComment {
+    height: 305px;
+    width: 700px;
+    margin: 10px auto;
+    background-color: pink;
+    &__textarea {
+      height: 30px;
+      width: 650px;
+      margin: 20 auto;
+    }
+  }
+  .mainLinks {
+    height: 24px;
+    width: 700px;
+    margin: 10px auto;
+    padding-top: 10px;
+  }
+  .mainRelated {
+    height: 24px;
+    width: 700px;
+    margin: 10px auto;
+    padding-top: 24px;
+  }
+}
