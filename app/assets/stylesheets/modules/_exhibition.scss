@@ -11,6 +11,9 @@
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  &:hover{
+    background-color:$light-blue;
+  }
   &__text{
     color: white;
     padding-bottom: 10px;

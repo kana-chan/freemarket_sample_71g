@@ -32,10 +32,16 @@
         margin-top: 5px;
         width: 195px;
         height: 90px;
+        &:hover{
+          opacity: 0.5;
+        }
       }
       &--appStore{
         width: 170px;
         height: 100px;
+        &:hover{
+          opacity: 0.5;
+        }
       }
     }
   }
@@ -65,6 +71,9 @@
           line-height: 0.5;
           a{
             color: white;
+            &:hover{
+            border-bottom: solid white 1px;
+            }
           }
         }
       }
