@@ -1,0 +1,197 @@
+.main {
+  height: 100vh;
+  width: 100vw;
+  padding: 50px 0;
+  background-color:whitesmoke;
+  overflow: scroll;
+  .mainContent{
+    height: 1362px;
+    width: 700px;
+    margin: 10px auto;
+    padding-top: 30px;
+    background-color: white;
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    &__box {
+      height: 443px;
+      width: 620px;
+      margin: 16px auto;
+      &--top {
+        height: 346px;
+        width: 620px;
+        background-color: pink;
+        .imageBig {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      &--bottom {
+        height: 97px;
+        width: 620px;
+        background-color: orange;
+        ul {
+          display: flex;
+          justify-content: center;
+          .imageSmall {
+            height: 11vh;
+            width: 10vw;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+    &__price {
+      height: 77px;
+      width: 620px;
+      margin: 16px auto;
+      padding: 5px 0;
+      text-align: center;
+      p.top {
+        font-size: 46px;
+        margin: 2px 0;
+      }
+      p.bottom {
+        font-size: 16px;
+      }
+    }
+    &__detail {
+      height: 162px;
+      width: 620px;
+      margin: 30px auto;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    &__table {
+      height: 426px;
+      width: 620px;
+      margin: 0px auto;
+      table {
+        height: 47px;
+        width: 620px;
+        tbody {
+          height: 46px;
+          width: 619px;
+          tr {
+            border: 1px solid #f8f8f8;
+            th {
+              font-size: 14px;
+              background-color: #eee;
+              border: 1px solid #dedede;
+              padding: 15px 15px;
+            }
+            td {
+              font-size: 14px;
+              border: 1px solid #dedede;
+              padding: 15px 15px;
+              box-sizing: border-box;
+              line-height: 15px;
+              vertical-align: middle;
+              .category {
+                color: #3CCACE;
+              }
+              .city {
+                color: #3CCACE;
+              }
+            }
+            .categories{
+              line-height: 100px;
+            }
+          }
+        }
+      }
+    }
+    &__option {
+      height: 48px;
+      width: 620px;
+      margin: 50px auto;
+      display: flex;
+      justify-content: space-between;
+      &__left {
+        height: 38px;
+        width: 134px;
+        border:1px solid orange;
+        border-radius: 40px;
+        color: #3CCACE;
+        line-height: 38px;
+        padding-left: 25px;
+        font-size: inherit;
+      }
+      &__right {
+        height: 38px;
+        width: 165px;
+        border: 1px solid black;
+      }
+      .alert {
+        line-height: 38px;
+        padding-left: 25px;
+      }
+    }
+  }
+  .mainComment {
+    height: 305px;
+    width: 700px;
+    padding: 24px;
+    margin: 0 auto;
+    background-color: white;
+    text-align: center;
+    &__textarea {
+      margin: 20 auto; 
+      textarea {
+        min-height: 104px;
+        width: 650px;
+        border: 1px solid black;
+      }
+    }
+    &__alert {
+      height: 58px;
+      width: 650px;
+      font-size: 14px;
+      margin: 10px 0;
+      padding: 10px 0;
+      background-color: whitesmoke;
+      p {
+        margin: 5px 0;
+        text-align: left;
+      }
+    }
+    &__btn {
+      height: 53px;
+      width: 391px;
+      font-size: 18px;
+      background-color: #3CCACE;
+      border-radius: 100px;
+      line-height: 53px;
+      margin-left: 130px;
+      .btn {
+        color: white;
+      }
+    }
+  }
+  .mainLinks {
+    height: 24px;
+    width: 700px;
+    margin: 10px auto;
+    padding-top: 10px;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      .product {
+        color: #3CCACE;
+        font-size: 16px;
+      }
+    }
+  }
+  .mainRelated {
+    height: 24px;
+    width: 700px;
+    margin: 10px auto;
+    padding-top: 24px;
+    .related {
+      color: #3CCACE;
+      font-size: 24px;
+    }
+  }
+}

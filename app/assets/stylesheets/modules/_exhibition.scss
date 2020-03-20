@@ -1,5 +1,6 @@
 .exhibition__box{
-  background-color:skyblue;
+  z-index: 999;
+  background-color:$blue;
   border-radius: 5%;
   position: fixed;
     bottom: 2%;
@@ -11,6 +12,9 @@
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  &:hover{
+    background-color:$light-blue;
+  }
   &__text{
     color: white;
     padding-bottom: 10px;

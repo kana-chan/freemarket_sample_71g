@@ -13,6 +13,7 @@
     flex-direction: column;
     &__text{
       color: white;
+      text-shadow: $shadow;
       font-size: 40px;
       margin-top: 5%;
       text-align: center;
@@ -27,15 +28,25 @@
       height: 20%;
       display: flex;
       justify-content: space-between;
-      &--googlePlay,&--appStore{
-        width: 95%;
-        height: 100%;
+      &--googlePlay{
+        width: 170px;
+        height: 60px;
+        &:hover{
+          opacity: 0.5;
+        }
+      }
+      &--appStore{
+        width: 170px;
+        height: 60px;
+        &:hover{
+          opacity: 0.5;
+        }
       }
     }
   }
   // 下半分------------------------------------------------
   &__lower{
-    background-color:black;
+    background-color:$black;
     width: 100%;
     height: 50%;
     padding: 5% 20%;
@@ -51,10 +62,18 @@
         color: white;
         font-weight: bold;
         font-size: 15px;
+        line-height: 1.5;
         li{
           font-weight: normal;
           margin: 25px 60px 0;
           font-size: 11px;
+          line-height: 0.5;
+          a{
+            color: white;
+            &:hover{
+            border-bottom: solid white 1px;
+            }
+          }
         }
       }
     }
