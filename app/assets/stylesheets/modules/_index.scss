@@ -7,15 +7,12 @@
   height: 560px;
   padding-left: 65px;
   padding-top: 220px;
-
-
   &__life {
     height: 100px;
     width: 750px;
     font-size: 60px;
     text-shadow:1px 1px 10px $black;
   }
-
   &__easy {
     height: 60px;
     width: 600px;
@@ -109,15 +106,12 @@
   height: 400px;
   padding-left: 210px;
   padding-top: 90px;
-
-
   &__picOne {
     height: 45px;
     width: 200px;
     font-size: 28px;
     text-shadow:1px 1px 10px $black;
   }
-
   &__picTwo {
     height: 100px;
     width: 400px;
@@ -126,7 +120,6 @@
     text-shadow: 1px 1px 10px $black;
     line-height: 1.5;
   }
-  
 }
 // 特徴------------------------------------------------
 .itemsMain__character {
@@ -192,8 +185,8 @@
   }
 }
 // カテゴリー別------------------------------------------------
-.itemsMain__newPost {
-  background-color: #f8f8f8;
+.itemsMain__newPost,.itemsMain__bland {
+  background-color: $light-gray;
   height: 500px;
   text-align: center;
   &__top {
@@ -224,10 +217,10 @@
         width: 100%;
         &__pic {
           max-height: 168px;
-          min-height: 168ox;
+          min-height: 168px;
           width: auto;
         }
-     }
+      }
       &__down {
         height: 40%;
         padding: 16px;
@@ -246,71 +239,6 @@
           &__tax {
             font-size: 10px;
           }
-        }
-        &__likes {
-          line-height: 50%; 
-        }
-      }
-    }
-  }  
-}
-.itemsMain__bland {
-  background-color: #f8f8f8;
-  height: 500px;
-  text-align: center;
-  &__top {
-    padding-top: 50px;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  &__middle {
-    padding-top: 10px;
-    font-size: 24px;
-    color: $blue;
-  }
-  &__box {
-    height: 280px;
-    width: 780px;
-    margin: 26px auto; 
-    justify-content: space-between;
-    display: flex;
-    &__content1,&__content2,&__content3 {
-      background-color:white;
-      height: 100%;
-      width: 30%;
-      &:hover{
-        opacity: 0.5;
-      }
-      &__upper {
-        height: 60%;
-        width: 100%;
-        &__pic {
-          max-height: 168px;
-          min-height: 168ox;
-          width: auto;
-        }
-     }
-      &__down {
-        height: 40%;
-        padding: 16px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        &__left {
-          height: 100%;
-          width: 80%;
-          text-align: left;
-          line-height: 30px;
-          &__name,&__price,&__tax{
-            height: 30px;
-            width: 100%;
-          }
-          &__tax {
-            font-size: 10px;
-          }
-        }
-        &__likes {
-          line-height: 50%; 
         }
       }
     }
