@@ -13,6 +13,7 @@
     flex-direction: column;
     &__text{
       color: white;
+      text-shadow: $shadow;
       font-size: 40px;
       margin-top: 5%;
       text-align: center;

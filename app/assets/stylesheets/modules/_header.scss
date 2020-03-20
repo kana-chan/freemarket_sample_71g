@@ -34,11 +34,13 @@
       width: 96%;
     }
     &__icon{
+      border-radius: 2px;
       background-color: $blue;
       height: 100%;
       width: 4%;
       &--serchIcon{
-        margin: 6px;
+
+        margin: 8px;
         height: 55%;
         width:55%;
       }
