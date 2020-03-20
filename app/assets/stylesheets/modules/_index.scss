@@ -5,9 +5,28 @@
   background-size: cover;
   color: white;
   height: 560px;
-  padding: 60px;
+  padding-left: 65px;
+  padding-top: 220px;
+
+
+  &__life {
+    height: 100px;
+    width: 750px;
+    font-size: 60px;
+    text-shadow:1px 1px 10px $black;
   }
+
+  &__easy {
+    height: 60px;
+    width: 600px;
+    font-size: 18px;
+    text-shadow:1px 1px 10px $black;
+    line-height: 1.5;
+  }
+}
+
 // ３つの理由------------------------------------------------
+
 .itemsMain__how {
   height: 90vh;
   width: 100vw;
@@ -87,9 +106,27 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  font-size: 18px;
   height: 400px;
-  padding: 200px;
+  padding-left: 210px;
+  padding-top: 90px;
+
+
+  &__picOne {
+    height: 45px;
+    width: 200px;
+    font-size: 28px;
+    text-shadow:1px 1px 10px $black;
+  }
+
+  &__picTwo {
+    height: 100px;
+    width: 400px;
+    margin: 20px 0px 30px;
+    font-size: 18px;
+    text-shadow: 1px 1px 10px $black;
+    line-height: 1.5;
+  }
+  // padding: 200px;
 }
 // 特徴------------------------------------------------
 .itemsMain__character {
@@ -156,32 +193,40 @@
 }
 // カテゴリー別------------------------------------------------
 .itemsMain__category {
-  background-color: gray;
-  height: 20%;
+  background-color: #f8f8f8;
+  height: 500px;
   text-align: center;
   &__top {
-    padding-top: 100px;
+    padding-top: 80px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  &__middle {
+    padding-top: 10px;
+    font-size: 24px;
+    color: $blue;
   }
   &__pic {
-    width: 100%;
-    background-color: blueviolet;
+    height: 300px;
+    background-color: pink;
+    margin-top: 30px;
     &__content {
-      margin: 0 auto;
-      height: 100%;
-      width: 60%;
-      background-color: rosybrown;
-      &__left {
-        margin: 25px 0px;
-        height: 20px;
-        width: 20px;
-        background-color:white;
-        &__top  {
-          background-color: yellowgreen;
-        }
-        &__down {
-          background-color: blue;
-        }
-      }
+      padding-top: 30px;
+      background-color: $blue;
+      height: 50px;
+      //margin: 0 auto;
+      //&__left {
+        //margin: 25px 0px;
+        //height: 20px;
+        //width: 20px;
+        //background-color:white;
+        //&__top  {
+          //background-color: yellowgreen;
+        //}
+        //&__down {
+          //background-color: blue;
+        //}
+      //}
     }     
   }
 }
