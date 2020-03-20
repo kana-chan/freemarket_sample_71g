@@ -211,22 +211,11 @@
     background-color: pink;
     margin-top: 30px;
     &__content {
+      
       padding-top: 30px;
       background-color: $blue;
       height: 50px;
-      //margin: 0 auto;
-      //&__left {
-        //margin: 25px 0px;
-        //height: 20px;
-        //width: 20px;
-        //background-color:white;
-        //&__top  {
-          //background-color: yellowgreen;
-        //}
-        //&__down {
-          //background-color: blue;
-        //}
-      //}
+      
     }     
   }
 }
