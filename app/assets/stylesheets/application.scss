@@ -1,7 +1,11 @@
 @import 'reset';
 @import 'config/colors';
+@import 'mixin/suzuki';
 @import 'modules/header';
 @import 'modules/index';
+@import 'modules/new';
 @import 'modules/exhibition';
+@import 'users/sessions/new';
+@import 'users/show';
 @import 'modules/footer';
 @import 'modules/show';

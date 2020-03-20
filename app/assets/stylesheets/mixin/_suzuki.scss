@@ -1,0 +1,45 @@
+@mixin title {
+  .new_item {
+    margin: 40px 0 28px 0;
+    display: flex;
+
+    &_left {
+      font-weight: bold;
+    }
+    &_right {
+      background-color: red;
+      color: white;
+      margin-left: 8px;
+      padding: 0 4px;
+    }
+  }
+}
+
+@mixin size {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 700px;
+  padding: 40px 40px 64px ;
+  background-color: white;
+  border-bottom: 1px solid #D8D8D8;
+
+}
+
+@mixin logo {
+  height: 40px;
+  width: 140px;
+  margin-top: 50px;
+}
+
+@mixin form {
+    margin-top: 18px;
+    border: solid 1px #ccc;
+    height: 50px;
+    width: 100%;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-size: 15px;
+  
+}
