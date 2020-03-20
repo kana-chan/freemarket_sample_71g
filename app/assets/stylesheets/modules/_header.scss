@@ -12,20 +12,20 @@
   height: 60%;
   width: 100%;
   display: flex;
-  align-items: center;
   &__logo{
     height: 100%;
     width: 15%;
     &--toplogo{
       height: 40px;
       width:140px;
-      margin-top: 8%;
+      margin-top: 10%;
     }
   }
   &__formBox{
-    height: 50%;
+    height: 60%;
     width: 85%;
     display: flex;
+    margin-top: 20px;
     justify-content: space-between;
     &__text{
       border: solid 1px gray;
@@ -34,11 +34,15 @@
       width: 96%;
     }
     &__icon{
+      border-radius: 2px;
       background-color: $blue;
       height: 100%;
       width: 4%;
+      &:hover{
+        background-color: $light-blue;
+      }
       &--serchIcon{
-        margin: 6px;
+        margin: 8px;
         height: 55%;
         width:55%;
       }
@@ -60,11 +64,17 @@
       position: absolute;
         bottom: 30%;
         left: 0;
+      &:hover{
+        color: $orange;
+      }
     }
     &__brand{
       position: absolute;
         bottom: 30%;
         right: 0;
+      &:hover{
+        color: $orange;
+      }  
     }
   }
   &__right{
@@ -76,7 +86,7 @@
         bottom: 30%;
         left: 0;
     }
-    &__signUp{
+    &__signUp,&__logOut{
       position: absolute;
         bottom: 30%;
         right: 0;
