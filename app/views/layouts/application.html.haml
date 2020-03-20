@@ -9,6 +9,7 @@
     = javascript_include_tag 'application'
   %body
     %header
+    - if request.path != new_user_session_path
       =render "items/header"
       =render "items/exhibition"
     = yield
