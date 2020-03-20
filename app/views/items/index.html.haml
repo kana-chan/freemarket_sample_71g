@@ -6,6 +6,10 @@
       FURIMAはだれでもかんたんに出品・購入できる
       %br フリマアプリです
     .itemsMain__visial__icon
+      =link_to("https://play.google.com/store")do
+        =image_tag "material/icon/google-play-badge.png",class:"footer__upper__btn--googlePlay"
+      =link_to("https://www.apple.com/jp/ios/app-store")do
+        =image_tag "material/icon/appstore.svg",class:"footer__upper__btn--appStore"
   .itemsMain__how
     FURIMAが選ばれる3つの理由
   .itemsMain__pic
@@ -16,10 +20,10 @@
       %br 出品・購入回数も業界最多です！
       ほしかったあの商品に出会えるかもしれません。
     .itemsMain__pic__picBtn
-      = link_to "https://play.google.com/store", class: "pic__picBtn" do
-        = image_tag "material/icon/google-play-badge.png"
-
-
+      =link_to("https://play.google.com/store")do
+        =image_tag "material/icon/google-play-badge.png",class:"footer__upper__btn--googlePlay"
+      =link_to("https://www.apple.com/jp/ios/app-store")do
+        =image_tag "material/icon/appstore.svg",class:"footer__upper__btn--appStore"
   .itemsMain__characteristic
     FURIMAの特徴
   .itemsMain__category
