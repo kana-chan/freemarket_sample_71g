@@ -23,25 +23,22 @@
 }
 
 // ３つの理由------------------------------------------------
-
-.itemsMain__how {
+// 特徴------------------------------------------------
+.itemsMain__how,.itemsMain__character{
   height: 90vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   &__topText{
-    margin: 5% 0;
+    margin: 5% 0 2.5% 0;
     font-size: 30px;
-    position: relative;
-    &--underLine{
-      background-color: $blue;
-      position: absolute;
-        top: 50px;
-        left: 150px;
-      height: 3px;
-      width: 100px;
-    }
+  }
+  &__underLine{
+    background-color: $blue;
+    margin: 0 0 2.5% 0;
+    height: 3px;
+    width: 100px;
   }
   &__photos{
     background-color: white;
@@ -58,8 +55,24 @@
     &__content3{
       background-image: url("material/pict/pict-reason-03.jpg");
     }
+    &__content4{
+      background-image: url("material/icon/icon-01.png");
+    }
+    &__content5{
+      background-image: url("material/icon/icon-02.png");
+    }
+    &__content6{
+      background-image: url("material/icon/icon-03.png");
+    }
     &__content1,&__content2,&__content3{
       background-size: cover;
+    }
+    &__content4,&__content5,&__content6{
+      background-size: contain;
+    }
+    &__content1,&__content2,&__content3,&__content4,&__content5,&__content6{
+      background-position: center;
+      background-repeat: no-repeat;
       border-radius: 2px;
       height: 40vh;
       width: 40vh;
@@ -81,7 +94,7 @@
         width: 100%;
         height: 80px;
         line-height: 80px;
-        font-size: 25px;
+        font-size: 23px;
         font-weight: bold;
         text-align: center;
         span{
@@ -119,69 +132,6 @@
     font-size: 18px;
     text-shadow: 1px 1px 10px $black;
     line-height: 1.5;
-  }
-}
-// 特徴------------------------------------------------
-.itemsMain__character {
-  height: 90vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  &__topText{
-    margin: 5% 0;
-    font-size: 30px;
-    position: relative;
-    &--underLine{
-      background-color: $blue;
-      position: absolute;
-        top: 50px;
-        left: 50px;
-      height: 3px;
-      width: 100px;
-    }
-  }
-  &__photos{
-    background-color: white;
-    width: 80%;
-    height: 50%;
-    display: flex;
-    justify-content: space-between;
-    &__content1{
-      background-image: url("material/icon/icon-01.png");
-    }
-    &__content2{
-      background-image: url("material/icon/icon-02.png");
-    }
-    &__content3{
-      background-image: url("material/icon/icon-03.png");
-    }
-    &__content1,&__content2,&__content3{
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 40vh;
-      width: 40vh;
-      position: relative;
-      &__upperText{
-        position: absolute;
-          top: 40vh;
-        width: 100%;
-        height: 80px;
-        line-height: 80px;
-        font-size: 24px;
-        font-weight: bold;
-        text-align: center;
-        span{
-          color: $blue;
-        }
-      }
-      &__lowerText{
-        font-size: 17px;
-        position: absolute;
-          top:calc(40vh + 80px);
-      }
-    }
   }
 }
 // カテゴリー別------------------------------------------------
