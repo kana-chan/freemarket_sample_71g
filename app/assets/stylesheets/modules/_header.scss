@@ -77,19 +77,28 @@
       }  
     }
   }
-  &__right{
+  &__right--notLogIn{
     height: 100%;
     width: 15%;
-    position: relative;
-    &__logIn{
-      position: absolute;
-        bottom: 30%;
-        left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a{
+      &:hover{
+        color: $orange;
+      }
     }
-    &__signUp,&__logOut{
-      position: absolute;
-        bottom: 30%;
-        right: 0;
+  }
+  &__right--logIn{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a{
+      &:hover{
+        color: $orange;
+      }
     }
   }
 }
