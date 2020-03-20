@@ -38,8 +38,10 @@
       background-color: $blue;
       height: 100%;
       width: 4%;
+      &:hover{
+        background-color: $light-blue;
+      }
       &--serchIcon{
-
         margin: 8px;
         height: 55%;
         width:55%;
@@ -62,11 +64,17 @@
       position: absolute;
         bottom: 30%;
         left: 0;
+      &:hover{
+        color: $orange;
+      }
     }
     &__brand{
       position: absolute;
         bottom: 30%;
         right: 0;
+      &:hover{
+        color: $orange;
+      }  
     }
   }
   &__right{
