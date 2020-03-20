@@ -19,29 +19,6 @@
       height: 443px;
       width: 620px;
       margin: 16px auto;
-      &--top {
-        height: 346px;
-        width: 620px;
-        background-color: pink;
-        .imageBig {
-          height: 100%;
-          width: 100%;
-        }
-      }
-      &--bottom {
-        height: 97px;
-        width: 620px;
-        background-color: orange;
-        ul {
-          display: flex;
-          justify-content: center;
-          .imageSmall {
-            height: 11vh;
-            width: 10vw;
-            margin-left: 10px;
-          }
-        }
-      }
     }
     &__price {
       height: 77px;
