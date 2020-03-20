@@ -9,5 +9,9 @@
     = javascript_include_tag 'application'
   %body
     %header
-      -# =render "items/header"
+    - if request.path != new_item_path 
+      =render "items/header"
+      =render "items/exhibition"
     = yield
+    %footer
+      =render "items/footer"
