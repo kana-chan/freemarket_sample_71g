@@ -1,138 +1,134 @@
-.new_wrapper
-  .new_header
-    =image_tag "material/logo/logo.png" ,class:"new_logo"
-  //ーーヘッダー部分ーー
-  .new_content1
-    .new_main-content1
-      .new_item
-        .new_item_left
-          出品画像
-        .new_item_right
-          必須
-      .new_exe
-        最大10枚までアップロードできます
-      .new_picture
-        .new_picture_exe
-          %br ドラッグアンドドロップ
-          またはクリックしてファイルをアップロード
-      //-------ここまでcontent1--------
-  .new_content2
-    .new_main-header2
-      .new_item
-        .new_item_left
-          商品名
-        .new_item_right
-          必須
-      = form_with url:"/", html: {class: "new_form-label"} do |f|
+= form_with url:"/", html: {class: "new_form-label"} do |f|
+  .new_wrapper
+    .new_header
+      =image_tag "material/logo/logo.png" ,class:"new_logo"
+    //ーーヘッダー部分ーー
+    .new_content1
+      .new_main-content1
+        .new_item
+          .new_item_left
+            出品画像
+          .new_item_right
+            必須
+        .new_exe
+          最大10枚までアップロードできます
+        .new_picture
+          .new_picture_exe
+            %br ドラッグアンドドロップ
+            またはクリックしてファイルをアップロード
+        //-------ここまでcontent1--------
+    .new_content2
+      .new_main-header2
+        .new_item
+          .new_item_left
+            商品名
+          .new_item_right
+            必須
         = f.text_field :content, class: 'new_form-label__message', placeholder: '40字まで'
-    .new_main-header3
-      .new_item
-        .new_item_left
-          商品の説明 
-        .new_item_right
-          必須 
-      = form_with url:"/", html: {class: "new_form-text_area"} do |f|
+      .new_main-header3
+        .new_item
+          .new_item_left
+            商品の説明 
+          .new_item_right
+            必須 
+        
         = f.text_area :content, class: 'new_form-text_area-message', placeholder: '40字まで'
-    .new_count
-      0/1000
-      //------------ここまでcontent2-------------
-  .new_content3
-    .new_title
-      商品の詳細
-    .new_main-header4
-      .new_item
-        .new_item_left
-          カテゴリー
-        .new_item_right
-          必須
-      = form_with url:"/", html: {class: "new_form-label"} do |f|
+      .new_count
+        0/1000
+        //------------ここまでcontent2-------------
+    .new_content3
+      .new_title
+        商品の詳細
+      .new_main-header4
+        .new_item
+          .new_item_left
+            カテゴリー
+          .new_item_right
+            必須
         = f.text_field :content, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
-    .new_main-header5    
-      .new_items
-        .new_items_left
-          ブランド
-        .new_items_right
-          任意
-      = form_with url:"/", html: {class: "new_form-label"} do |f|
+      .new_main-header5    
+        .new_items
+          .new_items_left
+            ブランド
+          .new_items_right
+            任意
         = f.text_field :content, class: 'new_form-label__message', placeholder: '例）シャネル'
-    .new_main-header6
+      .new_main-header6
+        .new_item
+          .new_item_left
+            商品の状態
+          .new_item_right
+            必須 
+        = f.text_field :content, class: 'new_form-label__message', placeholder: 'ここにselectが入る.' 
+      -# -------------ここまでcontent3---------------
+    .new_content4
+      .new_title
+        配送について 
+      .new_title_logo
+        
       .new_item
         .new_item_left
-          商品の状態
+          配送料の負担
         .new_item_right
           必須
-      = form_with url:"/", html: {class: "new_form-label"} do |f|
-        = f.text_field :content, class: 'new_form-label__message', placeholder: 'ここにselectが入る' 
-    //-------------ここまでcontent3---------------
-  .new_content4
-    .new_title
-      配送について 
-    .new_title_logo
-      
-    .new_item
-      .new_item_left
-        配送料の負担
-      .new_item_right
-        必須
-    = form_with url:"/", html: {class: "new_form-label"} do |f|
       = f.text_field :content, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
-    .new_item  
-      .new_item_left
-        発送元の地域
-      .new_item_right
-        必須
-    = form_with url:"/", html: {class: "new_form-label"} do |f|
-      = f.text_field :content, class: 'new_form-label__message', placeholder: 'ここにselectが入る' 
-    .new_item
-      .new_item_left
-        発送までの日数
-      .new_item_right
-        必須
-    = form_with url:"/", html: {class: "new_form-label"} do |f|
-      = f.text_field :content, class: 'new_form-label__message', placeholder: 'ここにselectが入る'  
-      //-------------ここまでcontent4---------------
-  .new_content5
-    .new_title
-      価格（¥300〜9,999,999）
-    .new_title_logo
 
-    .new_input
       .new_item  
         .new_item_left
-          販売価格地域
+          発送元の地域
         .new_item_right
           必須
-      = form_with url:"/", html: {class: "new_price"} do |f|
-        = f.text_field :content, class: 'new_price_input', placeholder: '0'  
-    .new_tax-box
-      .new_tax-box_left
-        販売手数料（10%）
-      .new_tax-box_right
-        %p -
-    .new_profit
-      .new_profit-left
-        販売利益    
-      .new_profit-right
-        %p -
-    .new_button
-      .new_button-shipping
-        出品する
-      .new_button-save
-        下書き保存する
-      .new_button-back
-        = link_to "#", class: "new_btn" do
-          もどる
-    .new_bottom_box
-      禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
-    //---------------ここまでcontent5------------------------
-  .new_footer
-    %ul.new_footer_exe
-      %li.new_footer_exe_left
-        プライバシーポリシー
-      %li.new_footer_exe_middle
-        メルカリ利用規約
-      %li.new_footer_exe_right
-        特定商取引に関する表記
-    .new_footer_logo
-      =image_tag "material/logo/logo.png" ,class:"new_logo"
-   
+      = f.text_field :content, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
+
+      .new_item
+        .new_item_left
+          発送までの日数
+        .new_item_right
+          必須
+      = f.text_field :content, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
+      
+    .new_content5
+      .new_title
+        価格（¥300〜9,999,999）
+      .new_title_logo
+
+      .new_input
+        .new_item  
+          .new_item_left
+            販売価格
+          .new_item_right
+            必須   
+        = f.text_field :content, class: 'new_price_input', placeholder: '0'
+
+      .new_tax-box
+        .new_tax-box_left
+          販売手数料（10%）
+        .new_tax-box_right
+          %p -
+      .new_profit
+        .new_profit-left
+          販売利益    
+        .new_profit-right
+          %p -
+      .new_button
+        .new_button-shipping
+          出品する
+        .new_button-save
+          下書き保存する
+        .new_button-back
+          = link_to "#", class: "new_btn" do
+            もどる
+      .new_bottom_box
+        禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+      //---------------ここまでcontent5------------------------
+    .new_footer
+      %ul.new_footer_exe
+        %li.new_footer_exe_left
+          プライバシーポリシー
+        %li.new_footer_exe_middle
+          メルカリ利用規約
+        %li.new_footer_exe_right
+          特定商取引に関する表記
+      .new_footer_logo
+        =image_tag "material/logo/logo.png" ,class:"new_logo"
+    

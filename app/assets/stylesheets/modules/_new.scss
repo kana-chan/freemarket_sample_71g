@@ -66,21 +66,19 @@
     .new_main-header2 {
       @include title;
 
-      .new_form-label{
+      .new_form-label__message{
        @include form;
       }
     }
     .new_main-header3{
       @include title;
 
-      .new_form-text_area {
-        &-message {
+      .new_form-text_area-message {
           height: 150px;
           width: 100%;
           padding: 13px 16px;
           border-radius: 4px;
           border: solid 1px #ccc;
-        }
       }
     }
     .new_count {
@@ -102,9 +100,12 @@
     }
     .new_main-header4 {
       @include title;
-      .new_form-label{
+      
+        
+      .new_form-label__message {
         @include form;
       }
+      
     }
     .new_main-header5 {
       .new_items{
@@ -119,18 +120,21 @@
           margin-left: 8px;
           padding: 0 4px;
         }
-      }  
-      .new_form-label{
+      } 
+      .new_form-label__message {
         @include form;
       }
     }
     .new_main-header6 {
       @include title;
-      .new_form-label{
+      .new_form-label__message{
        @include form;
       }
     }
   }
+
+
+
   //-------------ここまでcontent3---------------
   .new_content4 {
     @include size;
@@ -143,22 +147,9 @@
     .new_title_logo {
 
     }
-    .new_item{
-      margin: 40px 0 28px 0;
-      display: flex;
-
-      &_left {
-        font-weight: bold;
-      }
-      &_right {
-        background-color: red;
-        color: white;
-        margin-left: 8px;
-        padding: 0 4px;
-      }
-    }  
-    .new_form-label{
-      @include form
+    @include title;
+    .new_form-label__message{
+      @include form;
     }
   }
   //-------------ここまでcontent4---------------
@@ -176,30 +167,15 @@
       display: flex;
       justify-content: space-between;
       padding-bottom: 12px;
-      .new_item{
-        margin: 40px 0 28px 0;
-        display: flex;
-
-        &_left {
-          font-weight: bold;
-        }
-        &_right {
-          background-color: red;
-          color: white;
-          margin-left: 8px;
-          padding: 0 4px;
-        }
-      }  
-      .new_price{
+      @include title;
+      .new_price_input{
         margin-top: 18px;
-        &_input {
-          border: solid 1px #ccc;
-          height: 50px;
-          width: 100%;
-          border-radius: 4px;
-          padding: 0 16px;
-          font-size: 15px;
-        }
+        border: solid 1px #ccc;
+        height: 50px;
+        width: 40%;
+        border-radius: 4px;
+        padding: 0 16px;
+        font-size: 15px;
       }
     }
     .new_tax-box {
@@ -294,3 +270,6 @@
   }
 }
 //-------------ここまでフッター---------------
+.new_form-label__message {
+  display: block;
+}
