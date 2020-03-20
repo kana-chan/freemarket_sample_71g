@@ -1,0 +1,60 @@
+.show-main {
+  background-color: gray;
+  height: 150vh;
+  width: 100vw;
+
+  &-box {
+    display: flex;
+    justify-content: space-between;
+    width: 60vw;
+    height: 100%;
+    background-color: gray;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    &-left {
+      background-color: yellow;
+      width: 26%;
+
+      &-top {
+        background-color: white;
+        height: 80vh;
+        width: 100%;
+        margin-bottom: 25px;
+      }
+
+      &-center {
+        background-color: white;
+        height: 18vh;
+        width: 100%;
+        margin-bottom: 25px;
+      }
+
+      &-bottom {
+        background-color: white;
+        height: 40vh;
+        width: 100%;
+      }
+    }
+
+    &-right {
+      background-color: yellowgreen;
+      height: 100%;
+      width: 70%;
+
+      &-top {
+        background-color: white;
+        height: 80vh;
+        width: 100%;
+        margin-bottom: 25px;
+      }
+
+      &-bottom {
+        background-color: white;
+        height: 40vh;
+        width: 100%;
+      }
+
+    }
+  }
+}
