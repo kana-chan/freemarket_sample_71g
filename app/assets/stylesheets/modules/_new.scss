@@ -1,0 +1,296 @@
+.new_wrapper{
+  height: 100%;
+  width: 100vw;
+  background-color: rgb(245, 245, 245);
+
+
+  .new_header {
+    height: 128px;
+    background-color: rgb(245, 245, 245);
+    text-align: center;
+    .new_logo {
+      @include logo;
+    }
+  }
+
+
+
+
+
+  //ーーー-------------------ここまでヘッダー部分ーーー------------------------------
+  .new_content1 {
+    @include size;
+
+    .new_main-content1 {
+      box-sizing: border-box;
+      @include title;
+
+      .new_exe {
+        margin-top: 16px;
+      }
+
+      .new_picture {
+       
+        align-items: center;
+        background-color: rgb(245, 245, 245);
+        cursor: pointer;
+        height: 155px;
+        border-width: 1px;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-style: dashed;
+        border-color: rgb(204, 204, 204);
+        transition: all 0.5s ease-out 0s;
+        margin-top: 16px;
+        &_exe {
+          font-size: 12px;
+          line-height: 1.9em;
+          text-align: center;
+          width: 100%;
+          margin-top: 50px;
+        }
+      }
+
+    }
+  }
+
+
+
+    //ーー-------------------ーーここまでcontent1ーーーーーー--------
+
+  .new_content2 {
+    @include size;
+
+    .new_main-header2 {
+      @include title;
+
+      .new_form-label{
+       @include form;
+      }
+    }
+    .new_main-header3{
+      @include title;
+
+      .new_form-text_area {
+        &-message {
+          height: 150px;
+          width: 100%;
+          padding: 13px 16px;
+          border-radius: 4px;
+          border: solid 1px #ccc;
+        }
+      }
+    }
+    .new_count {
+      margin-top: 16px;
+      font-size: 12px;;
+      text-align: right;
+
+    }
+  }
+
+  //-----------------ここまでcontent2------------------
+  .new_content3 {
+    @include size;
+
+    .new_title{
+      margin: 0 0 24px 0;
+      font-size: 14px;
+      color: #888888;
+    }
+    .new_main-header4 {
+      @include title;
+      .new_form-label{
+        @include form;
+      }
+    }
+    .new_main-header5 {
+      .new_items{
+        margin: 40px 0 28px 0;
+        display: flex;
+        &_left {
+          font-weight: bold;
+        }
+        &_right {
+          background-color: #BFBFBF;
+          color: white;
+          margin-left: 8px;
+          padding: 0 4px;
+        }
+      }  
+      .new_form-label{
+        @include form;
+      }
+    }
+    .new_main-header6 {
+      @include title;
+      .new_form-label{
+       @include form;
+      }
+    }
+  }
+  //-------------ここまでcontent3---------------
+  .new_content4 {
+    @include size;
+
+    .new_title{
+      margin: 0 0 24px 0;
+      font-size: 14px;
+      color: #888888;
+    }
+    .new_title_logo {
+
+    }
+    .new_item{
+      margin: 40px 0 28px 0;
+      display: flex;
+
+      &_left {
+        font-weight: bold;
+      }
+      &_right {
+        background-color: red;
+        color: white;
+        margin-left: 8px;
+        padding: 0 4px;
+      }
+    }  
+    .new_form-label{
+      @include form
+    }
+  }
+  //-------------ここまでcontent4---------------
+  .new_content5 {
+    @include size;
+    .new_title{
+      margin: 0 0 24px 0;
+      font-size: 14px;
+      color: #888888;
+    }
+    .new_title_logo {
+
+    }
+    .new_input {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 12px;
+      .new_item{
+        margin: 40px 0 28px 0;
+        display: flex;
+
+        &_left {
+          font-weight: bold;
+        }
+        &_right {
+          background-color: red;
+          color: white;
+          margin-left: 8px;
+          padding: 0 4px;
+        }
+      }  
+      .new_price{
+        margin-top: 18px;
+        &_input {
+          border: solid 1px #ccc;
+          height: 50px;
+          width: 100%;
+          border-radius: 4px;
+          padding: 0 16px;
+          font-size: 15px;
+        }
+      }
+    }
+    .new_tax-box {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: solid 1px #DBDBDB;
+      &_left{
+        font-size: 14px;
+      }
+      &_right{
+        font-size: 14px;
+      }
+
+    }
+    .new_profit {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0 0;
+      &-left {
+        font-size: 14px;
+      }
+      &-right {
+        font-size: 14px;
+      }
+    }
+    .new_button {
+      margin: 0 130px 32px ;
+      width: 360px;
+      text-align: center;
+      margin-top: 30px;
+      &-shipping {
+        height: 40px;
+        margin-bottom: 24px;
+        padding: 0 24px;
+        background-color: #ea352d;
+        color: #fff;
+        font-size: 16px;
+        line-height: 2.5;
+        border-radius: 4px;
+        
+
+      }
+      &-save {
+        margin-bottom: 24px;
+        background-color: #ccc;
+        color: #222;
+        font-size: 16px;
+        height: 40px;
+        padding: 0 24px;
+        line-height: 2.5;
+        border-radius: 4px;
+
+      }
+      &-back {
+        .new_btn {
+          color: #0095ee;
+        }
+        .new_btn:hover {
+          color: #000;
+          border-bottom: solid 1px;
+        }
+      }
+    }
+    .new_bottom_box{
+      font-size: 12px;
+      line-height: 1.4em;
+
+    }
+  } 
+  //---------------ここまでcontent5------------------------
+  .new_footer {
+    max-width: 700px;
+    padding: 40px 0;
+    margin: 0 auto;
+    text-align: center;
+    &_exe {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 150px;
+      font-size: 12px;
+      .new_footer_exe_right,.new_footer_exe_left,.new_footer_exe_middle {
+        cursor: pointer;
+      }
+    
+    }
+    .new_footer_logo {
+      .new_logo{
+        @include logo;
+      }
+    }
+  }
+}
+//-------------ここまでフッター---------------
