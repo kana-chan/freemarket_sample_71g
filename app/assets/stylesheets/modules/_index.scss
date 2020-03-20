@@ -102,7 +102,7 @@
 // 会員数日本一------------------------------------------------
 .itemsMain__pic {
   background-image: url(material/pict/bg-topMiddleDl-pict.jpg);
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -126,7 +126,7 @@
     text-shadow: 1px 1px 10px $black;
     line-height: 1.5;
   }
-  // padding: 200px;
+  
 }
 // 特徴------------------------------------------------
 .itemsMain__character {
@@ -192,12 +192,12 @@
   }
 }
 // カテゴリー別------------------------------------------------
-.itemsMain__category {
+.itemsMain__newPost {
   background-color: #f8f8f8;
   height: 500px;
   text-align: center;
   &__top {
-    padding-top: 80px;
+    padding-top: 50px;
     font-size: 28px;
     font-weight: bold;
   }
@@ -206,41 +206,113 @@
     font-size: 24px;
     color: $blue;
   }
-  &__pic {
-    height: 300px;
-    background-color: pink;
-    margin-top: 30px;
-    &__content {
-      padding-top: 30px;
-      background-color: $blue;
-      height: 50px;
-      //margin: 0 auto;
-      //&__left {
-        //margin: 25px 0px;
-        //height: 20px;
-        //width: 20px;
-        //background-color:white;
-        //&__top  {
-          //background-color: yellowgreen;
-        //}
-        //&__down {
-          //background-color: blue;
-        //}
-      //}
-    }     
-  }
+  &__box {
+    height: 280px;
+    width: 780px;
+    margin: 26px auto; 
+    justify-content: space-between;
+    display: flex;
+    &__content1,&__content2,&__content3 {
+      background-color: white;
+      height: 100%;
+      width: 30%;
+      &:hover{
+        opacity: 0.5;
+      }
+      &__upper {
+        height: 60%;
+        width: 100%;
+        &__pic {
+          max-height: 168px;
+          min-height: 168ox;
+          width: auto;
+        }
+     }
+      &__down {
+        height: 40%;
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__left {
+          height: 100%;
+          width: 80%;
+          text-align: left;
+          line-height: 30px;
+          &__name,&__price,&__tax{
+            height: 30px;
+            width: 100%;
+          }
+          &__tax {
+            font-size: 10px;
+          }
+        }
+        &__likes {
+          line-height: 50%; 
+        }
+      }
+    }
+  }  
 }
-
 .itemsMain__bland {
-  background-color: khaki;
-  height: 20%;
+  background-color: #f8f8f8;
+  height: 500px;
   text-align: center;
   &__top {
-    padding-top: 100px;
+    padding-top: 50px;
+    font-size: 28px;
+    font-weight: bold;
   }
   &__middle {
+    padding-top: 10px;
+    font-size: 24px;
+    color: $blue;
   }
-  &__pic {
-  }
+  &__box {
+    height: 280px;
+    width: 780px;
+    margin: 26px auto; 
+    justify-content: space-between;
+    display: flex;
+    &__content1,&__content2,&__content3 {
+      background-color:white;
+      height: 100%;
+      width: 30%;
+      &:hover{
+        opacity: 0.5;
+      }
+      &__upper {
+        height: 60%;
+        width: 100%;
+        &__pic {
+          max-height: 168px;
+          min-height: 168ox;
+          width: auto;
+        }
+     }
+      &__down {
+        height: 40%;
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__left {
+          height: 100%;
+          width: 80%;
+          text-align: left;
+          line-height: 30px;
+          &__name,&__price,&__tax{
+            height: 30px;
+            width: 100%;
+          }
+          &__tax {
+            font-size: 10px;
+          }
+        }
+        &__likes {
+          line-height: 50%; 
+        }
+      }
+    }
+  }  
 }
-
