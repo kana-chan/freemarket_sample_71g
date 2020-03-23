@@ -3,7 +3,7 @@
     %h2 products2
     .mainContent__box
       .mainContent__box--top
-        =image_tag "images/material/icon/icon_camera.png", class:"imageBig"
+        =image_tag "/images/material/icon/icon_camera.png", class:"imageBig"
       .mainContent__box--bottom
         %ul
           %li
@@ -74,3 +74,4 @@
         =link_to('後ろの商品 >', '#', class: "product") 
   .mainRelated
     =link_to('メンズをもっと見る', '#', class: "related") 
+    =link_to('編集', "/itemss/#{@item.id}/edit", method: :get) 
