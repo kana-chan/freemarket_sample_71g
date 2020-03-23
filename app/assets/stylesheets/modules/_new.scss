@@ -30,7 +30,6 @@
       }
 
       .new_picture {
-       
         align-items: center;
         background-color: rgb(245, 245, 245);
         cursor: pointer;
@@ -67,7 +66,7 @@
       @include title;
 
       .new_form-label__message{
-       @include form;
+      @include form;
       }
     }
     .new_main-header3{
