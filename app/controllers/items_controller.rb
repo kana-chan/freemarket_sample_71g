@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   
   def index
-    @items = Item.find(1)
+    # @items = Item.find(1)
   end
 
   def show
@@ -9,9 +9,17 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
+    @item.images.new
   end
   
   def create
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -21,6 +29,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def item_params
+    params.require(:item).permit(:name, :explaination, :conditon, :date, :shipping_method, :cost, :responsibility, :price, images_attributes: [:src])
   end
 
 end
