@@ -27,14 +27,15 @@ ActiveRecord::Schema.define(version: 2020_03_19_071510) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.string "nickname", null: false
-    t.string "prifile", null: false
-    t.string "assessment", null: false
+    t.string "profile"
+    t.string "assessment"
     t.integer "phone_number", null: false
     t.string "gender", null: false
-    t.string "payment_method", null: false
-    t.string "image", null: false
+    t.string "birthday", null: false
+    t.string "image"
     t.string "favorite"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
