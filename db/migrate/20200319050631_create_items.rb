@@ -8,6 +8,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :date, null:false
       t.string :responsibility, null:false
       t.integer :price, null:false
+      
       t.timestamps
     end
   end

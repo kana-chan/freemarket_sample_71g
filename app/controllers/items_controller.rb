@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
+    @prefecture = Address.where('prefecture_id IN(?)', params[:prefecture_id])
   end
   
   def create
