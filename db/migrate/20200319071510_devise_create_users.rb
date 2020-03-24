@@ -12,6 +12,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :payment_method, null: false
       t.string :image, null: false
       t.string :favorite
+      t.integer :prefecture_id, null:false
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
