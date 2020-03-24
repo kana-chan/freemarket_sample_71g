@@ -1,7 +1,7 @@
 .itemsMain__newPost__box__content1
   .itemsMain__newPost__box__content1__upper
     - item.images.each do |image|
-      = image_tag image.src.to_s
+      = image_tag image.src.to_s, class: "itemsMain__newPost__box__content1__upper__pic"
   .itemsMain__newPost__box__content1__down
     .itemsMain__newPost__box__content1__down__left
       .itemsMain__newPost__box__content1__down__left__name
