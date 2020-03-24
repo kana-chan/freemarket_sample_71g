@@ -27,11 +27,11 @@
           .field-label
             = f.label :フリガナ（苗字）, class: "field-label__name"
             %span.field-label__required 必須
-            = f.text_field :last_name, autofocus: true, class: "field-label__input"
+            = f.text_field :last_furigana, autofocus: true, class: "field-label__input"
           .field-label
             = f.label :フリガナ（名前）, class: "field-label__name"
             %span.field-label__required 必須
-            = f.text_field :first_name, autofocus: true, class: "field-label__input"
+            = f.text_field :first_furigana, autofocus: true, class: "field-label__input"
           .field-label
             = f.label :電話番号, class: "field-label__name"
             %span.field-label__required 必須
