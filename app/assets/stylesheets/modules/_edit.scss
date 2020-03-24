@@ -21,7 +21,7 @@
 
     .edit_main-content1 {
       box-sizing: border-box;
-      @include title;
+      @include title2;
 
       .edit_exe {
         margin-top: 16px;
@@ -61,14 +61,14 @@
     @include size;
 
     .edit_main-header2 {
-      @include title;
-
+      @include title2;
+      
       .edit_form-label__message{
       @include form;
       }
     }
     .edit_main-header3{
-      @include title;
+      @include title2;
 
       .edit_form-text_area-message {
           height: 150px;
@@ -95,7 +95,7 @@
       color: #888888;
     }
     .edit_main-header4 {
-      @include title;
+      @include title2;
       
         
       .edit_form-label__message {
@@ -122,7 +122,7 @@
       }
     }
     .edit_main-header6 {
-      @include title;
+      @include title2;
       .edit_form-label__message{
        @include form;
       }
@@ -143,7 +143,7 @@
     .edit_title_logo {
 
     }
-    @include title;
+    @include title2;
     .edit_form-label__message{
       @include form;
     }
@@ -163,7 +163,7 @@
       display: flex;
       justify-content: space-between;
       padding-bottom: 12px;
-      @include title;
+      @include title2;
       .edit_price_input{
         margin-top: 18px;
         border: solid 1px #ccc;
@@ -255,6 +255,8 @@
     }
   }
 }
+
+
 
 //-------------ここまでフッター---------------
 .edit_form-label__message {
