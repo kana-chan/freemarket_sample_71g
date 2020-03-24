@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   
   def index
-    @items = Item.find(1)
   end
 
   def show
