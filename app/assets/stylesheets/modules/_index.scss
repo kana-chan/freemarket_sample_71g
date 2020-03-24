@@ -1,69 +1,196 @@
-.main{
-  background-color: pink;
-  height: 500vh;
-  width: 100vw;
-  display: block;
-
-  .mainVisial {
-    background-color: grey;
-    height: 90%;
+.itemsMain__visial {
+  background-image: url(/images/material/pict/bg-mainVisual-pict_pc.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 560px;
+  padding-left: 65px;
+  padding-top: 220px;
+  &__life {
+    height: 100px;
+    width: 750px;
+    font-size: 60px;
+    text-shadow:1px 1px 10px $black;
   }
-
-  .mainHow {
-    background-color: white;
-    height: 90%;
-    
-
+  &__easy {
+    height: 60px;
+    width: 600px;
+    font-size: 18px;
+    text-shadow:1px 1px 10px $black;
+    line-height: 1.5;
   }
-
-  .mainPic{
-    background-color:gray;
-    height: 90%;
-
-  }
-  .mainCharacteristic {
-    background-color: white;
-    height: 90%;
-
-  }
-
-  .mainCategory {
-    background-color: gray;
-    height: 90%;
-    text-align: center;
-    &__top {
-      padding-top: 100px;
-
-    }
-    &__middle {
-      
-    }
-    &__pic {
-
-    }
-
-
-  }
-
-  .mainBland {
-    background-color: khaki;
-    height: 90%;
-    text-align: center;
-    &__top {
-      padding: 100px;
-
-    }
-    &__middle {
-
-    }
-    &__pic {
-
-    }
-
-
-  }
-  
-
-
 }
 
+// ３つの理由------------------------------------------------
+// 特徴------------------------------------------------
+.itemsMain__how,.itemsMain__character{
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__topText{
+    margin: 5% 0 2.5% 0;
+    font-size: 30px;
+  }
+  &__underLine{
+    background-color: $blue;
+    margin: 0 0 2.5% 0;
+    height: 3px;
+    width: 100px;
+  }
+  &__photos{
+    background-color: white;
+    width: 80%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    &__content1{
+      background-image: url("/images/material/pict/pict-reason-01.jpg");
+    }
+    &__content2{
+      background-image: url("/images/material/pict/pict-reason-02.jpg");
+    }
+    &__content3{
+      background-image: url("/images/material/pict/pict-reason-03.jpg");
+    }
+    &__content4{
+      background-image: url("/images/material/icon/icon-01.png");
+    }
+    &__content5{
+      background-image: url("/images/material/icon/icon-02.png");
+    }
+    &__content6{
+      background-image: url("/images/material/icon/icon-03.png");
+    }
+    &__content1,&__content2,&__content3{
+      background-size: cover;
+    }
+    &__content4,&__content5,&__content6{
+      background-size: contain;
+    }
+    &__content1,&__content2,&__content3,&__content4,&__content5,&__content6{
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 2px;
+      height: 40vh;
+      width: 40vh;
+      position: relative;
+      &__number{
+        background-color: $blue;
+        border-radius: 2px;
+        height: 20%;
+        width: 20%;
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 17px;
+      }
+      &__upperText{
+        position: absolute;
+          top: 40vh;
+        width: 100%;
+        height: 80px;
+        line-height: 80px;
+        font-size: 23px;
+        font-weight: bold;
+        text-align: center;
+        span{
+          color: $blue;
+        }
+      }
+      &__lowerText{
+        font-size: 17px;
+        position: absolute;
+          top:calc(40vh + 80px);
+      }
+    }
+  }
+}
+// 会員数日本一------------------------------------------------
+.itemsMain__pic {
+  background-image: url(/images/material/pict/bg-topMiddleDl-pict.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 400px;
+  padding-left: 210px;
+  padding-top: 90px;
+  &__picOne {
+    height: 45px;
+    width: 200px;
+    font-size: 28px;
+    text-shadow:1px 1px 10px $black;
+  }
+  &__picTwo {
+    height: 100px;
+    width: 400px;
+    margin: 20px 0px 30px;
+    font-size: 18px;
+    text-shadow: 1px 1px 10px $black;
+    line-height: 1.5;
+  }
+}
+// カテゴリー別------------------------------------------------
+.itemsMain__newPost,.itemsMain__bland {
+  background-color: $light-gray;
+  height: 500px;
+  text-align: center;
+  &__top {
+    padding-top: 50px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  &__middle {
+    padding-top: 10px;
+    font-size: 24px;
+    color: $blue;
+  }
+  &__box {
+    height: 280px;
+    width: 780px;
+    margin: 26px auto; 
+    justify-content: space-between;
+    display: flex;
+    &__content1,&__content2,&__content3 {
+      background-color: white;
+      height: 100%;
+      width: 30%;
+      &:hover{
+        opacity: 0.5;
+      }
+      &__upper {
+        height: 60%;
+        width: 100%;
+        &__pic {
+          max-height: 168px;
+          min-height: 168px;
+          width: auto;
+        }
+      }
+      &__down {
+        height: 40%;
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__left {
+          height: 100%;
+          width: 80%;
+          text-align: left;
+          line-height: 30px;
+          &__name,&__price,&__tax{
+            height: 30px;
+            width: 100%;
+          }
+          &__tax {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }  
+}
