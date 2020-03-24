@@ -16,16 +16,20 @@ sample_71g  DB設計
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|size|string|
 |name|string|null: false|
 |explaination|string|null: false|
 |condition|string|null: false|
 |date|integer|null: false|
-|shipping-method|string|null: false|
-|cost|integer|null: false|
-|card_id|references|foreign_key: true|
+|responsibility|string|null: false|
+|price|integer|null: false|
+|prefecture_id|integer|null: false|
+|brand|string|
+
 |user_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
+|like_id|references|foreign_key: true|
+|comment_id|references|foreign_key: true|
+
 ### Association
 - belongs_to :user
 - belongs_to :category
@@ -56,11 +60,16 @@ sample_71g  DB設計
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_furigana|string|null: false|
+|first_furigana|string|null: false|
 |zip|integer|null: false|
-|prefectures|string|null: false|
+|prefectures_id|interger|null: false|
 |city|string|null: false|
 |street|string|null: false|
-|building-name|string|null: false|
+|building-name|string|
+
 |user_id|references|foreign_key: true|
 ### Association
 - belongs_to :user
