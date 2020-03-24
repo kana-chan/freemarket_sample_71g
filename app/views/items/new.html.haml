@@ -53,7 +53,7 @@
             ブランド
           .new_items_right
             任意
-        = f.text_field :content, class: 'new_form-label__message', placeholder: '例）シャネル'
+        = f.text_field :brand, class: 'new_form-label__message', placeholder: '例）シャネル'
       .new_main-header6
         .new_item
           .new_item_left
@@ -79,7 +79,7 @@
           発送元の地域
         .new_item_right
           必須
-      = f.text_field :content, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
+      = f.text_field :area, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
 
       .new_item
         .new_item_left
@@ -132,4 +132,3 @@
           特定商取引に関する表記
       .new_footer_logo
         =image_tag "material/logo/logo.png" ,class:"new_logo"
-    
