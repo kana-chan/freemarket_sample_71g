@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
+  # before_action :set_image 
   
   def index
+    @items = Item.all.includes(:images).order("created_at DESC").page(params[:page]).per(3)
   end
 
   def show
@@ -37,4 +39,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :explaination, :conditon, :date, :shipping_method, :cost, :responsibility, :price, images_attributes: [:src])
   end
 
+  # def set_image
+  #   @images = Image.all
+  # end
 end
