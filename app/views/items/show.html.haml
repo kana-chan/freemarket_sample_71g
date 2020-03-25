@@ -1,13 +1,12 @@
 .main
+
   .edit
-    .edit__frame
-      = link_to('編集','/items/#{item.id}/edit', method: :get)
-
-
+    .edit__editBtn
+      = link_to('編集','/items/#{item.id}/edit',class:"edit__editBtn--text")
 
   .content
     .content__text
-      products2
+      = @item.name
     .content__photoBox
       .content__photoBox--top
         =image_tag "/images/material/icon/icon_camera.png", class:"imageBig"
@@ -21,52 +20,61 @@
             =image_tag "/images/material/icon/icon_camera.png", class:"imageSmall"
           %li
             =image_tag "/images/material/icon/icon_camera.png", class:"imageSmall"
+          %li
+            =image_tag "/images/material/icon/icon_camera.png", class:"imageSmall"
+
     .content__priceBox
       .content__priceBox__top
-        ￥20000 (税込)
+        = "￥#{@item.price} (税込)"
       .content__priceBox__bottom
-        送料込み 
+        送料込み？
     .content__detailBox
-      "親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰をーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー"
+      = @item.explaination
     %table.content__tableBox
       %tr.content__tableBox--seller
         %th 出品者
-        %td hoge
+        %td hoge?
       %tr.content__tableBox--category
         %th カテゴリー
         %td
           .content__tableBox--category--parent
-            メンズ
+            メンズ?
           .content__tableBox--category--child
-            トップス
+            トップス?
           .content__tableBox--category--grandChild
-            シャツ
+            シャツ?
       %tr.content__tableBox--bland
         %th ブランド
-        %td グッチ
-      %tr.content__tableBox--size
-        %th 商品のサイズ
-        %td S
+        %td 
+          -# -if @item.bland.present?
+          -#   = @item.bland
       %tr.content__tableBox--condition
         %th 商品の状態
-        %td 新品/未使用
+        %td 
+          = @item.conditon
+          -# 誤字があるよ↑conditionやで
       %tr.content__tableBox--sendingFee
         %th 配送料の負担
-        %td 着払い（購入者負担）
+        %td 
+          = @item.responsibility
       %tr.content__tableBox--sellerAddress
         %th 発送元の地域
-        %td 青森県
+        %td 青森県?
       %tr.content__tableBox--sendDate
         %th 発送日の目安
-        %td 1-2日で発送
+        %td 
+          = @item.date
     .content__option
-      .content__option__left
-        %i.fa.fa-cog
-        お気に入り 0
-      .content__option__right
-        %i.fa.fa-flag
-        不適切な商品の報告
-
+      .content__option__upper
+        .content__option__upper--buyBtn
+          購入する
+      .content__option__lower
+        .content__option__lower--favorite
+          %i.fa.fa-cog
+          お気に入り 0
+        .content__option__lower--ban
+          %i.fa.fa-flag
+          不適切な商品の報告
 
 
   .comment
@@ -74,7 +82,6 @@
     .comment__alert
       相手のことを考え丁寧なコメントを心がけましょう。
       %br 不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    %br
     .comment__commentBtn
       コメントする
   .links
