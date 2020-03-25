@@ -88,18 +88,25 @@
   //-----------------ここまでcontent2------------------
   .edit_content3 {
     @include size;
-
+    background-color: sandybrown;
     .edit_title{
       margin: 0 0 24px 0;
       font-size: 14px;
       color: #888888;
+      background-color: palegoldenrod;
     }
+    .edit_box {
+      
+
     .edit_main-header4 {
       @include title2;
+      background-color: pink;
+      text-align: right;
       
         
       .edit_form-label__message {
         @include form;
+        background-color: plum;
       }
       
     }
@@ -129,7 +136,7 @@
     }
   }
 
-
+  }
 
   //-------------ここまでcontent3---------------
   .edit_content4 {

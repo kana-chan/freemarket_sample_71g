@@ -39,27 +39,28 @@
     .edit_content3
       .edit_title
         商品の詳細
-      .edit_main-header4
-        .edit_item
-          .edit_item_left
-            カテゴリー
-          .edit_item_right
-            必須
-        = f.text_field :content, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
-      .edit_main-header5    
-        .edit_items
-          .edit_items_left
-            ブランド
-          .edit_items_right
-            任意
-        = f.text_field :content, class: 'edit_form-label__message', placeholder: '例）シャネル'
-      .edit_main-header6
-        .edit_item
-          .edit_item_left
-            商品の状態
-          .edit_item_right
-            必須 
-        = f.text_field :content, class: 'edit_form-label__message', placeholder: 'ここにselectが入る.' 
+      .edit_box
+        .edit_main-header4
+          .edit_item
+            .edit_item_left
+              カテゴリー
+            .edit_item_right
+              必須
+          = f.text_field :content, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
+        .edit_main-header5    
+          .edit_items
+            .edit_items_left
+              ブランド
+            .edit_items_right
+              任意
+          = f.text_field :content, class: 'edit_form-label__message', placeholder: '例）シャネル'
+        .edit_main-header6
+          .edit_item
+            .edit_item_left
+              商品の状態
+            .edit_item_right
+              必須 
+          = f.text_field :content, class: 'edit_form-label__message', placeholder: 'ここにselectが入る.' 
       -# -------------ここまでcontent3---------------
     .edit_content4
       .edit_title
