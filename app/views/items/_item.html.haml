@@ -2,6 +2,10 @@
   .itemsMain__newPost__box__content1__upper
     - item.images.each do |image|
       = image_tag image.src.to_s, class: "itemsMain__newPost__box__content1__upper__pic"
+      - if user_signed_in? 
+        .itemsMain__bland__box__content1__upper_soldout
+        .itemsMain__bland__box__content1__upper_soldout_text
+          SOLD
   .itemsMain__newPost__box__content1__down
     .itemsMain__newPost__box__content1__down__left
       .itemsMain__newPost__box__content1__down__left__name

@@ -93,9 +93,10 @@
       .itemsMain__bland__box__content1
         .itemsMain__bland__box__content1__upper
           =image_tag '/freemarket.g.png', class:"itemsMain__bland__box__content1__upper__pic"
-          .itemsMain__bland__box__content1__upper_soldout
-          .itemsMain__bland__box__content1__upper_soldout_text
-            SOLD
+          - if user_signed_in?
+            .itemsMain__bland__box__content1__upper_soldout
+            .itemsMain__bland__box__content1__upper_soldout_text
+              SOLD
         .itemsMain__bland__box__content1__down
           .itemsMain__bland__box__content1__down__left
             .itemsMain__bland__box__content1__down__left__name
