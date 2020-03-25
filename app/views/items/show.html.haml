@@ -1,7 +1,8 @@
 .main
   .mainEdit
     .mainEdit__frame
-      = link_to('編集','/items/#{item.id}/edit', method: :get)
+      = link_to(edit_item_path,class:"mainEdit__frame") do
+        編集する
   .mainContent
     %h2 products2
     .mainContent__box
