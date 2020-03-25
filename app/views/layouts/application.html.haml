@@ -9,12 +9,9 @@
     = javascript_include_tag 'application'
   %body
     %header
-    - if request.path != new_user_session_path || new_item_path 
+    - if request.path != new_user_session_path && request.path != new_item_path
       =render "items/header"
       =render "items/exhibition"
     = yield
     %footer
       =render "items/footer"
-
-
-%new_item_path
