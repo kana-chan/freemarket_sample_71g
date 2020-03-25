@@ -45,18 +45,3 @@
 }
 
 
-@mixin soldout {
-  &_soldout{
-    position: absolute;
-    position: relative;
-    top: 1px;
-    border-top: 60px solid #ea352d ;
-    border-right: 60px solid transparent;
-    border-bottom: 60px solid transparent;
-    border-left: 60px solid #ea352d ;
-    &_text {
-      position: absolute;
-      
-    }
-  }
-}
