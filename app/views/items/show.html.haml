@@ -1,8 +1,9 @@
 .main
   .mainEdit
-    .mainEdit__frame
-      = link_to(edit_item_path,class:"mainEdit__frame") do
-        編集する
+    - if user_signed_in?
+      .mainEdit__frame
+        = link_to(edit_item_path@items.id, class:"mainEdit__frame") do
+          編集する
   .mainContent
     %h2 products2
     .mainContent__box
@@ -78,4 +79,3 @@
         =link_to('後ろの商品 >', '#', class: "product") 
   .mainRelated
     =link_to('メンズをもっと見る', '#', class: "related") 
-   
