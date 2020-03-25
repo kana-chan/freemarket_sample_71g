@@ -11,8 +11,8 @@ class CreateAddresses < ActiveRecord::Migration[5.2]
       t.string :street, null:false
       t.string :building_name
       t.string :phone_number
-      t.references :user, foreign_key: true,
-      t.references :item, foreign_key: true,
+      t.references :user, foreign_key: true
+      t.references :item, foreign_key: true
       t.timestamps
     end
   end
