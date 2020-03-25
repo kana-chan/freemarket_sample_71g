@@ -5,11 +5,22 @@
   background-color:whitesmoke;
   overflow: scroll;
   .mainEdit {
-    background-color: pink;
+    //background-color: pink;
     height: 48px;
     width: 700px;
     margin: 10px auto;
-    text-align: right;
+    text-align: center;
+
+    &__frame {
+      height: 38px;
+      width: 134px;
+      float: right;
+      background-color: $blue;
+      border-radius: 40px;
+      line-height: 38px;
+      color: white;
+      font-size: inherit;
+    }
     
   }
   .mainContent{
@@ -53,10 +64,6 @@
 
       }
     }
-
-
-
-
 
     &__price {
       height: 77px;
