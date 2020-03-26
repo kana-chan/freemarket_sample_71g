@@ -10,14 +10,13 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.images.new
-    9.times { @item.images.build }
+    5.times { @item.images.build }
     @prefecture = Address.where('prefecture_id IN(?)', params[:prefecture_id])
   end
   
   def create
     @item = Item.new(item_params)
-    if @item.save && [:id] == Integer
+    if @item.save
       redirect_to root_path
     else
       render :new
