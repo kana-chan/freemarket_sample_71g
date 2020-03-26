@@ -1,0 +1,35 @@
+.sign-up__header
+  .sign-up__header__image
+.sign-up__main
+  .sign-up__main__box
+    = form_for @address do |f|
+      = render "devise/shared/error_messages", resource: @address
+      .sign-up__main__box__contents
+        %h1.sign-up-head 住所登録
+      .sign-up__main__box__information
+        .sign-up__main__box__information__contents
+          .field-label
+            = f.label :郵便番号, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :zip, autofocus: true, autocomplete: "zip", class: "field-label__input"
+          .field-label
+            = f.label :都道府県, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :prefectures, autofocus: true, autocomplete: "prefectures", class: "field-label__input"
+          .field-label
+            = f.label :市区町村, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :city, autofocus: true, class: "field-label__input"
+          .field-label
+            = f.label :番地, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :street, autofocus: true, class: "field-label__input"
+          .field-label
+            = f.label :マンション名, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :building_name, autofocus: true, class: "field-label__input"
+          .actions
+            = f.submit "signup",  class: "actions__btn"
+.sign-up__footer
+  .sign-up__footer__image
+//= render "devise/shared/links"
