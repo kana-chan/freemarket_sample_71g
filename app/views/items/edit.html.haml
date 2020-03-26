@@ -113,11 +113,14 @@
           %p -
       .edit_button
         .edit_button-shipping
-          変更する
+          = link_to('#' , class: "edit_button-shipping") do
+            変更する
         .edit_button-save
-          出品を一時停止する
-        .edit_button-back
-          = link_to 'この商品を削除する', "/items/#{@item.id}", method: :delete
+          = link_to('#' , class: "edit_button-save") do
+            出品を一時停止する
+        .edit_button-delete
+          = link_to('#' , class: "edit_button-back") do
+            この商品を削除する
       .edit_bottom_box
         禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
       //---------------ここまでcontent5------------------------
