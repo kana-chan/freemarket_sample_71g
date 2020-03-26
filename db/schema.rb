@@ -59,9 +59,9 @@ ActiveRecord::Schema.define(version: 2020_03_24_013946) do
     t.string "last_name", null: false
     t.string "first_furigana"
     t.string "last_furigana"
-    t.integer "birthday", null: false
+    t.string "birthday", null: false
     t.string "image"
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.string "gender", null: false
     t.string "assessment"
     t.string "profile"
