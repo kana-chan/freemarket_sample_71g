@@ -1,23 +1,7 @@
-.new-header {
-  height: 15vh;
-  width: 100vw;
-  background-color: rgb(236, 231, 231);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-
-  &-image {
-    height: 49px;
-    width: 185px;
-
-  }
-}
-
 .new-content {
   height: 90vh;
   width: 100vw;
-  background-color: rgb(236, 231, 231);
+  background-color: $light-gray;
 
   &-box {
     box-sizing: border-box;
