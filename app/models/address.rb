@@ -5,5 +5,5 @@ class Address < ApplicationRecord
   belongs_to_active_hash :responsibility
   belongs_to_active_hash :shipment
   belongs_to :user, optional: true
-  validates :zip, :prefectures, :city, :street, :building_name ,presence: true
+  validates :zip, :prefecture_id, :city, :street, :building_name ,presence: true
 end
