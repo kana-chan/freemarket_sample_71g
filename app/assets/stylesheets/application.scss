@@ -1,10 +1,12 @@
 @import 'reset';
 @import 'config/colors';
 @import 'mixin/suzuki';
-@import 'modules/header';
+@import 'modules/headers/header_small';
+@import 'modules/headers/header_big';
+@import 'modules/footers/footer_small';
+@import 'modules/footers/footer_big';
 @import 'modules/exhibition';
 @import 'users/registrations/new';
-@import 'modules/footer';
 @import 'modules/index';
 @import 'modules/new';
 @import 'modules/show';

@@ -1,0 +1,8 @@
+.new_header {
+  height: 128px;
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+  .new_logo {
+    @include logo;
+  }
+}

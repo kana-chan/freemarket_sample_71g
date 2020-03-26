@@ -122,37 +122,3 @@
     }
   }
 }
-
-.new-footer {
-  height: 25vh;
-  width: 100vw;
-  box-sizing: border-box;
-  background-color: rgb(236, 231, 231);
-
-  .new-footer-box {
-    height: 100%;
-    width: 456px;
-    margin: 0 auto;
-    background-color: rgb(236, 231, 231);
-    padding: 40px 0;
-    
-    &-area {
-      display: flex;
-      justify-content: space-between;
-    }
-  
-
-    &-bottom {
-      text-align: center;
-      margin-top: 50px;
-      &-image {
-        height: 30px;
-        
-      }
-    }
-    &-ink {
-      text-align: center;
-      font-size: 10px;
-    }
-  }
-}
