@@ -1,8 +1,11 @@
 .new_header {
-  height: 128px;
-  background-color: rgb(245, 245, 245);
+  height: 120px;
+  background-color: $light-gray;
   text-align: center;
+  
   .new_logo {
-    @include logo;
+    width: auto;
+    height: 55px;
+    margin-top: 30px;
   }
 }
