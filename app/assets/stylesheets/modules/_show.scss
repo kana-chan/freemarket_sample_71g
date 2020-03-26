@@ -5,23 +5,6 @@
   flex-direction: column;
   align-items: center;
 }
-// 編集ボタン------------------------------------------------
-.edit {
-  height: 50px;
-  width: 55vw;
-  text-align: center;
-  &__editBtn{
-    height: 40px;
-    width: 140px;
-    float: right;
-    background-color: $blue;
-    border-radius: 40px;
-    line-height: 38px;
-    &--text{
-      color:white;
-    }
-  }
-}
 
 // 商品情報------------------------------------------------
 .content{
@@ -98,7 +81,7 @@
   &__tableBox,table {
     height: 60vh;
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 40px;
     font-size: 15px;
     tr {
       border: 1px solid #f8f8f8;
@@ -127,11 +110,10 @@
     width: 80%;
     margin: 0 auto ;
     &__upper{
-      margin-top:15px ;
-      padding-top: 15px;
+      margin:40px 0;
       height: 50%;
       width: 100%;
-      &--buyBtn{
+      &--buyBtn,&--editBtn{
         width: 90%;
         height: 75%;
         background-color:$blue;
@@ -142,91 +124,94 @@
         font-size: 20px;
       }
     }
-    &__lower{
-      height: 30%;
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      &--favorite,&--ban {
-        height: 30px;
-        width: 130px;
-        font-size: 10px;
-        margin:20px 0 30px 10px;
-        border-radius: 20px;
-        line-height: 30px;
-      }
-      &--favorite{
-        background-color: $orange;
-        color: white;
-      }
-      &--ban {
-        background-color: $light-gray;
-        color: $black;
-      }
-    }
+
+    
+// 追加実装------------------------------------------------
+//     &__lower{
+//       height: 30%;
+//       width: 100%;
+//       display: flex;
+//       justify-content: flex-end;
+//       align-items: center;
+//       &--favorite,&--ban {
+//         height: 30px;
+//         width: 130px;
+//         font-size: 10px;
+//         margin:20px 0 30px 10px;
+//         border-radius: 20px;
+//         line-height: 30px;
+//       }
+//       &--favorite{
+//         background-color: $orange;
+//         color: white;
+//       }
+//       &--ban {
+//         background-color: $light-gray;
+//         color: $black;
+//       }
+//     }
   }
 }
 
-// コメント欄------------------------------------------------
-.comment {
-  margin-top: 20px;
-  height: 40vh;
-  width: 55%;
-  background-color: white;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  &__textArea {
-    margin: 20px auto 0 ;
-    height: 40%;
-    width: 80%;
-    border: 1px solid $gray;
-    }
-  &__alert {
-    margin: 20px auto 0 ;
-    height: 20%;
-    width: 80%;
-    padding-top: 10px;
-    line-height: 1.5;
-    font-size: 15px;
-    background-color: $light-gray;
-  }
-  &__commentBtn {
-    height: 15%;
-    width: 50%;
-    font-size: 15px;
-    font-weight: bold;
-    background-color: $blue;
-    color: white;
-    margin: 20px auto 0 ;
-    border-radius: 40px;
-    line-height: 47px;
-  }
-}
+// // コメント欄------------------------------------------------
+// .comment {
+//   margin-top: 20px;
+//   height: 40vh;
+//   width: 55%;
+//   background-color: white;
+//   text-align: center;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   &__textArea {
+//     margin: 20px auto 0 ;
+//     height: 40%;
+//     width: 80%;
+//     border: 1px solid $gray;
+//     }
+//   &__alert {
+//     margin: 20px auto 0 ;
+//     height: 20%;
+//     width: 80%;
+//     padding-top: 10px;
+//     line-height: 1.5;
+//     font-size: 15px;
+//     background-color: $light-gray;
+//   }
+//   &__commentBtn {
+//     height: 15%;
+//     width: 50%;
+//     font-size: 15px;
+//     font-weight: bold;
+//     background-color: $blue;
+//     color: white;
+//     margin: 20px auto 0 ;
+//     border-radius: 40px;
+//     line-height: 47px;
+//   }
+// }
 
-.links {
-  height: 24px;
-  width: 700px;
-  margin: 10px auto;
-  padding-top: 10px;
-  ul {
-    display: flex;
-    justify-content: space-between;
-    .product {
-      color: #3CCACE;
-      font-size: 16px;
-    }
-  }
-}
-.related {
-  height: 24px;
-  width: 700px;
-  margin: 10px auto;
-  padding-top: 24px;
-  .related {
-    color: #3CCACE;
-    font-size: 24px;
-  }
-}
+// .links {
+//   height: 24px;
+//   width: 700px;
+//   margin: 10px auto;
+//   padding-top: 10px;
+//   ul {
+//     display: flex;
+//     justify-content: space-between;
+//     .product {
+//       color: #3CCACE;
+//       font-size: 16px;
+//     }
+//   }
+// }
+// .related {
+//   height: 24px;
+//   width: 700px;
+//   margin: 10px auto;
+//   padding-top: 24px;
+//   .related {
+//     color: #3CCACE;
+//     font-size: 24px;
+//   }
+// }
