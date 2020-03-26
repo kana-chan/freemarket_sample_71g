@@ -1,27 +1,28 @@
-.new-content
-  .new-content-box
-    .new-content-box-top
-      .new-content-box-top-text
-        アカウントをお持ちでない方はこちら
-      .new-content-box-top-btn
-        = link_to "新規会員登録", "#"
-    .new-content-box-center
-      .new-content-box-center-face
-        = link_to "facebookでログイン", "#"
-      .new-content-box-center-goo
-        = link_to "Googleでログイン", "#"
-    .new-content-box-bottom
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .new-content-box-bottom-email
-          = f.email_field :email, autofocus: true, autocomplete: "email", class: "new-content-box-bottom-email-area",placeholder: "メールアドレス"
-        .new-content-box-bottom-pass
-          = f.password_field :password, autocomplete: "current-password", class: "new-content-box-bottom-pass-area",placeholder: "パスワード"
-        - if devise_mapping.rememberable?
-        .new-content-box-bottom-area
-          = f.check_box :remember_me
-            = f.label :パスワードを記憶する
-        .new-content-box-bottom-submit
-          = f.submit "ログイン", class: "new-content-box-bottom-submit-area"
-        .new-content-box-bottom-link
-          = render "devise/shared/links"
+.new_wrapper
+  .new-content
+    .new-content-box
+      .new-content-box-top
+        .new-content-box-top-text
+          アカウントをお持ちでない方はこちら
+        .new-content-box-top-btn
+          = link_to "新規会員登録", "#"
+      .new-content-box-center
+        .new-content-box-center-face
+          = link_to "facebookでログイン", "#"
+        .new-content-box-center-goo
+          = link_to "Googleでログイン", "#"
+      .new-content-box-bottom
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .new-content-box-bottom-email
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "new-content-box-bottom-email-area",placeholder: "メールアドレス"
+          .new-content-box-bottom-pass
+            = f.password_field :password, autocomplete: "current-password", class: "new-content-box-bottom-pass-area",placeholder: "パスワード"
+          - if devise_mapping.rememberable?
+          .new-content-box-bottom-area
+            = f.check_box :remember_me
+              = f.label :パスワードを記憶する
+          .new-content-box-bottom-submit
+            = f.submit "ログイン", class: "new-content-box-bottom-submit-area"
+          .new-content-box-bottom-link
+            = render "devise/shared/links"
 
