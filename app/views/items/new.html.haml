@@ -60,7 +60,8 @@
             商品の状態
           .new_item_right
             必須 
-        = f.text_field :conditon, class: 'new_form-label__message', placeholder: 'ここにselectが入る.' 
+        = f.collection_select :condition_id, Condition.all, :id, :name, class: 'select'
+        //= f.text_field :conditon, class: 'new_form-label__message', placeholder: 'ここにselectが入る.' 
       -# -------------ここまでcontent3---------------
     .new_content4
       .new_title
@@ -72,7 +73,7 @@
           配送料の負担
         .new_item_right
           必須
-      = f.text_field :responsibility, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
+      = f.collection_select :responsibility_id, Responsibility.all, :id, :name
 
       .new_item  
         .new_item_left
@@ -86,7 +87,7 @@
           発送までの日数
         .new_item_right
           必須
-      = f.text_field :date, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
+      = f.collection_select :shipment_id, Shipment.all, :id, :name
       
     .new_content5
       .new_title
