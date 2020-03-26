@@ -3,7 +3,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       t.string :name, null: false
       t.string :nickname, null: false, unique: true
-      t.string :prifile, null: false
+      t.string :profile, null: false
       t.string :assessment, null: false
       t.integer :phone_number, null: false
       t.string :gender, null: false

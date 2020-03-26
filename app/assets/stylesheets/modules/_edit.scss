@@ -1,55 +1,33 @@
-.new_wrapper{
+.edit_wrapper{
   height: 100%;
   width: 100vw;
   background-color: rgb(245, 245, 245);
 
 
-  .new_header {
+  .edit_header {
     height: 128px;
     background-color: rgb(245, 245, 245);
     text-align: center;
-    .new_logo {
+    .edit_logo {
       @include logo;
     }
   }
-
-#item_condition_id {
-  height: 50px;
-  width: 100%;
-  font-size: 15px;
-}
-
-#item_responsibility_id {
-  height: 50px;
-  width: 100%;
-  font-size: 15px;
-}
-
-#item_prefecture_id {
-  height: 50px;
-  width: 100%;
-  font-size: 15px;
-}
-
-#item_shipment_id {
-  height: 50px;
-  width: 100%;
-  font-size: 15px;
-}
+  
+  
 
   //ーーー-------------------ここまでヘッダー部分ーーー------------------------------
-  .new_content1 {
+  .edit_content1 {
     @include size;
 
-    .new_main-content1 {
+    .edit_main-content1 {
       box-sizing: border-box;
-      @include title;
+      @include title2;
 
-      .new_exe {
+      .edit_exe {
         margin-top: 16px;
       }
 
-      .new_picture {
+      .edit_picture {
         align-items: center;
         background-color: rgb(245, 245, 245);
         cursor: pointer;
@@ -79,20 +57,20 @@
 
     //ーー-------------------ーーここまでcontent1ーーーーーー--------
 
-  .new_content2 {
+  .edit_content2 {
     @include size;
 
-    .new_main-header2 {
-      @include title;
-
-      .new_form-label__message{
+    .edit_main-header2 {
+      @include title2;
+      
+      .edit_form-label__message{
       @include form;
       }
     }
-    .new_main-header3{
-      @include title;
+    .edit_main-header3{
+      @include title2;
 
-      .new_form-text_area-message {
+      .edit_form-text_area-message {
           height: 150px;
           width: 100%;
           padding: 13px 16px;
@@ -100,34 +78,40 @@
           border: solid 1px #ccc;
       }
     }
-    .new_count {
+    .edit_count {
       margin-top: 16px;
       font-size: 12px;;
       text-align: right;
-
     }
   }
 
   //-----------------ここまでcontent2------------------
-  .new_content3 {
+  .edit_content3 {
     @include size;
-
-    .new_title{
+    background-color: sandybrown;
+    .edit_title{
       margin: 0 0 24px 0;
       font-size: 14px;
       color: #888888;
+      background-color: palegoldenrod;
     }
-    .new_main-header4 {
-      @include title;
+    .edit_box {
+      
+
+    .edit_main-header4 {
+      @include title2;
+      background-color: pink;
+      text-align: right;
       
         
-      .new_form-label__message {
+      .edit_form-label__message {
         @include form;
+        background-color: plum;
       }
       
     }
-    .new_main-header5 {
-      .new_items{
+    .edit_main-header5 {
+      .edit_items{
         margin: 40px 0 28px 0;
         display: flex;
         &_left {
@@ -140,54 +124,54 @@
           padding: 0 4px;
         }
       } 
-      .new_form-label__message {
+      .edit_form-label__message {
         @include form;
       }
     }
-    .new_main-header6 {
-      @include title;
-      .new_form-label__message{
+    .edit_main-header6 {
+      @include title2;
+      .edit_form-label__message{
        @include form;
       }
     }
   }
 
-
+  }
 
   //-------------ここまでcontent3---------------
-  .new_content4 {
+  .edit_content4 {
     @include size;
 
-    .new_title{
+    .edit_title{
       margin: 0 0 24px 0;
       font-size: 14px;
       color: #888888;
     }
-    .new_title_logo {
+    .edit_title_logo {
 
     }
-    @include title;
-    .new_form-label__message{
+    @include title2;
+    .edit_form-label__message{
       @include form;
     }
   }
   //-------------ここまでcontent4---------------
-  .new_content5 {
+  .edit_content5 {
     @include size;
-    .new_title{
+    .edit_title{
       margin: 0 0 24px 0;
       font-size: 14px;
       color: #888888;
     }
-    .new_title_logo {
+    .edit_title_logo {
 
     }
-    .new_input {
+    .edit_input {
       display: flex;
       justify-content: space-between;
       padding-bottom: 12px;
-      @include title;
-      .new_price_input{
+      @include title2;
+      .edit_price_input{
         margin-top: 18px;
         border: solid 1px #ccc;
         height: 50px;
@@ -197,7 +181,7 @@
         font-size: 15px;
       }
     }
-    .new_tax-box {
+    .edit_tax-box {
       display: flex;
       justify-content: space-between;
       padding: 12px 0;
@@ -210,7 +194,7 @@
       }
 
     }
-    .new_profit {
+    .edit_profit {
       display: flex;
       justify-content: space-between;
       padding: 12px 0 0;
@@ -221,7 +205,7 @@
         font-size: 14px;
       }
     }
-    .new_button {
+    .edit_button {
       margin: 0 130px 32px ;
       width: 360px;
       text-align: center;
@@ -238,7 +222,7 @@
         
 
       }
-      &-save {
+      &-save,&-back {
         margin-bottom: 24px;
         background-color: #ccc;
         color: #222;
@@ -247,26 +231,16 @@
         padding: 0 24px;
         line-height: 2.5;
         border-radius: 4px;
-
-      }
-      &-back {
-        .new_btn {
-          color: #0095ee;
-        }
-        .new_btn:hover {
-          color: #000;
-          border-bottom: solid 1px;
-        }
-      }
+      }   
     }
-    .new_bottom_box{
+    .edit_bottom_box{
       font-size: 12px;
       line-height: 1.4em;
 
     }
   } 
   //---------------ここまでcontent5------------------------
-  .new_footer {
+  .edit_footer {
     max-width: 700px;
     padding: 40px 0;
     margin: 0 auto;
@@ -276,19 +250,22 @@
       justify-content: space-between;
       margin: 0 150px;
       font-size: 12px;
-      .new_footer_exe_right,.new_footer_exe_left,.new_footer_exe_middle {
+      .edit_footer_exe_right,.edit_footer_exe_left,.edit_footer_exe_middle {
         cursor: pointer;
       }
     
     }
-    .new_footer_logo {
-      .new_logo{
+    .edit_footer_logo {
+      .edit_logo{
         @include logo;
       }
     }
   }
 }
+
+
+
 //-------------ここまでフッター---------------
-.new_form-label__message {
+.edit_form-label__message {
   display: block;
 }
