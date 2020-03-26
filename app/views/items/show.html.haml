@@ -62,17 +62,12 @@
           = @item.date
     .content__option
       .content__option__upper
-        =link_to("#") do
-          .content__option__upper--buyBtn
-            購入する
-
--# 条件分岐------------------------------------------------
         -if user_signed_in? && current_user.id == @item.user_id
-          =link_to("#") do
+          =link_to(edit_item_path(@item.id)) do
             .content__option__upper--editBtn
               編集する
         -else
-          =link_to("#") do
+          =link_to(edit_item_path(@item.id)) do
             .content__option__upper--buyBtn
               購入する
 
