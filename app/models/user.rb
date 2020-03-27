@@ -6,4 +6,6 @@ class User < ApplicationRecord
       
          validates :nickname, :email, presence: true, uniqueness: true
          validates :first_name, :last_name, :password, :phone_number, :gender, :image, presence: true
+
+  has_many  :cards     
 end

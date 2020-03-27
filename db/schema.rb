@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_045207) do
+ActiveRecord::Schema.define(version: 2020_03_25_120837) do
 
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "prefecture_id"
-    t.string "city"
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -42,19 +44,17 @@ ActiveRecord::Schema.define(version: 2020_03_23_045207) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
-    t.string "email", default: "", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
-    t.string "first_furigana"
-    t.string "last_furigana"
-    t.integer "birthday", null: false
-    t.string "image"
+    t.string "nickname", null: false
+    t.string "profile"
+    t.string "assessment"
     t.integer "phone_number", null: false
     t.string "gender", null: false
-    t.string "assessment"
-    t.string "profile"
+    t.string "birthday", null: false
+    t.string "image"
     t.string "favorite"
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -65,5 +65,6 @@ ActiveRecord::Schema.define(version: 2020_03_23_045207) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cards", "users"
   add_foreign_key "images", "items"
 end
