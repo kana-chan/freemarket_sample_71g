@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   
   def index
-    # @items = Item.find(1)
+    @items = Item.all
   end
 
   def show
@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render :new
+      redirect_to action: :new
     end
   end
 
