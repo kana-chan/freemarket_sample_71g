@@ -4,6 +4,24 @@
   padding: 50px 0;
   background-color:whitesmoke;
   overflow: scroll;
+  .mainEdit {
+    height: 48px;
+    width: 700px;
+    margin: 10px auto;
+    text-align: center;
+
+    &__frame {
+      height: 38px;
+      width: 134px;
+      float: right;
+      background-color: $blue;
+      border-radius: 40px;
+      line-height: 38px;
+      color: white;
+      font-size: inherit;
+    }
+    
+  }
   .mainContent{
     height: 1362px;
     width: 700px;
@@ -19,7 +37,33 @@
       height: 443px;
       width: 620px;
       margin: 16px auto;
+      &--top { 
+        height: 346px;
+        width: 620px;
+        background-color: orange;
+        .imageBig {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      &--bottom {
+        height: 97px;
+        width: 620px;
+        background-color: palegoldenrod;
+        ul {
+          display: flex;
+          justify-content: center;
+          .imageSmall {
+            height: 11vh;
+            width: 10vw;
+            margin-left: 10px;
+          }
+        }
+
+
+      }
     }
+
     &__price {
       height: 77px;
       width: 620px;
@@ -93,7 +137,7 @@
         border-radius: 40px;
         color: #3CCACE;
         line-height: 38px;
-        padding-left: 25px;
+        padding-left: 15px;
         font-size: inherit;
       }
       &__right {
@@ -103,7 +147,7 @@
       }
       .alert {
         line-height: 38px;
-        padding-left: 25px;
+        padding-left: 15px;
       }
     }
   }

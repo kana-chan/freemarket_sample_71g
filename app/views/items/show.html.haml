@@ -1,4 +1,9 @@
 .main
+  .mainEdit
+    - if user_signed_in?
+      .mainEdit__frame
+        = link_to(edit_item_path@items.id, class:"mainEdit__frame") do
+          編集する
   .mainContent
     %h2 products2
     .mainContent__box
