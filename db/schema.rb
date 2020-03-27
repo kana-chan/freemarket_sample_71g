@@ -13,14 +13,14 @@
 ActiveRecord::Schema.define(version: 2020_03_24_013946) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "last_name", null: false
-    t.string "first_name", null: false
-    t.string "last_furigana", null: false
-    t.string "first_furigana", null: false
-    t.string "zip", null: false
-    t.integer "prefecture_id", null: false
-    t.string "city", null: false
-    t.string "street", null: false
+    t.string "last_name"
+    t.string "first_name"
+    t.string "last_furigana"
+    t.string "first_furigana"
+    t.string "zip"
+    t.integer "prefecture_id"
+    t.string "city"
+    t.string "street"
     t.string "building_name"
     t.string "phone_number"
     t.bigint "user_id"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_03_24_013946) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "src", null: false
+    t.string "src"
     t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,41 +40,41 @@ ActiveRecord::Schema.define(version: 2020_03_24_013946) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "explaination", null: false
-    t.integer "condition_id", null: false
-    t.integer "shipment_id", null: false
-    t.integer "responsibility_id", null: false
-    t.integer "price", null: false
-    t.integer "prefecture_id", null: false
+    t.string "name"
+    t.string "explaination"
+    t.integer "condition_id"
+    t.integer "shipment_id"
+    t.integer "responsibility_id"
+    t.integer "price"
+    t.integer "prefecture_id"
     t.string "brand"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
-    t.string "email", default: "", null: false
-    t.string "first_name", null: false
-    t.string "last_name", null: false
+    t.string "nickname"
+    t.string "email", default: ""
+    t.string "first_name"
+    t.string "last_name"
     t.string "first_furigana"
     t.string "last_furigana"
-    t.string "birthday", null: false
+    t.string "birthday"
     t.string "image"
-    t.string "phone_number", null: false
-    t.string "gender", null: false
+    t.string "phone_number"
+    t.string "gender"
     t.string "assessment"
     t.string "profile"
     t.string "favorite"
-    t.integer "prefecture_id", null: false
-    t.string "encrypted_password", default: "", null: false
+    t.integer "prefecture_id"
+    t.string "encrypted_password", default: ""
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email"
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
   end
 
   add_foreign_key "addresses", "items"
