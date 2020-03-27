@@ -1,0 +1,68 @@
+.sign-up__main
+  .sign-up__main__box
+    = form_for(@user, url: user_registration_path) do |f|
+      = render "devise/shared/error_messages", resource: @user
+      .sign-up__main__box__contents
+        %h1.sign-up-head 会員情報入力
+      .sign-up__main__box__information
+        .sign-up__main__box__information__contents
+          .field-label
+            = f.label :ニックネーム, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "field-label__input"
+          .field-label
+            = f.label :メールアドレス, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "field-label__input"
+          .field-label
+            = f.label :名前（苗字）, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :last_name, autofocus: true, class: "field-label__input"
+          .field-label
+            = f.label :名前（名前）, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :first_name, autofocus: true, class: "field-label__input"
+          .field-label
+            = f.label :ふりがな（苗字）, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :last_furigana, autofocus: true, class: "field-label__input"
+          .field-label
+            = f.label :ふりがな（名前）, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :first_furigana, autofocus: true, class: "field-label__input"
+          .field-label
+            = f.label :電話番号, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :phone_number, autofocus: true, class: "field-label__input"
+          .field-label
+            = f.label :性別, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.select :gender, { '男': :male, '女': :female }
+          .field-label
+            = f.label :生年月日, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :birthday, autofocus: true, class: "field-label__input"
+          .field-label
+            = f.label :password, class: "field-label__name"
+            %span.field-label__required 必須
+            - if @minimum_password_length
+              %em
+                (#{@minimum_password_length} characters minimum)
+            %br/
+            = f.password_field :password, autocomplete: "new-password", class: "field-label__input"
+          .field-label
+            = f.label :password_confirmation, class: "field-label__name"
+            %span.field-label__required 必須
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: "field-label__input"
+          .field-label
+            = f.label :アイコン, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.file_field :image, class: "field-label__image"
+          .field-label
+            = f.label :プロフィール, class: "field-label__name"
+            %span.field-label__any 任意
+            = f.text_area :profile, autofocus: true, autocomplete: "prifile", class: "field-label__input"
+          .actions
+            = f.submit "next", class: "actions__btn"
+

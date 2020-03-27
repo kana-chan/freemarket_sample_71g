@@ -5,7 +5,7 @@
       = @item.name
     .content__photoBox
       .content__photoBox--top
-        =image_tag @item.images.first.src.to_s, class:"imageBig"
+        =image_tag "/images/material/icon/icon_camera.png", class:"imageBig"
       .content__photoBox--bottom
         %ul
           %li
@@ -80,7 +80,7 @@
           = @item.shipment.name
     .content__option
       .content__option__upper
-        -# -if user_signed_in? && current_user.id == @item.user_id
+        -if user_signed_in? && current_user.id == @item.user_id
           =link_to(edit_item_path(@item.id)) do
             .content__option__upper--editBtn
               編集する
