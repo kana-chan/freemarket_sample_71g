@@ -4,5 +4,4 @@ class Address < ApplicationRecord
   belongs_to_active_hash :condition
   belongs_to_active_hash :responsibility
   belongs_to_active_hash :shipment
-  belongs_to :user, optional: true
 end
