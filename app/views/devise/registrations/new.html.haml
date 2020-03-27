@@ -1,6 +1,7 @@
 .sign-up__main
   .sign-up__main__box
-    = form_for(@user, url: step2_signup_index_path,local: true) do |f|
+    = form_for(@user, url: user_registration_path) do |f|
+      = render "devise/shared/error_messages", resource: @user
       .sign-up__main__box__contents
         %h1.sign-up-head 会員情報入力
       .sign-up__main__box__information

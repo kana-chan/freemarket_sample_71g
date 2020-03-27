@@ -5,7 +5,7 @@
       = @item.name
     .content__photoBox
       .content__photoBox--top
-        =image_tag @item.images.first.src.to_s, class:"imageBig"
+        =image_tag "/images/material/icon/icon_camera.png", class:"imageBig"
       .content__photoBox--bottom
         %ul
           %li
@@ -21,11 +21,11 @@
 
     .content__priceBox
       .content__priceBox__top
-        -# = "￥#{@item.price} (税込)"
+        = "￥#{@item.price} (税込)"
       .content__priceBox__bottom
         送料込み？
     .content__detailBox
-      -# = @item.explaination
+      = @item.explaination
     %table.content__tableBox
       %tr.content__tableBox--seller
         %th 出品者
@@ -47,22 +47,21 @@
       %tr.content__tableBox--condition
         %th 商品の状態
         %td 
-          -# = @item.condition_id
+          -# = @item.condition
       %tr.content__tableBox--sendingFee
         %th 配送料の負担
         %td 
-          -# = @item.responsibility_id
+          = @item.responsibility
       %tr.content__tableBox--sellerAddress
         %th 発送元の地域
-        %td 
-          -# = @item.prefecture_id
+        %td 青森県?
       %tr.content__tableBox--sendDate
         %th 発送日の目安
         %td 
-          -# = @item.shipment_id
+          = @item.date
     .content__option
       .content__option__upper
-        -# -if user_signed_in? && current_user.id == @item.user_id
+        -if user_signed_in? && current_user.id == @item.user_id
           =link_to(edit_item_path(@item.id)) do
             .content__option__upper--editBtn
               編集する

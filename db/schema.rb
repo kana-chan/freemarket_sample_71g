@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_03_24_013946) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "src"
+    t.string "src", null: false
     t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,13 +40,13 @@ ActiveRecord::Schema.define(version: 2020_03_24_013946) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "explaination"
-    t.integer "condition_id"
-    t.integer "shipment_id"
-    t.integer "responsibility_id"
-    t.integer "price"
-    t.integer "prefecture_id"
+    t.string "name", null: false
+    t.string "explaination", null: false
+    t.integer "condition_id", null: false
+    t.integer "shipment_id", null: false
+    t.integer "responsibility_id", null: false
+    t.integer "price", null: false
+    t.integer "prefecture_id", null: false
     t.string "brand"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 2020_03_24_013946) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email"
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "addresses", "items"
