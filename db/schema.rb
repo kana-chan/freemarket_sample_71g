@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(version: 2020_03_25_105216) do
     t.string "email", default: "", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
-    t.string "first_furigana"
-    t.string "last_furigana"
-    t.string "birthday", null: false
-    t.string "image"
+    t.string "first_furigana", null: false
+    t.string "last_furigana", null: false
+    t.integer "birthday", null: false
+    t.string "image", null: false
     t.string "phone_number", null: false
     t.string "gender", null: false
     t.string "assessment"
