@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-before_action : set_item, :only: [:show, :edit, :update]
+before_action :set_item, only: [:show, :edit, :update]
   def set_item
     @item = Item.find(params[:id])
   end
@@ -34,6 +34,7 @@ before_action : set_item, :only: [:show, :edit, :update]
       redirect_to item_path(item_id)
     else 
       redirect_to edit_item_path(item_id)
+    end
   end
 
   def destroy
