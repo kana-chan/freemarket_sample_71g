@@ -4,12 +4,13 @@ class ItemsController < ApplicationController
   end
 
   def show
-  @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 
   def new
     @item = Item.new
-    @item.images.new
+    5.times { @item.images.build }
+    @prefecture = Address.where('prefecture_id IN(?)', params[:prefecture_id])
   end
   
   def create
@@ -22,13 +23,13 @@ class ItemsController < ApplicationController
   end
 
   def edit
-   @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 
   def update
-   @item = Item.find(params[:id])
-   Item.update(item_params)
-   redirect_to item_path(item_id)
+    @item = Item.find(params[:id])
+    Item.update(item_params)
+    redirect_to item_path(item_id)
   end
 
   def destroy
@@ -38,7 +39,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :explaination, :conditon, :date, :shipping_method, :cost, :responsibility, :price, images_attributes: [:src])
+    params.require(:item).permit(:name, :explaination, :condition_id, :shipment_id, :responsibility_id, :price, :prefecture_id, :brand, images_attributes: [:src])
   end
 
 end

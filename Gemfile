@@ -81,3 +81,5 @@ gem "font-awesome-rails"
 gem 'font-awesome-sass'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'active_hash'
+gem 'pry-byebug'
