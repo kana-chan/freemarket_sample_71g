@@ -47,6 +47,13 @@
   border-bottom: 1px solid #D8D8D8;
 
 }
+
+@mixin logo {
+  height: 40px;
+  width: 140px;
+  margin-top: 50px;
+}
+
 @mixin form {
     margin-top: 18px;
     border: solid 1px #ccc;

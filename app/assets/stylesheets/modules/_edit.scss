@@ -1,7 +1,19 @@
 .edit_wrapper{
   height: 100%;
   width: 100vw;
-  background-color: $light-gray;
+  background-color: rgb(245, 245, 245);
+
+
+  .edit_header {
+    height: 128px;
+    background-color: rgb(245, 245, 245);
+    text-align: center;
+    .edit_logo {
+      @include logo;
+    }
+  }
+  
+  
 
   //ーーー-------------------ここまでヘッダー部分ーーー------------------------------
   .edit_content1 {
@@ -208,9 +220,35 @@
     .edit_bottom_box{
       font-size: 12px;
       line-height: 1.4em;
+
     }
   } 
+  //---------------ここまでcontent5------------------------
+  .edit_footer {
+    max-width: 700px;
+    padding: 40px 0;
+    margin: 0 auto;
+    text-align: center;
+    &_exe {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 150px;
+      font-size: 12px;
+      .edit_footer_exe_right,.edit_footer_exe_left,.edit_footer_exe_middle {
+        cursor: pointer;
+      }
+    
+    }
+    .edit_footer_logo {
+      .edit_logo{
+        @include logo;
+      }
+    }
+  }
 }
+
+
+
 //-------------ここまでフッター---------------
 .edit_form-label__message {
   display: block;

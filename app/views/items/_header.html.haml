@@ -1,5 +1,27 @@
-- if request.path == root_path 
-  =render "items/headers/header_big"
-- else
-  =render "items/headers/header_small"
-  
+.header
+  .header__headerBox
+    .headerBox__upper
+      .headerBox__upper__logo
+        =link_to(root_path) do
+          =image_tag "/images/material/logo/logo.png" ,class:"headerBox__upper__logo--toplogo"
+      .headerBox__upper__formBox
+        .headerBox__upper__formBox__text
+        .headerBox__upper__formBox__icon
+          =image_tag "/images/material/icon/icon-search 1.png" ,class:"headerBox__upper__formBox__icon--serchIcon"
+    .headerBox__lower
+      .headerBox__lower__left
+        .headerBox__lower__left__category
+          カテゴリー
+        .headerBox__lower__left__brand
+          ブランド
+      - if user_signed_in?
+        .headerBox__lower__right--logIn
+          =link_to('いいね一覧','#',class:"headerBox__lower__right__likes")
+          =link_to('お知らせ','#',class:"headerBox__lower__right__news")
+          =link_to('ログアウト',destroy_user_session_path,method: :delete ,class:"headerBox__lower__right__toDo")
+          =link_to('マイページ','#',class:"headerBox__lower__right__mypage")
+      - else
+        .headerBox__lower__right--notLogIn
+          =link_to('ログイン',new_user_session_path,class:"headerBox__lower__right__logIn")
+          =link_to('新規会員登録',new_user_registration_path,class:"headerBox__lower__right__signUp")
+

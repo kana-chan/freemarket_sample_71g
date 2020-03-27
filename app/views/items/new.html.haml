@@ -1,5 +1,7 @@
 = form_with model:@item do |f|
   .new_wrapper
+    .new_header
+      =image_tag "/images/material/logo/logo.png" ,class:"new_logo"
     //ーーヘッダー部分ーー
     .new_content1
       .new_main-content1
@@ -44,21 +46,21 @@
             カテゴリー
           .new_item_right
             必須
-        -# = f.text_field :categorie, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
+        = f.text_field :content, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
       .new_main-header5    
         .new_items
           .new_items_left
             ブランド
           .new_items_right
             任意
-        = f.text_field :brand, class: 'new_form-label__message', placeholder: '例）シャネル'
+        = f.text_field :content, class: 'new_form-label__message', placeholder: '例）シャネル'
       .new_main-header6
         .new_item
           .new_item_left
             商品の状態
           .new_item_right
             必須 
-        = f.collection_select :condition_id, Condition.all, :id, :name, class: 'select', prompt: "選択して下さい"
+        = f.text_field :conditon, class: 'new_form-label__message', placeholder: 'ここにselectが入る.' 
       -# -------------ここまでcontent3---------------
     .new_content4
       .new_title
@@ -70,20 +72,21 @@
           配送料の負担
         .new_item_right
           必須
-      = f.collection_select :responsibility_id, Responsibility.all, :id, :name, prompt: "選択して下さい"
+      = f.text_field :responsibility, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
 
       .new_item  
         .new_item_left
           発送元の地域
         .new_item_right
           必須
-      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択して下さい"
+      = f.text_field :content, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
+
       .new_item
         .new_item_left
           発送までの日数
         .new_item_right
           必須
-      = f.collection_select :shipment_id, Shipment.all, :id, :name, prompt: "選択して下さい"
+      = f.text_field :date, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
       
     .new_content5
       .new_title
@@ -118,3 +121,15 @@
             もどる
       .new_bottom_box
         禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+      //---------------ここまでcontent5------------------------
+    .new_footer
+      %ul.new_footer_exe
+        %li.new_footer_exe_left
+          プライバシーポリシー
+        %li.new_footer_exe_middle
+          メルカリ利用規約
+        %li.new_footer_exe_right
+          特定商取引に関する表記
+      .new_footer_logo
+        =image_tag "/images/material/logo/logo.png" ,class:"new_logo"
+    

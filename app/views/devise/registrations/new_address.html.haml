@@ -35,7 +35,7 @@
           .field-label
             = f.label :都道府県, class: "field-label__name"
             %span.field-label__required 必須
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択して下さい"
+            = f.text_field :prefectures, autofocus: true, autocomplete: "prefectures", class: "field-label__input"
           .field-label
             = f.label :市区町村, class: "field-label__name"
             %span.field-label__required 必須

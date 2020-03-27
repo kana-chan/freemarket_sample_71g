@@ -7,7 +7,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @user = User.new
-    @prefecture = Address.where('prefecture_id IN(?)', params[:prefecture_id])
   end
 
   # POST /resource
@@ -34,6 +33,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.save
     sign_in(:user, @user) 
     redirect_to root_path
+
   end
 
   # GET /resource/edit
@@ -68,7 +68,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def address_params
-     params.require(:address).permit(:zip, :prefecture_id, :city, :street, :building_name, :phone_number_ad, :first_name_ad, :last_name_ad, :first_furigana_ad, :last_furigana_ad)
+     params.require(:address).permit(:zip, :prefectures, :city, :street, :building_name, :phone_number_ad, :first_name_ad, :last_name_ad, :first_furigana_ad, :last_furigana_ad)
   end
 
   # If you have extra params to permit, append them to the sanitizer.

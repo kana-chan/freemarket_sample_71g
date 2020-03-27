@@ -1,3 +1,5 @@
+.sign-up__header
+  .sign-up__header__image
 .sign-up__main
   .sign-up__main__box
     = form_for(@user, url: user_registration_path) do |f|
@@ -65,4 +67,6 @@
             = f.text_area :profile, autofocus: true, autocomplete: "prifile", class: "field-label__input"
           .actions
             = f.submit "next", class: "actions__btn"
-
+.sign-up__footer
+  .sign-up__footer__image
+//= render "devise/shared/links"
