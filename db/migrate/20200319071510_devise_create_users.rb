@@ -15,7 +15,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :assessment
       t.string :profile
       t.string :favorite
-      t.integer :prefecture_id, null:false
       ## Database authenticatable
       
       t.string :encrypted_password, null: false, default: ""

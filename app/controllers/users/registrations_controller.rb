@@ -7,6 +7,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @user = User.new
+    @prefecture = Address.where('prefecture_id IN(?)', params[:prefecture_id])
   end
 
   # POST /resource
@@ -33,7 +34,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.save
     sign_in(:user, @user) 
     redirect_to root_path
-
   end
 
   # GET /resource/edit
