@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_03_24_013946) do
     t.string "last_furigana", null: false
     t.string "first_furigana", null: false
     t.string "zip", null: false
-    t.integer "prefecture_id", null: false
+    t.integer "prefecture"
     t.string "city", null: false
     t.string "street", null: false
     t.string "building_name"
@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 2020_03_24_013946) do
     t.string "assessment"
     t.string "profile"
     t.string "favorite"
-    t.integer "prefecture_id", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

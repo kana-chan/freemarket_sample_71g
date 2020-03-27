@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     5.times { @item.images.build }
-    @prefecture = Address.where('prefecture_id IN(?)', params[:prefecture_id])
+    @prefecture = Address.where('prefecture IN(?)', params[:prefecture])
   end
   
   def create
@@ -39,7 +39,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :explaination, :condition_id, :shipment_id, :responsibility_id, :price, :prefecture_id, :brand, images_attributes: [:src])
+    params.require(:item).permit(:name, :explaination, :condition_id, :shipment_id, :responsibility_id, :price, :prefecture, :brand, images_attributes: [:src])
   end
 
 end

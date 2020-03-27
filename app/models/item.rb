@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  validates :name, :explaination, :condition_id, :shipment_id, :responsibility_id, :price, :prefecture_id, presence: true 
+  validates :name, :explaination, :condition_id, :shipment_id, :responsibility_id, :price, :prefecture, presence: true 
   has_many :images
   accepts_nested_attributes_for :images, allow_destroy: true
   validates_associated :images
