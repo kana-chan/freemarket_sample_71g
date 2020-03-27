@@ -5,7 +5,7 @@
       = @item.name
     .content__photoBox
       .content__photoBox--top
-        =image_tag "/images/material/icon/icon_camera.png", class:"imageBig"
+        =image_tag @item.images.first.src.to_s, class:"imageBig"
       .content__photoBox--bottom
         %ul
           %li
