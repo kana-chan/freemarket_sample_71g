@@ -47,9 +47,12 @@ ActiveRecord::Schema.define(version: 2020_03_24_013946) do
     t.integer "responsibility_id", null: false
     t.integer "price", null: false
     t.integer "prefecture_id", null: false
+    t.bigint "user_id"
+    t.integer "buyer_id"
     t.string "brand"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -72,11 +75,10 @@ ActiveRecord::Schema.define(version: 2020_03_24_013946) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "addresses", "items"
   add_foreign_key "addresses", "users"
   add_foreign_key "images", "items"
+  add_foreign_key "items", "users"
 end

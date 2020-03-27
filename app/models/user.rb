@@ -10,6 +10,7 @@ class User < ApplicationRecord
          validates :first_furigana, :last_furigana, format: { with: /\A[ぁ-んー－]+\z/ }
          validates :phone_number, format: { with: /\A\d{10,11}\z/ }
          has_one :address
+         has_many :items
         #  extend ActiveHash::Associations::ActiveRecordExtensions
         #  belongs_to_active_hash :prefecture
 end
