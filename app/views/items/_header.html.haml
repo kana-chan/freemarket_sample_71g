@@ -18,8 +18,8 @@
         .headerBox__lower__right--logIn
           =link_to('いいね一覧','#',class:"headerBox__lower__right__likes")
           =link_to('お知らせ','#',class:"headerBox__lower__right__news")
-          =link_to('やること','#',class:"headerBox__lower__right__toDo")
-          =link_to('ログアウト', destroy_user_session_path ,method: :delete ,class:"headerBox__lower__right__mypage")
+          =link_to('ログアウト',destroy_user_session_path,method: :delete ,class:"headerBox__lower__right__toDo")
+          =link_to('マイページ','#',class:"headerBox__lower__right__mypage")
       - else
         .headerBox__lower__right--notLogIn
           =link_to('ログイン',new_user_session_path,class:"headerBox__lower__right__logIn")

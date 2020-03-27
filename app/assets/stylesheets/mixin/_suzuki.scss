@@ -15,6 +15,27 @@
   }
 }
 
+@mixin title2 {
+  .edit_item {
+    margin: 40px 0 28px 0;
+    display: flex;
+
+    &_left {
+      font-weight: bold;
+    }
+    &_right {
+      background-color: red;
+      color: white;
+      margin-left: 8px;
+      padding: 0 4px;
+    }
+  }
+}
+
+
+
+
+
 @mixin size {
   margin-left: auto;
   margin-right: auto;
