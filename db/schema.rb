@@ -17,7 +17,12 @@ ActiveRecord::Schema.define(version: 2020_03_25_105216) do
     t.string "prefectures", null: false
     t.string "city", null: false
     t.string "street", null: false
-    t.string "building_name", null: false
+    t.string "building_name"
+    t.string "phone_number_ad"
+    t.string "first_name_ad"
+    t.string "last_name_ad"
+    t.string "first_furigana_ad"
+    t.string "last_furigana_ad"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

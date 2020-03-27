@@ -9,6 +9,26 @@
       .sign-up__main__box__information
         .sign-up__main__box__information__contents
           .field-label
+            = f.label :送付先氏名（性）, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :last_name_ad, autofocus: true, class: "field-label__input"
+          .field-label
+            = f.label :送付先氏名（名）, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :first_name_ad, autofocus: true, class: "field-label__input"
+          .field-label
+            = f.label :ふりがな（性）, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :last_furigana_ad, autofocus: true, class: "field-label__input"
+          .field-label
+            = f.label :ふりがな（名）, class: "field-label__name"
+            %span.field-label__required 必須
+            = f.text_field :first_furigana_ad, autofocus: true, class: "field-label__input"
+          .field-label
+            = f.label :電話番号, class: "field-label__name"
+            %span.field-label__any 任意
+            = f.text_field :phone_number_ad, autofocus: true, class: "field-label__input"
+          .field-label
             = f.label :郵便番号, class: "field-label__name"
             %span.field-label__required 必須
             = f.text_field :zip, autofocus: true, autocomplete: "zip", class: "field-label__input"
@@ -26,7 +46,7 @@
             = f.text_field :street, autofocus: true, class: "field-label__input"
           .field-label
             = f.label :マンション名, class: "field-label__name"
-            %span.field-label__required 必須
+            %span.field-label__any 任意
             = f.text_field :building_name, autofocus: true, class: "field-label__input"
           .actions
             = f.submit "signup",  class: "actions__btn"
