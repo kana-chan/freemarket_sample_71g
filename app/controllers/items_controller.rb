@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   
   def index
+    @items = Item.all.includes(:images).order("created_at DESC").page(params[:page]).per(3)
   end
 
   def show
