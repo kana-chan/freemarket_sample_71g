@@ -1,15 +1,20 @@
 class ItemsController < ApplicationController
-  
+before_action :set_item, only: [:show, :edit, :update]
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+
   def index
   end
 
   def show
-  @item = Item.find(params[:id])
   end
 
   def new
     @item = Item.new
-    @item.images.new
+    5.times { @item.images.build }
+    @prefecture = Address.where('prefecture_id IN(?)', params[:prefecture_id])
   end
   
   def create
@@ -22,13 +27,14 @@ class ItemsController < ApplicationController
   end
 
   def edit
-   @item = Item.find(params[:id])
   end
 
   def update
-   @item = Item.find(params[:id])
-   Item.update(item_params)
-   redirect_to item_path(item_id)
+    if @item.save(item_params)
+      redirect_to item_path(item_id)
+    else 
+      redirect_to edit_item_path(item_id)
+    end
   end
 
   def destroy
@@ -38,7 +44,19 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :explaination, :conditon, :date, :shipping_method, :cost, :responsibility, :price, images_attributes: [:src])
+    params.require(:item).permit(
+      :name, 
+      :explaination, 
+      :price, 
+      :brand, 
+      :prefecture_id, 
+      :condition_id, 
+      :shipment_id, 
+      :responsibility_id, 
+      images_attributes: [:src]
+    ).merge(
+      user_id: current_user.id
+    )
   end
 
 end
