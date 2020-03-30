@@ -43,6 +43,7 @@ before_action :set_item, only: [:show, :edit, :update]
       redirect_to root_path
     else 
       redirect_to item_path(item_id)
+    end
   end
 
   def item_params
