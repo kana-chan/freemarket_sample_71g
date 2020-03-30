@@ -1,0 +1,25 @@
+.footerSmall {
+  height: 25vh;
+  width: 100vw;
+  box-sizing: border-box;
+  background-color:$light-gray;
+  &__box {
+    height: 100%;
+    width: 456px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+    &__area {
+      display: flex;
+      justify-content: space-between;
+    } 
+      &__bottom__image {
+        margin-top: 30px;
+        width:160px;
+        height: 45px;
+      }
+    &__ink {
+      font-size: 10px;
+    }
+  }
+}

@@ -1,17 +1,7 @@
 .new_wrapper{
   height: 100%;
   width: 100vw;
-  background-color: rgb(245, 245, 245);
-
-
-  .new_header {
-    height: 128px;
-    background-color: rgb(245, 245, 245);
-    text-align: center;
-    .new_logo {
-      @include logo;
-    }
-  }
+  background-color:$light-gray;
 
 #item_condition_id {
   height: 50px;
@@ -91,7 +81,7 @@ p.errors {
       @include title;
 
       .new_form-label__message{
-       @include form;
+      @include form;
       }
     }
     .new_main-header3{
@@ -155,6 +145,7 @@ p.errors {
     .new_main-header6 {
       @include title;
       .new_form-label__message{
+        @include form;
       }
     }
   }
@@ -170,9 +161,7 @@ p.errors {
       font-size: 14px;
       color: #888888;
     }
-    .new_title_logo {
 
-    }
     @include title;
     .new_form-label__message{
       @include form;
@@ -189,9 +178,7 @@ p.errors {
       font-size: 14px;
       color: #888888;
     }
-    .new_title_logo {
 
-    }
     .new_input {
       display: flex;
       justify-content: space-between;
@@ -240,7 +227,9 @@ p.errors {
       text-align: center;
       margin-top: 30px;
       &-shipping {
+        &__submit{
         height: 40px;
+        width: 360px;
         margin-bottom: 24px;
         padding: 0 24px;
         background-color: #ea352d;
@@ -248,8 +237,7 @@ p.errors {
         font-size: 16px;
         line-height: 2.5;
         border-radius: 4px;
-        
-
+        }
       }
       &-save {
         margin-bottom: 24px;
@@ -275,31 +263,8 @@ p.errors {
     .new_bottom_box{
       font-size: 12px;
       line-height: 1.4em;
-
     }
   } 
-  //---------------ここまでcontent5------------------------
-  .new_footer {
-    max-width: 700px;
-    padding: 40px 0;
-    margin: 0 auto;
-    text-align: center;
-    &_exe {
-      display: flex;
-      justify-content: space-between;
-      margin: 0 150px;
-      font-size: 12px;
-      .new_footer_exe_right,.new_footer_exe_left,.new_footer_exe_middle {
-        cursor: pointer;
-      }
-    
-    }
-    .new_footer_logo {
-      .new_logo{
-        @include logo;
-      }
-    }
-  }
 }
 //-------------ここまでフッター---------------
 .new_form-label__message {

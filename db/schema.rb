@@ -13,16 +13,16 @@
 ActiveRecord::Schema.define(version: 2020_03_24_013946) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "last_name", null: false
-    t.string "first_name", null: false
-    t.string "last_furigana", null: false
-    t.string "first_furigana", null: false
+    t.string "first_name_ad", null: false
+    t.string "last_name_ad", null: false
+    t.string "first_furigana_ad", null: false
+    t.string "last_furigana_ad", null: false
     t.string "zip", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.string "street", null: false
     t.string "building_name"
-    t.string "phone_number"
+    t.string "phone_number_ad"
     t.bigint "user_id"
     t.bigint "item_id"
     t.datetime "created_at", null: false
@@ -47,23 +47,28 @@ ActiveRecord::Schema.define(version: 2020_03_24_013946) do
     t.integer "responsibility_id", null: false
     t.integer "price", null: false
     t.integer "prefecture_id", null: false
+    t.bigint "user_id"
+    t.integer "buyer_id"
     t.string "brand"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
     t.string "nickname", null: false
-    t.string "prifile", null: false
-    t.string "assessment", null: false
-    t.integer "phone_number", null: false
-    t.string "gender", null: false
-    t.string "payment_method", null: false
-    t.string "image", null: false
-    t.string "favorite"
-    t.integer "prefecture_id", null: false
     t.string "email", default: "", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_furigana", null: false
+    t.string "last_furigana", null: false
+    t.string "birthday", null: false
+    t.string "image", null: false
+    t.string "phone_number", null: false
+    t.string "gender", null: false
+    t.string "assessment"
+    t.string "profile"
+    t.string "favorite"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -77,4 +82,5 @@ ActiveRecord::Schema.define(version: 2020_03_24_013946) do
   add_foreign_key "addresses", "items"
   add_foreign_key "addresses", "users"
   add_foreign_key "images", "items"
+  add_foreign_key "items", "users"
 end
