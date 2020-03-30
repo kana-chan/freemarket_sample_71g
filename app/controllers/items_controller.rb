@@ -39,8 +39,10 @@ before_action :set_item, only: [:show, :edit, :update]
 
   def destroy
     @item = Item.find(params[:id]) 
-    @item.destroy
-    redirect_to root_path
+    -if @item.destroy
+      redirect_to root_path
+    -else 
+      redirect_to item_path(item_id)
   end
 
   def item_params
