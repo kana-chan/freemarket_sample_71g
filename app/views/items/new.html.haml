@@ -28,7 +28,7 @@
           .new_item_right
             必須
         = f.text_field :name, class: 'new_form-label__message', placeholder: '40字まで'
-        - if @item.errors.any?
+        - if @item.errors[:name].any?
           %br
           %p.errors 入力してください
       .new_main-header3
@@ -38,7 +38,7 @@
           .new_item_right
             必須 
         = f.text_area :explaination, class: 'new_form-text_area-message', placeholder: '40字まで'
-        - if @item.errors.any?
+        - if @item.errors[:explaination].any?
           %br
           %p.errors 入力してください
       .new_count
@@ -54,7 +54,7 @@
           .new_item_right
             必須
         -# = f.text_field :categorie, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
-        - if @item.errors.any?
+        - if @item.errors[:category].any?
           %br
           %p.errors 選択してください
       .new_main-header5    
@@ -71,7 +71,8 @@
           .new_item_right
             必須 
         = f.collection_select :condition_id, Condition.all, :id, :name, class: 'select', prompt: "選択して下さい"
-        - if @item.errors.any?
+        - if @item.errors[:condition_id].any?
+          %br
           %br
           %p.errors 選択してください
       -# -------------ここまでcontent3---------------
@@ -86,7 +87,7 @@
         .new_item_right
           必須
       = f.collection_select :responsibility_id, Responsibility.all, :id, :name, prompt: "選択して下さい"
-      - if @item.errors.any?
+      - if @item.errors[:responsibility_id].any?
         %br
         %br
         %p.errors 選択してください
@@ -96,7 +97,7 @@
         .new_item_right
           必須
       = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択して下さい"
-      - if @item.errors.any?
+      - if @item.errors[:prefecture_id].any?
         %br
         %br
         %p.errors 選択してください
@@ -106,7 +107,7 @@
         .new_item_right
           必須
       = f.collection_select :shipment_id, Shipment.all, :id, :name, prompt: "選択して下さい"
-      - if @item.errors.any?
+      - if @item.errors[:shipment_id].any?
         %br
         %br
         %p.errors 選択してください
@@ -121,7 +122,7 @@
           .new_item_right
             必須   
         = f.text_field :price, class: 'new_price_input', placeholder: '0'
-      - if @item.errors.any?
+      - if @item.errors[:price].any?
         %br
         %p.errors 300以上9999999以下で入力してください
         %br
