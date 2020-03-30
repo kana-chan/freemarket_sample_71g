@@ -37,6 +37,19 @@
   font-size: 15px;
 }
 
+#parent_category {
+  height: 50px;
+  width: 100%;
+  font-size: 15px;
+}
+
+.listing-select-wrapper__box--select {
+  height: 50px;
+  width: 100%;
+  font-size: 15px;
+}
+
+
   //ーーー-------------------ここまでヘッダー部分ーーー------------------------------
   .new_content1 {
     @include size;
@@ -127,6 +140,7 @@
       }
       
     }
+
     .new_main-header5 {
       .new_items{
         margin: 40px 0 28px 0;
