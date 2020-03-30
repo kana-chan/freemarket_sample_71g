@@ -80,7 +80,7 @@
         =link_to('後ろの商品 >', '#', class: "product") 
   .mainRelated
     =link_to('メンズをもっと見る', '#', class: "related") 
-    = form_with url: pay_cards_path do
+    = form_with url: pay_cards_index_path do
       :plain
         <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_755fde24bed9898a63936fc3"></script>
 
