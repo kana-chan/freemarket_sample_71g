@@ -19,7 +19,9 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      redirect_to action: :new
+      #redirect_to action: :new
+      5.times { @item.images.build }
+      render :new
     end
   end
 
