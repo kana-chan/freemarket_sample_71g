@@ -213,7 +213,9 @@
       text-align: center;
       margin-top: 30px;
       &-shipping {
+        &__submit{
         height: 40px;
+        width: 360px;
         margin-bottom: 24px;
         padding: 0 24px;
         background-color: #ea352d;
@@ -221,8 +223,7 @@
         font-size: 16px;
         line-height: 2.5;
         border-radius: 4px;
-        
-
+        }
       }
       &-save {
         margin-bottom: 24px;
