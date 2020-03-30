@@ -6,6 +6,7 @@ before_action :set_item, only: [:show, :edit, :update]
 
 
   def index
+    @items = Item.all.includes(:images).order("created_at DESC").page(params[:page]).per(3)
   end
 
   def show
