@@ -29,6 +29,7 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(item_params)
+    category_params
     if @item.save
       redirect_to root_path
     else
@@ -49,4 +50,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :explaination, :condition_id, :shipment_id, :responsibility_id, :price, :prefecture_id, :brand, images_attributes: [:src])
   end
 
+  def category_params
+    params.require(:item).permit(@category_grandchildren = Category.find("#{params[:child_id]}").children)
+  end
 end

@@ -31,17 +31,6 @@ ActiveRecord::Schema.define(version: 2020_03_30_052029) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "customer_id", null: false
-    t.string "card_id", null: false
-    t.bigint "user_id"
-    t.bigint "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_cards_on_item_id"
-    t.index ["user_id"], name: "index_cards_on_user_id"
-  end
-
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -60,29 +49,29 @@ ActiveRecord::Schema.define(version: 2020_03_30_052029) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "size"
     t.string "explaination", null: false
-    t.string "conditon", null: false
-    t.integer "date", null: false
-    t.string "shipping_method", null: false
-    t.integer "cost", null: false
-    t.string "responsibility", null: false
+    t.integer "condition_id", null: false
+    t.integer "shipment_id", null: false
+    t.integer "responsibility_id", null: false
     t.integer "price", null: false
+    t.integer "prefecture_id", null: false
+    t.string "brand"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "first_name", null: false
-    t.string "last_name", null: false
+    t.string "name", null: false
     t.string "nickname", null: false
-    t.string "profile"
-    t.string "assessment"
+    t.string "prifile", null: false
+    t.string "assessment", null: false
     t.integer "phone_number", null: false
     t.string "gender", null: false
-    t.string "birthday", null: false
-    t.string "image"
+    t.string "payment_method", null: false
+    t.string "image", null: false
     t.string "favorite"
+    t.integer "prefecture_id", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -96,7 +85,5 @@ ActiveRecord::Schema.define(version: 2020_03_30_052029) do
 
   add_foreign_key "addresses", "items"
   add_foreign_key "addresses", "users"
-  add_foreign_key "cards", "items"
-  add_foreign_key "cards", "users"
   add_foreign_key "images", "items"
 end
