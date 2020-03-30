@@ -27,6 +27,9 @@
   font-size: 15px;
 }
 
+p.errors {
+  color: red;
+}
   //ーーー-------------------ここまでヘッダー部分ーーー------------------------------
   .new_content1 {
     @include size;
@@ -60,8 +63,10 @@
           width: 100%;
           margin-top: 50px;
         }
+      .errors {
+        color: red;
       }
-
+      }
     }
   }
 
@@ -132,6 +137,9 @@
       } 
       .new_form-label__message {
         @include form;
+        p.errors {
+          color: red;
+        }
       }
     }
     .new_main-header6 {
@@ -157,6 +165,9 @@
     @include title;
     .new_form-label__message{
       @include form;
+      p.errors {
+        color: red;
+      }
     }
   }
   //-------------ここまでcontent4---------------
@@ -181,6 +192,9 @@
         border-radius: 4px;
         padding: 0 16px;
         font-size: 15px;
+        p.errors {
+          color: red;
+        }
       }
     }
     .new_tax-box {
@@ -213,7 +227,9 @@
       text-align: center;
       margin-top: 30px;
       &-shipping {
+        &__submit{
         height: 40px;
+        width: 360px;
         margin-bottom: 24px;
         padding: 0 24px;
         background-color: #ea352d;
@@ -221,8 +237,7 @@
         font-size: 16px;
         line-height: 2.5;
         border-radius: 4px;
-        
-
+        }
       }
       &-save {
         margin-bottom: 24px;
