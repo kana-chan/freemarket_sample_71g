@@ -1,4 +1,5 @@
-= form_with url:"/", html: {class: "edit_form-label"} do |f|
+//= form_with url:"/", html: {class: "edit_form-label"}, do |f|
+= form_with model: @item, local: true do |f|
   .edit_wrapper
     //ーーヘッダー部分ーー
     .edit_content1
@@ -12,8 +13,10 @@
           最大10枚までアップロードできます
         .edit_picture
           .edit_picture_exe
-            %br ドラッグアンドドロップ
-            またはクリックしてファイルをアップロード
+            = f.fields_for :images do |i|
+              = i.file_field :src
+            //%br ドラッグアンドドロップ
+            //またはクリックしてファイルをアップロード
         //-------ここまでcontent1--------
     .edit_content2
       .edit_main-header2
@@ -22,7 +25,7 @@
             商品名
           .edit_item_right
             必須
-        = f.text_field :content, class: 'edit_form-label__message', placeholder: '40字まで'
+        = f.text_field :name, class: 'edit_form-label__message', placeholder: '40字まで'
       .edit_main-header3
         .edit_item
           .edit_item_left
@@ -30,7 +33,7 @@
           .edit_item_right
             必須 
         
-        = f.text_area :content, class: 'edit_form-text_area-message', placeholder: '40字まで'
+        = f.text_area :explaination, class: 'edit_form-text_area-message', placeholder: '40字まで'
       .edit_count
         0/1000
         //------------ここまでcontent2-------------
@@ -44,21 +47,21 @@
               カテゴリー
             .edit_item_right
               必須
-          = f.text_field :content, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
+          = f.text_field :category, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
         .edit_main-header5    
           .edit_items
             .edit_items_left
               ブランド
             .edit_items_right
               任意
-          = f.text_field :content, class: 'edit_form-label__message', placeholder: '例）シャネル'
+          = f.text_field :brand, class: 'edit_form-label__message', placeholder: '例）シャネル'
         .edit_main-header6
           .edit_item
             .edit_item_left
               商品の状態
             .edit_item_right
               必須 
-          = f.text_field :content, class: 'edit_form-label__message', placeholder: 'ここにselectが入る.' 
+          = f.collection_select :condition_id, Condition.all, :id, :name,class: 'edit_form-label__message', placeholder: 'ここにselectが入る.' 
       -# -------------ここまでcontent3---------------
     .edit_content4
       .edit_title
@@ -70,21 +73,21 @@
           配送料の負担
         .edit_item_right
           必須
-      = f.text_field :content, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
+      = f.collection_select :responsibility_id, Responsibility.all, :id, :name, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
 
       .edit_item  
         .edit_item_left
           発送元の地域
         .edit_item_right
           必須
-      = f.text_field :content, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
+      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
 
       .edit_item
         .edit_item_left
           発送までの日数
         .edit_item_right
           必須
-      = f.text_field :content, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
+      = f.collection_select :shipment_id, Shipment.all, :id, :name, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
       
     .edit_content5
       .edit_title
@@ -97,7 +100,7 @@
             販売価格
           .edit_item_right
             必須   
-        = f.text_field :content, class: 'edit_price_input', placeholder: '0'
+        = f.text_field :price, class: 'edit_price_input', placeholder: '0'
 
       .edit_tax-box
         .edit_tax-box_left
@@ -111,8 +114,9 @@
           %p -
       .edit_button
         .edit_button-shipping
-          = link_to('#' , class: "edit_button-shipping") do
-            変更する
+          = f.submit "変更する", class: "edit_button-shipping"
+          //= link_to(item_path(@item.id), method: :patch , class: "edit_button-shipping") do
+          //変更する
         .edit_button-delete
           = link_to(item_path(@item.id),method: :delete ,class: "edit_button-back") do
             この商品を削除する

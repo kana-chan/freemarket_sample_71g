@@ -30,10 +30,13 @@ before_action :set_item, only: [:show, :edit, :update]
   end
 
   def edit
+    @item = Item.find(params[:id])
+    5.times { @item.images.build }
   end
 
   def update
-    if @item.save(item_params)
+    item = Item.find(params[:id])
+    if item.update(item_params)
       redirect_to item_path(item_id)
     else 
       redirect_to edit_item_path(item_id)
