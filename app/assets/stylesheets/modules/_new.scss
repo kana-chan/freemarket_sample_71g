@@ -27,6 +27,23 @@
   font-size: 15px;
 }
 
+#parent_category {
+  height: 50px;
+  width: 100%;
+  font-size: 15px;
+}
+
+.listing-select-wrapper__box--select {
+  height: 50px;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+
+p.errors {
+  color: red;
+}
   //ーーー-------------------ここまでヘッダー部分ーーー------------------------------
   .new_content1 {
     @include size;
@@ -60,8 +77,10 @@
           width: 100%;
           margin-top: 50px;
         }
+      .errors {
+        color: red;
       }
-
+      }
     }
   }
 
@@ -116,6 +135,7 @@
       }
       
     }
+
     .new_main-header5 {
       .new_items{
         margin: 40px 0 28px 0;
@@ -132,6 +152,9 @@
       } 
       .new_form-label__message {
         @include form;
+        p.errors {
+          color: red;
+        }
       }
     }
     .new_main-header6 {
@@ -157,6 +180,9 @@
     @include title;
     .new_form-label__message{
       @include form;
+      p.errors {
+        color: red;
+      }
     }
   }
   //-------------ここまでcontent4---------------
@@ -181,6 +207,9 @@
         border-radius: 4px;
         padding: 0 16px;
         font-size: 15px;
+        p.errors {
+          color: red;
+        }
       }
     }
     .new_tax-box {
