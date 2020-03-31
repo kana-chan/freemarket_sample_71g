@@ -84,53 +84,54 @@
     .itemsMain__newPost__box
       - @items.each do |item|
         = render partial: "item", locals: {item: item }
-  .itemsMain__bland
-    .itemsMain__bland__top
-      ピックアップブランド
-    .itemsMain__bland__middle 
-      アーカイブ
-    .itemsMain__bland__box
-      .itemsMain__bland__box__content1
-        .itemsMain__bland__box__content1__upper
-          =image_tag '/freemarket.g.png', class:"itemsMain__bland__box__content1__upper__pic"
-          - if user_signed_in?
-            .itemsMain__bland__box__content1__upper_soldout
-            .itemsMain__bland__box__content1__upper_soldout_text
-              SOLD
-        .itemsMain__bland__box__content1__down
-          .itemsMain__bland__box__content1__down__left
-            .itemsMain__bland__box__content1__down__left__name
-              content
-            .itemsMain__bland__box__content1__down__left__price
-              price
-            .itemsMain__bland__box__content1__down__left__tax
-              (税込)
-          .itemsMain__bland__box__content1__down__likes
-            ★20   
-      .itemsMain__bland__box__content2
-        .itemsMain__bland__box__content2__upper
-          =image_tag '/freemarket.g.png', class:"itemsMain__bland__box__content1__upper__pic"
-        .itemsMain__bland__box__content2__down
-          .itemsMain__bland__box__content2__down__left
-            .itemsMain__bland__box__content2__down__left__name
-              content
-            .itemsMain__bland__box__content2__down__left__price
-              price
-            .itemsMain__bland__box__content2__down__left__tax
-              (税込)
-          .itemsMain__bland__box__content2__down__likes
-            ★29   
-      .itemsMain__bland__box__content3
-        .itemsMain__bland__box__content3__upper
-          =image_tag '/freemarket.g.png', class:"itemsMain__bland__box__content1__upper__pic"
-        .itemsMain__bland__box__content3__down
-          .itemsMain__bland__box__content3__down__left
-            .itemsMain__bland__box__content3__down__left__name
-              content
-            .itemsMain__bland__box__content3__down__left__price
-              price
-            .itemsMain__bland__box__content3__down__left__tax
-              (税込)
-          .itemsMain__bland__box__content3__down__likes
-            ★60   
+  -# .itemsMain__bland
+  -#   .itemsMain__bland__top
+  -#     ピックアップブランド
+  -#   .itemsMain__bland__middle 
+  -#     アーカイブ
+  -#   .itemsMain__bland__box
+  -#     .itemsMain__bland__box__content1
+  -#       .itemsMain__bland__box__content1__upper
+  -#         =image_tag '/freemarket.g.png', class:"itemsMain__bland__box__content1__upper__pic"
+  -#           - @items.each do |item|
+  -#           -if item.buyer_id.present? 
+  -#             .itemsMain__bland__box__content1__upper_soldout
+  -#             .itemsMain__bland__box__content1__upper_soldout_text
+  -#               SOLD
+  -#         .itemsMain__bland__box__content1__down
+  -#           .itemsMain__bland__box__content1__down__left
+  -#             .itemsMain__bland__box__content1__down__left__name
+  -#               content
+  -#             .itemsMain__bland__box__content1__down__left__price
+  -#               price
+  -#             .itemsMain__bland__box__content1__down__left__tax
+  -#               (税込)
+  -#           .itemsMain__bland__box__content1__down__likes
+  -#             ★20   
+  -#       .itemsMain__bland__box__content2
+  -#         .itemsMain__bland__box__content2__upper
+  -#           =image_tag '/freemarket.g.png', class:"itemsMain__bland__box__content1__upper__pic"
+  -#         .itemsMain__bland__box__content2__down
+  -#           .itemsMain__bland__box__content2__down__left
+  -#             .itemsMain__bland__box__content2__down__left__name
+  -#               content
+  -#             .itemsMain__bland__box__content2__down__left__price
+  -#               price
+  -#             .itemsMain__bland__box__content2__down__left__tax
+  -#               (税込)
+  -#           .itemsMain__bland__box__content2__down__likes
+  -#             ★29   
+  -#       .itemsMain__bland__box__content3
+  -#         .itemsMain__bland__box__content3__upper
+  -#           =image_tag '/freemarket.g.png', class:"itemsMain__bland__box__content1__upper__pic"
+  -#         .itemsMain__bland__box__content3__down
+  -#           .itemsMain__bland__box__content3__down__left
+  -#             .itemsMain__bland__box__content3__down__left__name
+  -#               content
+  -#             .itemsMain__bland__box__content3__down__left__price
+  -#               price
+  -#             .itemsMain__bland__box__content3__down__left__tax
+  -#               (税込)
+  -#           .itemsMain__bland__box__content3__down__likes
+  -#             ★60   
   

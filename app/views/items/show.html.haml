@@ -65,6 +65,6 @@
             .content__option__upper--editBtn
               編集する
         -else
-          =link_to(edit_item_path(@item.id)) do
-            .content__option__upper--buyBtn
-              購入する
+          = form_with url: done_item_path, method: :get, local: true do |form| 
+            = form.submit "submit"
+          -# - form_with url: ~~~~_path do |form| 

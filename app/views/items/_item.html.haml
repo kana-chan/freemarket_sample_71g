@@ -2,7 +2,7 @@
   .itemsMain__newPost__box__content1__upper
     - item.images.each do |image|
       = image_tag image.src.to_s, class: "itemsMain__newPost__box__content1__upper__pic"
-      - if user_signed_in? 
+        -if item.buyer_id.present? 
         .itemsMain__bland__box__content1__upper_soldout
         .itemsMain__bland__box__content1__upper_soldout_text
           SOLD

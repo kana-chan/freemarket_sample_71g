@@ -1,18 +1,19 @@
 class ItemsController < ApplicationController
-before_action :set_item, only: [:show, :edit, :update]
+before_action :set_item, only: [:show, :edit, :update, :done]
   def set_item
     @item = Item.find(params[:id])
   end
 
 
   def index
-    @items = Item.all.includes(:images).order("created_at DESC").page(params[:page]).per(3)
+    @items = Item.all.includes(:images).order("created_at DESC")
   end
 
   def show
   end
 
   def new
+    @items = Item.new
     @item = Item.new
     5.times { @item.images.build }
     @prefecture = Address.where('prefecture_id IN(?)', params[:prefecture_id])
@@ -30,16 +31,16 @@ before_action :set_item, only: [:show, :edit, :update]
   def get_category_grandchildren
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
-
   
   def create
     @item = Item.new(item_params)
-    category_id_params
     if @item.save
       redirect_to root_path
     else
-      redirect_to new_item_path
+      render :new
     end
+
+    
   end
 
   def edit
@@ -62,7 +63,12 @@ before_action :set_item, only: [:show, :edit, :update]
     end
   end
 
-  private
+  def done
+   @item_purchaser= Item.find(params[:id])
+   @item_purchaser.update( buyer_id: current_user.id)
+   redirect_to root_path
+
+ end
 
   def item_params
     params.require(:item).permit(
@@ -74,7 +80,6 @@ before_action :set_item, only: [:show, :edit, :update]
       :condition_id, 
       :shipment_id, 
       :responsibility_id, 
-      :category_id,
       images_attributes: [:src]
     ).merge(
       user_id: current_user.id
