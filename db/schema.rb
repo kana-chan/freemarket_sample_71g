@@ -58,6 +58,12 @@ ActiveRecord::Schema.define(version: 2020_03_30_052029) do
     t.bigint "user_id"
     t.integer "buyer_id"
     t.string "brand"
+    t.bigint "seller_id"
+    t.bigint "buyer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
+    t.index ["seller_id"], name: "index_items_on_seller_id"
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -91,5 +97,7 @@ ActiveRecord::Schema.define(version: 2020_03_30_052029) do
   add_foreign_key "addresses", "items"
   add_foreign_key "addresses", "users"
   add_foreign_key "images", "items"
+  add_foreign_key "items", "users", column: "buyer_id"
+  add_foreign_key "items", "users", column: "seller_id"
   add_foreign_key "items", "users"
 end
