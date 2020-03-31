@@ -7,9 +7,9 @@
       %br フリマアプリです
     .itemsMain__visial__icon
       =link_to("https://play.google.com/store")do
-        =image_tag "/images/material/icon/google-play.svg",class:"footer__upper__btn--googlePlay"
+        =image_tag "material/icon/google-play.svg",class:"footer__upper__btn--googlePlay"
       =link_to("https://www.apple.com/jp/ios/app-store")do
-        =image_tag "/images/material/icon/app-store.svg",class:"footer__upper__btn--appStore"
+        =image_tag "material/icon/app-store.svg",class:"footer__upper__btn--appStore"
 
   .itemsMain__how
     .itemsMain__how__topText
@@ -51,9 +51,9 @@
       ほしかったあの商品に出会えるかもしれません。
     .itemsMain__pic__picBtn
       =link_to("https://play.google.com/store")do
-        =image_tag "/images/material/icon/google-play.svg",class:"footer__upper__btn--googlePlay"
+        =image_tag "material/icon/google-play.svg",class:"footer__upper__btn--googlePlay"
       =link_to("https://www.apple.com/jp/ios/app-store")do
-        =image_tag "/images/material/icon/app-store.svg",class:"footer__upper__btn--appStore"
+        =image_tag "material/icon/app-store.svg",class:"footer__upper__btn--appStore"
 
   .itemsMain__character
     .itemsMain__character__topText
@@ -80,10 +80,47 @@
     .itemsMain__newPost__top
       ピックアップカテゴリー
     .itemsMain__newPost__middle 
-      新規投稿商品;
+      新規投稿商品
     .itemsMain__newPost__box
-      - @items.each do |item|
-        = render partial: "item", locals: {item: item }
+      .itemsMain__newPost__box__content1
+        .itemsMain__newPost__box__content1__upper
+          =image_tag '/freemarket.g.png', class:"itemsMain__newPost__box__content1__upper__pic"
+        .itemsMain__newPost__box__content1__down
+          .itemsMain__newPost__box__content1__down__left
+            .itemsMain__newPost__box__content1__down__left__name
+              -# = @items.name
+            .itemsMain__newPost__box__content1__down__left__price
+              -# = @items.price
+            .itemsMain__newPost__box__content1__down__left__tax
+              (税込)
+          .itemsMain__newPost__box__content1__down__likes
+            ★2   
+      .itemsMain__newPost__box__content2
+        .itemsMain__newPost__box__content2__upper
+          =image_tag '/freemarket.g.png', class:"itemsMain__newPost__box__content1__upper__pic"
+        .itemsMain__newPost__box__content2__down
+          .itemsMain__newPost__box__content2__down__left
+            .itemsMain__newPost__box__content2__down__left__name
+              content
+            .itemsMain__newPost__box__content2__down__left__price
+              price
+            .itemsMain__newPost__box__content2__down__left__tax
+              (税込)
+          .itemsMain__newPost__box__content2__down__likes
+            ★12   
+      .itemsMain__newPost__box__content3
+        .itemsMain__newPost__box__content3__upper
+          =image_tag '/freemarket.g.png', class:"itemsMain__newPost__box__content1__upper__pic"
+        .itemsMain__newPost__box__content3__down
+          .itemsMain__newPost__box__content3__down__left
+            .itemsMain__newPost__box__content3__down__left__name
+              content
+            .itemsMain__newPost__box__content3__down__left__price
+              price
+            .itemsMain__newPost__box__content3__down__left__tax
+              (税込)
+          .itemsMain__newPost__box__content3__down__likes
+            ★6   
   .itemsMain__bland
     .itemsMain__bland__top
       ピックアップブランド
@@ -93,10 +130,6 @@
       .itemsMain__bland__box__content1
         .itemsMain__bland__box__content1__upper
           =image_tag '/freemarket.g.png', class:"itemsMain__bland__box__content1__upper__pic"
-          - if user_signed_in?
-            .itemsMain__bland__box__content1__upper_soldout
-            .itemsMain__bland__box__content1__upper_soldout_text
-              SOLD
         .itemsMain__bland__box__content1__down
           .itemsMain__bland__box__content1__down__left
             .itemsMain__bland__box__content1__down__left__name

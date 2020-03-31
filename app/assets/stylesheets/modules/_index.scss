@@ -1,5 +1,5 @@
 .itemsMain__visial {
-  background-image: url(/images/material/pict/bg-mainVisual-pict_pc.jpg);
+  background-image: url(material/pict/bg-mainVisual-pict_pc.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -47,22 +47,22 @@
     display: flex;
     justify-content: space-between;
     &__content1{
-      background-image: url("/images/material/pict/pict-reason-01.jpg");
+      background-image: url("material/pict/pict-reason-01.jpg");
     }
     &__content2{
-      background-image: url("/images/material/pict/pict-reason-02.jpg");
+      background-image: url("material/pict/pict-reason-02.jpg");
     }
     &__content3{
-      background-image: url("/images/material/pict/pict-reason-03.jpg");
+      background-image: url("material/pict/pict-reason-03.jpg");
     }
     &__content4{
-      background-image: url("/images/material/icon/icon-01.png");
+      background-image: url("material/icon/icon-01.png");
     }
     &__content5{
-      background-image: url("/images/material/icon/icon-02.png");
+      background-image: url("material/icon/icon-02.png");
     }
     &__content6{
-      background-image: url("/images/material/icon/icon-03.png");
+      background-image: url("material/icon/icon-03.png");
     }
     &__content1,&__content2,&__content3{
       background-size: cover;
@@ -111,7 +111,7 @@
 }
 // 会員数日本一------------------------------------------------
 .itemsMain__pic {
-  background-image: url(/images/material/pict/bg-topMiddleDl-pict.jpg);
+  background-image: url(material/pict/bg-topMiddleDl-pict.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -135,30 +135,6 @@
   }
 }
 // カテゴリー別------------------------------------------------
-
-.itemsMain__bland__box__content1__upper_soldout{
-    position: absolute;
-
-    top: 0px;
-    border-top: 60px solid #ea352d ;
-    border-right: 60px solid transparent;
-    border-bottom: 60px solid transparent;
-    border-left: 60px solid #ea352d ;
-    &_text {
-      position: absolute;
-      top: 30px;
-      left: 10px;
-      transform: rotate(-45deg);
-      color: white;
-      font-size: 20px;
-    }
-
-}
-
-
-
-
-
 .itemsMain__newPost,.itemsMain__bland {
   background-color: $light-gray;
   height: 500px;
@@ -189,7 +165,6 @@
       &__upper {
         height: 60%;
         width: 100%;
-        position: relative;
         &__pic {
           max-height: 168px;
           min-height: 168px;
