@@ -1,4 +1,4 @@
-= form_with model:@item do |f|
+= form_with(model:@item, local: true) do |f|
   .new_wrapper
     .new_header
       =image_tag "material/logo/logo.png" ,class:"new_logo"

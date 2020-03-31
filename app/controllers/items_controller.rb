@@ -29,11 +29,11 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(item_params)
-    category_params
+    category_id_params
     if @item.save
       redirect_to root_path
     else
-      redirect_to action: :new
+      redirect_to new_item_path
     end
   end
 
@@ -46,11 +46,18 @@ class ItemsController < ApplicationController
   def destroy
   end
 
+  private
+
   def item_params
-    params.require(:item).permit(:name, :explaination, :condition_id, :shipment_id, :responsibility_id, :price, :prefecture_id, :brand, images_attributes: [:src])
+    params.require(:item).permit(:category_id, :name, :explaination, :condition_id, :shipment_id, :responsibility_id, :price, :prefecture_id, :brand, images_attributes: [:src])
   end
 
-  def category_params
-    params.require(:item).permit(@category_grandchildren = Category.find("#{params[:child_id]}").children)
+
+  # def category_id_params
+  #   { category_id: params[:category_id]}
+  # end
+  def category_id_params
+    category = params.permit(:category_id)
+    @item[:category_id] = category[:category_id]
   end
 end
