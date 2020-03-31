@@ -1,18 +1,19 @@
 class ItemsController < ApplicationController
-before_action :set_item, only: [:show, :edit, :update]
+before_action :set_item, only: [:show, :edit, :update, :done]
   def set_item
     @item = Item.find(params[:id])
   end
 
 
   def index
-    @items = Item.all.includes(:images).order("created_at DESC").page(params[:page]).per(3)
+    @items = Item.all.includes(:images).order("created_at DESC")
   end
 
   def show
   end
 
   def new
+    @items = Item.new
     @item = Item.new
     5.times { @item.images.build }
     @prefecture = Address.where('prefecture_id IN(?)', params[:prefecture_id])
@@ -25,6 +26,8 @@ before_action :set_item, only: [:show, :edit, :update]
     else
       render :new
     end
+
+    
   end
 
   def edit
@@ -46,6 +49,13 @@ before_action :set_item, only: [:show, :edit, :update]
       redirect_to item_path(item_id)
     end
   end
+
+  def done
+   @item_purchaser= Item.find(params[:id])
+   @item_purchaser.update( buyer_id: current_user.id)
+   redirect_to root_path
+
+ end
 
   def item_params
     params.require(:item).permit(

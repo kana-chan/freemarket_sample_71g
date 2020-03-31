@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
   root 'items#index'
-  resources :items
+  resources :items do
+    member do
+      get :done
+    end
+  end
   resources :users, only: [:show, :edit]
 end
