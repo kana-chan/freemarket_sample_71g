@@ -35,9 +35,8 @@ before_action :set_item, only: [:show, :edit, :update]
   end
 
   def update
-    item = Item.find(params[:id])
-    if item.update(item_params)
-      redirect_to item_path(item_id)
+    if @item.update(item_params)
+      redirect_to root_path
     else 
       redirect_to edit_item_path(item_id)
     end
@@ -62,10 +61,9 @@ before_action :set_item, only: [:show, :edit, :update]
       :condition_id, 
       :shipment_id, 
       :responsibility_id, 
-      images_attributes: [:src]
+      images_attributes: [:src, :_destroy, :id]
     ).merge(
       user_id: current_user.id
     )
   end
-
 end
