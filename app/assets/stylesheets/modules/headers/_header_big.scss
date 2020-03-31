@@ -77,21 +77,9 @@
       }  
     }
   }
-  &__right--notLogIn{
+  &__right--notLogIn,&__right--logIn{
     height: 100%;
     width: 15%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    a{
-      &:hover{
-        color: $orange;
-      }
-    }
-  }
-  &__right--logIn{
-    height: 100%;
-    width: 40%;
     display: flex;
     justify-content: space-between;
     align-items: center;
