@@ -27,6 +27,20 @@
   font-size: 15px;
 }
 
+#parent_category {
+  height: 50px;
+  width: 100%;
+  font-size: 15px;
+}
+
+.listing-select-wrapper__box--select {
+  height: 50px;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+
 p.errors {
   color: red;
 }
@@ -121,6 +135,7 @@ p.errors {
       }
       
     }
+
     .new_main-header5 {
       .new_items{
         margin: 40px 0 28px 0;
