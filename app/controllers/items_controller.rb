@@ -80,10 +80,6 @@ before_action :set_item, only: [:show, :edit, :update]
     )
   end
 
-
-  # def category_id_params
-  #   { category_id: params[:category_id]}
-  # end
   def category_id_params
     category = params.permit(:category_id)
     @item[:category_id] = category[:category_id]
