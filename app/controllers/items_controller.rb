@@ -69,7 +69,7 @@ before_action :set_item, only: [:show, :edit, :update, :done]
       :responsibility_id, 
       images_attributes: [:src]
     ).merge(
-      user_id: current_user.id
+      user_id: current_user.id ,seller_id: current_user.id
     )
   end
 
