@@ -12,6 +12,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.references :seller, foreign_key: {to_table: :users} 
       t.references :buyer, foreign_key: {to_table: :users}
       t.string :brand
+      t.references :category, foreign_key: {to_tabel: :categories}
       t.timestamps
     end
   end

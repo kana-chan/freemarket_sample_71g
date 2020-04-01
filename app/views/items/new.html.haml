@@ -44,7 +44,23 @@
             カテゴリー
           .new_item_right
             必須
-        -# = f.text_field :categorie, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
+    .new_content3
+      .new_title
+        商品の詳細
+      .new_main-header4
+        .new_item
+          .new_item_left
+            カテゴリー
+          .new_item_right
+            必須
+          .listing-form-box
+            .listing-product-detail__category
+              .listing-select-wrapper
+                .listing-select-wrapper__box
+                  = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+        - if @item.errors[:category].any?
+          %br
+          %p.errors 選択してください
       .new_main-header5    
         .new_items
           .new_items_left
