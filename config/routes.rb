@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
+
   root 'items#index'
   resources :items do
     member do
@@ -21,5 +22,7 @@ Rails.application.routes.draw do
     end
   end
   
+
+
   resources :users, only: [:show, :edit]
 end

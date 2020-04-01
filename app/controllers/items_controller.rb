@@ -10,7 +10,6 @@ before_action :set_item, only: [:show, :edit, :update, :done]
   end
 
   def show
-    
   end
 
   def new
@@ -89,4 +88,12 @@ before_action :set_item, only: [:show, :edit, :update, :done]
       user_id: current_user.id ,seller_id: current_user.id
     )
   end
+
+
+  def category_id_params
+    category = params.permit(:category_id)
+    @item[:category_id] = category[:category_id]
+  end
+
+
 end
