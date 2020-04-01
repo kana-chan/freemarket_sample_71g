@@ -134,8 +134,10 @@
     line-height: 1.5;
   }
 }
-// カテゴリー別------------------------------------------------
 
+
+
+//　SOLD表記小さいーーーーーーーーーーーーーー
 .itemsMain__bland__box__content1__upper_soldout{
     position: absolute;
 
@@ -156,9 +158,29 @@
 }
 
 
+//SOLD表記でかいーーーーーーーーーーーーーーーーーー
+
+.itemsMain__bland__box__content1__upper_soldout_big{
+  position: absolute;
+
+  top: 0px;
+  border-top: 100px solid #ea352d ;
+  border-right: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-left: 100px solid #ea352d ;
+  &_text {
+    position: absolute;
+    top: 51px;
+    left: 20px;
+    transform: rotate(-45deg);
+    color: white;
+    font-size: 33px;
+    letter-spacing: 6px;
+  }
+}
 
 
-
+// カテゴリー別------------------------------------------------
 .itemsMain__newPost,.itemsMain__bland {
   background-color: $light-gray;
   overflow: scroll;
