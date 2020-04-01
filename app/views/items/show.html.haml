@@ -6,6 +6,10 @@
     .content__photoBox
       .content__photoBox--top
         =image_tag @item.images.first.src.to_s, class:"imageBig"
+        -if @item.buyer_id.present?
+          .itemsMain__bland__box__content1__upper_soldout_big
+          .itemsMain__bland__box__content1__upper_soldout_big_text
+            SOLD    
       .content__photoBox--bottom
         %ul
           - [0,0,0,0,0].zip(@item.images) do |z,image|
