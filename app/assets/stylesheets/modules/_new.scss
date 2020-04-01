@@ -27,9 +27,6 @@
   font-size: 15px;
 }
 
-p.errors {
-  color: red;
-}
   //ーーー-------------------ここまでヘッダー部分ーーー------------------------------
   .new_content1 {
     @include size;
@@ -63,10 +60,8 @@ p.errors {
           width: 100%;
           margin-top: 50px;
         }
-      .errors {
-        color: red;
       }
-      }
+
     }
   }
 
@@ -137,9 +132,6 @@ p.errors {
       } 
       .new_form-label__message {
         @include form;
-        p.errors {
-          color: red;
-        }
       }
     }
     .new_main-header6 {
@@ -165,9 +157,6 @@ p.errors {
     @include title;
     .new_form-label__message{
       @include form;
-      p.errors {
-        color: red;
-      }
     }
   }
   //-------------ここまでcontent4---------------
@@ -192,9 +181,6 @@ p.errors {
         border-radius: 4px;
         padding: 0 16px;
         font-size: 15px;
-        p.errors {
-          color: red;
-        }
       }
     }
     .new_tax-box {

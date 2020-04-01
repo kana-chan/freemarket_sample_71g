@@ -10,4 +10,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :condition
   belongs_to_active_hash :responsibility
   belongs_to_active_hash :shipment
+  belongs_to :seller, class_name: "User", foreign_key: "seller_id", optional: true
+  belongs_to :buyer, class_name: "User", foreign_key: "buyer_id", optional: true
+
 end

@@ -64,7 +64,7 @@
           =link_to(edit_item_path(@item.id)) do
             .content__option__upper--editBtn
               編集する
-        -else
-          =link_to(edit_item_path(@item.id)) do
-            .content__option__upper--buyBtn
-              購入する
+        -elsif user_signed_in? && @item.buyer_id.blank?
+          = form_with url: done_item_path, method: :get, local: true do |form| 
+            = form.submit "submit"
+        
