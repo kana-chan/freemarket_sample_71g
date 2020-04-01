@@ -217,10 +217,13 @@
         height: 60%;
         width: 100%;
         position: relative;
+        text-align: center;
         &__pic {
           max-height: 154px;
           min-height: 154px;
+          max-width:234px;
           width: auto;
+          height: auto;
         }
       }
       &__down {
