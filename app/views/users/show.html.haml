@@ -2,8 +2,6 @@
   .show-main-box
     .show-main-box-left
       .show-main-box-left-item
-        = link_to "マイページ ", "#"
-      .show-main-box-left-item
         = link_to "プロフィール設定", "#"
       .show-main-box-left-item
         = link_to "発送元、お届け先変更", "#"
@@ -12,48 +10,55 @@
       .show-main-box-left-item
         = link_to "番号確認", "#"
       .show-main-box-left-item
-        = link_to "評価一覧", "#"
-      .show-main-box-left-item
-        = link_to "いいね一覧", "#"
-      .show-main-box-left-item
         = link_to "クレジットカード登録", "#"
       .show-main-box-left-item
         = link_to "クレジットカード変更", "#"
       .show-main-box-left-item
-        = link_to "ログアウト", "#"
+        = link_to "ログアウト", destroy_user_session_path,method: :delete
     .show-main-box-right
       .show-main-box-right-top
         .show-main-box-right-top-icon
-          アイコン画像
+          イメージ
         .show-main-box-right-top-name
-          User Name
-        .show-main-box-right-top-text
-          評価 0 出品数 0
+          = @user.nickname
       .show-main-box-right-bottom
         .show-main-box-right-bottom-title
-          最近購入した商品
+          .show-main-box-right-bottom-title-text
+            最近出品した商品 
+          = link_to "出品一覧⇨", "#"
         .show-main-box-right-bottom-main
-          .show-main-box-right-bottom-main-box
-            .show-main-box-right-bottom-main-box-item
-              商品画像
-            .show-main-box-right-bottom-main-box-name
-              商品名
-            .show-main-box-right-bottom-main-box-value
-              2000000円
-          .show-main-box-right-bottom-main-box
-            .show-main-box-right-bottom-main-box-item
-              商品画像
-            .show-main-box-right-bottom-main-box-name
-              商品名
-            .show-main-box-right-bottom-main-box-value
-              2000000円
-          .show-main-box-right-bottom-main-box
-            .show-main-box-right-bottom-main-box-item
-              商品画像
-            .show-main-box-right-bottom-main-box-name
-              商品名
-            .show-main-box-right-bottom-main-box-value
-              2000000円
-        .show-main-box-right-bottom-menu
-          = link_to "購入一覧", "#"
-          = link_to "→", "#"
+          -[0,0,0].zip(@user.items) do |c,item|
+            -if item.present?
+              .show-main-box-right-bottom-main-box
+                .show-main-box-right-bottom-main-box-item
+                  =image_tag item.images.first.src.to_s,class:"show-main-box-right-bottom-main-box-item-image"
+                .show-main-box-right-bottom-main-box-name
+                  =item.name
+                .show-main-box-right-bottom-main-box-value
+                  ="#{item.price}円"
+            - else
+              .show-main-box-right-bottom-main-box
+                .show-main-box-right-bottom-main-box-item
+                  =image_tag "/images/material/icon/icon_camera.png" ,class:"show-main-box-right-bottom-main-box-item-image"
+                .show-main-box-right-bottom-main-box-name
+                  出品されていません
+        .show-main-box-right-bottom-title
+          .show-main-box-right-bottom-title-text
+            最近購入した商品 
+          = link_to "購入一覧⇨", "#"
+        .show-main-box-right-bottom-main
+          -[0,0,0].zip(@user.items) do |c,item|
+            -if item.present?
+              .show-main-box-right-bottom-main-box
+                .show-main-box-right-bottom-main-box-item
+                  =image_tag item.images.first.src.to_s,class:"show-main-box-right-bottom-main-box-item-image"
+                .show-main-box-right-bottom-main-box-name
+                  =item.name
+                .show-main-box-right-bottom-main-box-value
+                  ="#{item.price}円"
+            - else
+              .show-main-box-right-bottom-main-box
+                .show-main-box-right-bottom-main-box-item
+                  =image_tag "/images/material/icon/icon_camera.png" ,class:"show-main-box-right-bottom-main-box-item-image"
+                .show-main-box-right-bottom-main-box-name
+                  購入していません
