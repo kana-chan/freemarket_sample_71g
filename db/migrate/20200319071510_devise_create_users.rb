@@ -8,7 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :first_furigana, null: false
       t.string :last_furigana, null: false
       t.string :birthday, null: false
-      t.string :image, null: false
+      t.string :image
       t.string :phone_number, null: false
       t.string :gender, null: false
       t.string :assessment
