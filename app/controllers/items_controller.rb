@@ -15,7 +15,6 @@ before_action :set_item, only: [:show, :edit, :update]
   def new
     @item = Item.new
     5.times { @item.images.build }
-    @prefecture = Address.where('prefecture_id IN(?)', params[:prefecture_id])
     @category_parent_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
