@@ -14,6 +14,8 @@ class User < ApplicationRecord
          has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
          has_many :selling_items, ->{ where("buyer_id is NULL") }, foreign_key: "seller_id", class_name: "Item"
          has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "seller_id", class_name: "Item"
+         has_many :cards
+         has_many :items
         #  has_many :bought_products, class_name: "Product", foreign_key: "buyer_id"
         #  has_many :sold_products, class_name: "Product", foreign_key: "seller_id", -> { where("buyer_id is not NULL") }
         #  extend ActiveHash::Associations::ActiveRecordExtensions
