@@ -12,16 +12,18 @@
         .edit_exe
           最大10枚までアップロードできます
         .edit_picture
-          %ul
-            - [0,0,0,0,0].zip(@item.images) do |z,image|
-              %li 
-                -if image.present?
-                  =image_tag image.src.to_s, class:"imageSmall"
-                -else 
-                  =image_tag "/images/material/icon/icon_camera.png", class:"imageSmall"
           .edit_picture_exe
-            = f.fields_for @item.images do |i|
-              = i.file_field :src
+            #image-box
+              = f.fields_for :images do |i|
+                .js-file_group{"data-index" => "#{i.index}"}
+                  = i.file_field :src, class: 'js-file'
+                  %span.js-remove 削除
+                - if @item.persisted?
+                  = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
+              - if @item.persisted?
+                .js-file_group{"data-index" => "#{@item.images.count}"}
+                  = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}]", class: 'js-file'
+                  .js-remove 削除 
             //%br ドラッグアンドドロップ
             //またはクリックしてファイルをアップロード
         //-------ここまでcontent1--------

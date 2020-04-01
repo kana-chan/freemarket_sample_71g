@@ -38,7 +38,7 @@ before_action :set_item, only: [:show, :edit, :update]
     if @item.update(item_params)
       redirect_to root_path
     else 
-      redirect_to edit_item_path(item_id)
+      render :edit
     end
   end
 
@@ -47,7 +47,7 @@ before_action :set_item, only: [:show, :edit, :update]
     if @item.destroy
       redirect_to root_path
     else 
-      redirect_to item_path(item_id)
+      redirect_to :destroy
     end
   end
 
