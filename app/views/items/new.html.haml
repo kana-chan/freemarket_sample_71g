@@ -48,11 +48,7 @@
             .listing-product-detail__category
               .listing-select-wrapper
                 .listing-select-wrapper__box
-                  = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-    .new_content3
-      .new_title
-        商品の詳細
-      .new_main-header4
+                  = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
         - if @item.errors[:category].any?
           %br
           %p.errors 選択してください
