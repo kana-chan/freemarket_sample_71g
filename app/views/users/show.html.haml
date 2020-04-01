@@ -18,7 +18,7 @@
     .show-main-box-right
       .show-main-box-right-top
         .show-main-box-right-top-icon
-          イメージ
+          アイコン
         .show-main-box-right-top-name
           = @user.nickname
       .show-main-box-right-bottom
@@ -27,8 +27,8 @@
             最近出品した商品 
           = link_to "出品一覧⇨", "#"
         .show-main-box-right-bottom-main
-          -[0,0,0].zip(@user.items) do |c,item|
-            -if item.present?
+          -[0,0,0].zip(@user.items) do |z,item|
+            -if item.present? && item.seller_id == current_user.id
               .show-main-box-right-bottom-main-box
                 .show-main-box-right-bottom-main-box-item
                   =image_tag item.images.first.src.to_s,class:"show-main-box-right-bottom-main-box-item-image"
@@ -47,11 +47,11 @@
             最近購入した商品 
           = link_to "購入一覧⇨", "#"
         .show-main-box-right-bottom-main
-          -[0,0,0].zip(@user.items) do |c,item|
-            -if item.present?
+          -[0,0,0].zip(@user.items) do |z,item|
+            -if item.present? && item.buyer_id == current_user.id
               .show-main-box-right-bottom-main-box
                 .show-main-box-right-bottom-main-box-item
-                  =image_tag item.images.first.src.to_s,class:"show-main-box-right-bottom-main-box-item-image"
+                  =image_tag buyer.item.images.first.src.to_s,class:"show-main-box-right-bottom-main-box-item-image"
                 .show-main-box-right-bottom-main-box-name
                   =item.name
                 .show-main-box-right-bottom-main-box-value
