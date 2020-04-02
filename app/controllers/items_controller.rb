@@ -10,7 +10,6 @@ before_action :set_item, only: [:show, :edit, :update, :done]
   end
 
   def show
-    
   end
 
   def new

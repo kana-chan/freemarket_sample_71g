@@ -1,22 +1,26 @@
 .show-main
   .show-main-box
     .show-main-box-left
-      .show-main-box-left-item
-        = link_to "プロフィール情報変更", "#"
-      .show-main-box-left-item
-        = link_to "アイコン設定", "#"
-      .show-main-box-left-item
-        = link_to "クレジットカード登録", "#"
-      .show-main-box-left-item
-        = link_to "クレジットカード変更", "#"
-      .show-main-box-left-item
-        = link_to "ログアウト", destroy_user_session_path,method: :delete
+      .show-main-box-left-icon
+        アイコン
+      .show-main-box-left-name
+        = @user.nickname
+      =link_to("#") do
+        .show-main-box-left-item
+          プロフィール設定
+      =link_to("#") do
+        .show-main-box-left-item
+          アイコン設定
+      =link_to("#") do
+        .show-main-box-left-item
+          クレジットカード情報登録
+      =link_to("#") do
+        .show-main-box-left-item
+          クレジットカード情報変更
+      =link_to(destroy_user_session_path,method: :delete) do
+        .show-main-box-left-item
+          ログアウト
     .show-main-box-right
-      .show-main-box-right-top
-        .show-main-box-right-top-icon
-          アイコン
-        .show-main-box-right-top-name
-          = @user.nickname
       .show-main-box-right-bottom
         .show-main-box-right-bottom-title
           .show-main-box-right-bottom-title-text
@@ -25,7 +29,7 @@
         .show-main-box-right-bottom-main
           -[0,0,0].zip(@user.selling_items) do |z,item|
             -if item.present? && item.seller_id == current_user.id
-              .show-main-box-right-bottom-main-box
+              =link_to(item_path(item.id),class:"show-main-box-right-bottom-main-box")do
                 .show-main-box-right-bottom-main-box-item
                   =image_tag item.images.first.src.to_s,class:"show-main-box-right-bottom-main-box-item-image"
                 .show-main-box-right-bottom-main-box-name
@@ -45,7 +49,7 @@
         .show-main-box-right-bottom-main
           -[0,0,0].zip(@user.buyed_items) do |z,item|
             -if item.present? && item.buyer_id == current_user.id
-              .show-main-box-right-bottom-main-box
+              =link_to(item_path(item.id),class:"show-main-box-right-bottom-main-box")do
                 .show-main-box-right-bottom-main-box-item
                   =image_tag item.images.first.src.to_s,class:"show-main-box-right-bottom-main-box-item-image"
                 .show-main-box-right-bottom-main-box-name
