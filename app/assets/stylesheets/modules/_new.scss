@@ -3,30 +3,6 @@
   width: 100vw;
   background-color:$light-gray;
 
-#item_condition_id {
-  height: 50px;
-  width: 100%;
-  font-size: 15px;
-}
-
-#item_responsibility_id {
-  height: 50px;
-  width: 100%;
-  font-size: 15px;
-}
-
-#item_prefecture_id {
-  height: 50px;
-  width: 100%;
-  font-size: 15px;
-}
-
-#item_shipment_id {
-  height: 50px;
-  width: 100%;
-  font-size: 15px;
-}
-
 #parent_category {
   height: 50px;
   width: 100%;
@@ -153,6 +129,11 @@
       .new_form-label__message{
         @include form;
       }
+      #item_condition_id {
+        height: 50px;
+        width: 100%;
+        font-size: 15px;
+      }
     }
   }
 
@@ -171,6 +152,21 @@
     @include title;
     .new_form-label__message{
       @include form;
+    }
+    #item_responsibility_id {
+      height: 50px;
+      width: 100%;
+      font-size: 15px;
+    }
+    #item_prefecture_id {
+      height: 50px;
+      width: 100%;
+      font-size: 15px;
+    }
+    #item_shipment_id {
+      height: 50px;
+      width: 100%;
+      font-size: 15px;
     }
   }
   //-------------ここまでcontent4---------------
