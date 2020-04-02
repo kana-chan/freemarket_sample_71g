@@ -62,7 +62,7 @@
               カテゴリー
             .edit_item_right
               必須
-          = f.text_field :category, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
+          = f.text_field :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
         .edit_main-header5    
           .edit_items
             .edit_items_left
