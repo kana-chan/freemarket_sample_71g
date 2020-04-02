@@ -14,7 +14,8 @@ before_action :set_item, only: [:show, :edit, :update]
 
   def new
     @item = Item.new
-    5.times { @item.images.build }
+    @item.images.new
+    # 5.times { @item.images.build }
     @prefecture = Address.where('prefecture_id IN(?)', params[:prefecture_id])
   end
   
@@ -28,10 +29,12 @@ before_action :set_item, only: [:show, :edit, :update]
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
-    if @item.save(item_params)
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
       redirect_to item_path(item_id)
     else 
       redirect_to edit_item_path(item_id)
@@ -54,10 +57,11 @@ before_action :set_item, only: [:show, :edit, :update]
       :condition_id, 
       :shipment_id, 
       :responsibility_id, 
-      images_attributes: [:src]
+      images_attributes: [:src, :_destroy, :id]
     ).merge(
       user_id: current_user.id
     )
   end
 
+  
 end

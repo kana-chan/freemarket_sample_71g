@@ -11,6 +11,8 @@ class User < ApplicationRecord
          validates :phone_number, format: { with: /\A\d{10,11}\z/ }
          has_one :address
          has_many :items
+         
+         
         #  extend ActiveHash::Associations::ActiveRecordExtensions
         #  belongs_to_active_hash :prefecture
 end
