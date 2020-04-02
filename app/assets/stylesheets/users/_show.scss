@@ -2,6 +2,7 @@
   background-color: $light_gray;
   height: 100vh;
   width: 100vw;
+  padding: 5vh 0;
   &-box {
     display: flex;
     justify-content: space-between;
@@ -67,7 +68,7 @@
           justify-content: space-between;
           padding:0 10px;
           background-color: $gray;
-          margin-bottom: 7vh;
+          margin-bottom: 1vh;
           &-box {
             height: 200px;
             width: 30%;
