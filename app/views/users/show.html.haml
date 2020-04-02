@@ -3,7 +3,7 @@
     .show-main-box-left
       .show-main-box-left-icon
         -if @user.image.present?
-          =image_tag @user.image.src.to_s, class:"show-main-box-left-icon-photo"
+          =image_tag @user.image.to_s, class:"show-main-box-left-icon-photo"
         -else 
           =image_tag "/images/material/icon/icon_camera.png", class:"show-main-box-left-icon-photo"
       .show-main-box-left-name
@@ -11,7 +11,7 @@
       =link_to("#") do
         .show-main-box-left-item
           プロフィール設定
-      =link_to("#") do
+      =link_to(edit_user_path(current_user.id)) do
         .show-main-box-left-item
           アイコン設定
       =link_to("#") do
