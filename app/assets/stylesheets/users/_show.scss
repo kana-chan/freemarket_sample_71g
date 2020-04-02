@@ -6,9 +6,9 @@
     display: flex;
     justify-content: space-between;
     width: 60vw;
-    height: 90%;
+    height: 100%;
     background-color: $light_gray;
-    margin: 0 auto;
+    margin: 0 auto ;
 // ------------------------------------------------
     &-left {
       padding: 20px 0;
@@ -28,7 +28,7 @@
       }
       &-item {
         margin-top: 3vh;
-        line-height: 4.5;
+        line-height: 5;
         height: 10%;
         width: 100%;
         text-align: center;
@@ -45,20 +45,29 @@
         height: 100%;
         width: 100%;
         &-title {
-          background-color: #fff;
           height: 15%;
           font-size: 20px;
-          line-height: 100px;
-          color:$gray;
+          padding-top: 6vh;
+          color:$black;
           display: flex;
           justify-content: space-between;
           border-bottom: 3px solid $gray;
+          background-color: #fff;
+          a{
+            width: 20%;
+            height: 30%;
+            color: $gray;
+            &:hover{
+              color: $orange;
+            }
+          }
         }
         &-main {
           display: flex;
           justify-content: space-between;
           padding:0 10px;
           background-color: $gray;
+          margin-bottom: 7vh;
           &-box {
             height: 200px;
             width: 30%;
