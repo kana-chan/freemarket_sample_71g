@@ -44,11 +44,11 @@
             カテゴリー
           .new_item_right
             必須
-          .listing-form-box
-            .listing-product-detail__category
-              .listing-select-wrapper
-                .listing-select-wrapper__box
-                  = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+        .listing-form-box
+          .listing-product-detail__category
+            .listing-select-wrapper
+              .listing-select-wrapper__box
+                = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
         - if @item.errors[:category].any?
           %br
           %p.errors 選択してください
