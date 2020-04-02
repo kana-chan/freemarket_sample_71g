@@ -1,0 +1,23 @@
+.done-main {
+  display: block;
+  background: $light-gray;
+
+  &__box {
+    background-color: #fff;
+    width: 700px;
+    margin: auto;
+
+    &__header {
+      height: 200px;
+
+      .done-main__box__title {
+        text-align: center;
+          padding: 40px;
+          border-bottom: solid 1px #cccccc;
+          font-weight: 600;
+          font-size: 22px;
+      }
+    }
+
+  }
+}
