@@ -57,7 +57,7 @@
             = f.password_field :password_confirmation, autocomplete: "new-password", class: "field-label__input",placeholder: "確認"
           .field-label
             = f.label :アイコン, class: "field-label__name"
-            %span.field-label__required 必須
+            %span.field-label__any 任意
             = f.file_field :image, class: "field-label__image"
           .field-label
             = f.label :プロフィール, class: "field-label__name"
