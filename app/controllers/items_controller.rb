@@ -43,7 +43,7 @@ before_action :set_item, only: [:show, :edit, :update, :done]
 
   def edit
     @item = Item.find(params[:id])
-    5.times { @item.images.build }
+    #5.times { @item.images.build }
   end
 
   def update
@@ -55,7 +55,6 @@ before_action :set_item, only: [:show, :edit, :update, :done]
   end
 
   def destroy
-    @item = Item.find(params[:id]) 
     if @item.destroy
       redirect_to root_path
     else 
