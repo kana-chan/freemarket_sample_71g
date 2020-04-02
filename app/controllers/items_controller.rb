@@ -1,12 +1,12 @@
 class ItemsController < ApplicationController
-before_action :set_item, only: [:show, :edit, :update]
+before_action :set_item, only: [:show, :edit, :update, :done]
   def set_item
     @item = Item.find(params[:id])
   end
 
 
   def index
-    @items = Item.all.includes(:images).order("created_at DESC").page(params[:page]).per(3)
+    @items = Item.all.includes(:images).order("created_at DESC")
   end
 
   def show
@@ -15,26 +15,42 @@ before_action :set_item, only: [:show, :edit, :update]
   def new
     @item = Item.new
     5.times { @item.images.build }
-    @prefecture = Address.where('prefecture_id IN(?)', params[:prefecture_id])
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    # @category_parent_array = Category.where(ancestry: nil).pluck(:name) 
+    end
   end
+
+  def get_category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
   
   def create
     @item = Item.new(item_params)
+    category_id_params
     if @item.save
       redirect_to root_path
     else
-      render :new
+      redirect_to new_item_path
     end
   end
 
   def edit
+    @item = Item.find(params[:id])
+    5.times { @item.images.build }
   end
 
   def update
-    if @item.save(item_params)
-      redirect_to item_path(item_id)
+    if @item.update(item_params)
+      redirect_to root_path
     else 
-      redirect_to edit_item_path(item_id)
+      render :edit
     end
   end
 
@@ -43,9 +59,19 @@ before_action :set_item, only: [:show, :edit, :update]
     if @item.destroy
       redirect_to root_path
     else 
-      redirect_to item_path(item_id)
+      redirect_to :destroy
     end
   end
+
+  def done
+   if@item_purchaser= Item.find(params[:id])
+     @item_purchaser.update( buyer_id: current_user.id)
+     redirect_to root_path
+   else
+    render :show
+   end
+
+ end
 
   def item_params
     params.require(:item).permit(
@@ -57,10 +83,17 @@ before_action :set_item, only: [:show, :edit, :update]
       :condition_id, 
       :shipment_id, 
       :responsibility_id, 
-      images_attributes: [:src]
+      images_attributes: [:src, :_destroy, :id]
     ).merge(
-      user_id: current_user.id
+      user_id: current_user.id ,seller_id: current_user.id
     )
   end
+
+
+  def category_id_params
+    category = params.permit(:category_id)
+    @item[:category_id] = category[:category_id]
+  end
+
 
 end
