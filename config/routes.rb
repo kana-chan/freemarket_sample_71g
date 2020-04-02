@@ -13,13 +13,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :card, only: [:new, :show] do
-    collection do
-      get :show
-      get :pay  
-      get :delete
-    end
-  end
-  
-  resources :users, only: [:show, :edit]
+  resources :users, only: [:show, :edit] 
 end

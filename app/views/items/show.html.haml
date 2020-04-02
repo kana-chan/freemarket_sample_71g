@@ -67,4 +67,5 @@
         -elsif user_signed_in? && @item.buyer_id.blank?
           = form_with url: done_item_path, method: :get, local: true do |form| 
             = form.submit "submit"
+
         

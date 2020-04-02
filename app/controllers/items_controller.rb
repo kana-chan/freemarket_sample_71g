@@ -73,5 +73,16 @@ before_action :set_item, only: [:show, :edit, :update, :done]
     ).merge(
       user_id: current_user.id ,seller_id: current_user.id
     )
-  end
+  
+  require 'payjp'
+
+    def purchase
+      Payjp.api_key = "pk_test_755fde24bed9898a63936fc3"
+      Payjp::Charge.create(
+        amount: 809, # 決済する値段
+        card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+        currency: 'jpy'
+      )
+    end
+      
 end

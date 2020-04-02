@@ -1,4 +1,7 @@
 //= form_with url:"/", html: {class: "edit_form-label"}, do |f|
+= form_with model: @user do
+  :plain
+    <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_755fde24bed9898a63936fc3"></script>
 = form_with model: @item, local: true do |f|
   .edit_wrapper
     //ーーヘッダー部分ーー
