@@ -2,9 +2,12 @@
   .show-main-box
     .show-main-box-left
       .show-main-box-left-icon
-        アイコン
+        -if @user.image.present?
+          =image_tag @user.image.src.to_s, class:"show-main-box-left-icon-photo"
+        -else 
+          =image_tag "/images/material/icon/icon_camera.png", class:"show-main-box-left-icon-photo"
       .show-main-box-left-name
-        = @user.nickname
+        = ":#{@user.nickname}"
       =link_to("#") do
         .show-main-box-left-item
           プロフィール設定
