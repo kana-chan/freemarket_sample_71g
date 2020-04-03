@@ -68,16 +68,19 @@
               カテゴリー
             .edit_item_right
               必須
-          .category-wrapper-box
-            .category-wrapper-select
-              .category-wrapper-select__box
-                = f.select :parent_name, @category_parent_array, {selected:@item.category.parent.parent.name}, { class: 'category-wrapper__category form-control', id: 'parent_category'}
-            .category-wrapper-select#children_wrapper
-              .category-wrapper-select__box
-                = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'category-wrapper__category form-control', id: 'child_category'}
-            .category-wrapper-select#grandchildren_wrapper
-              .category-wrapper-select__box
-                = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'category-wrapper__category form-control', id: 'grandchild_category'}
+          .listing-form-box
+            .listing-product-detail__category
+              .listing-select-wrapper
+                .listing-select-wrapper__box
+                  = f.select :parent_name, @category_parent_array, {selected:@item.category.parent.parent.name}, { class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+          #children_wrapper.listing-select-wrapper__added
+            .listing-select-wrapper__box
+              = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'child_category', name: "category_id"}
+              %option{"data-category" => "---", :value => "---"}
+          #grandchildren_wrapper.listing-select-wrapper__added
+            .listing-select-wrapper__box
+              = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category', name: "category_id"}
+              %option{"data-category" => "---", :value => "---"}
             - if @item.errors[:categories].any?
               %br
               %p.errors 選択してください
