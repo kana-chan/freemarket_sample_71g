@@ -1,11 +1,21 @@
-.sign-up__main
-  .sign-up__main__box
-    = form_for(@user, url: user_registration_path) do |f|
-      = render "devise/shared/error_messages", resource: @user
+= form_with model: @user,local: true do |f|
+  .sign-up__main
+    .sign-up__main__box
       .sign-up__main__box__contents
-        %h1.sign-up-head 会員情報入力
+        %h1.sign-up-head プロフィール情報編集
       .sign-up__main__box__information
         .sign-up__main__box__information__contents
+          .field-label
+            = f.label :image, class: "form-image" do
+              .box
+                -if @user.image.present?
+                  =image_tag(@user.image.to_s,class:"image")
+                -else
+                  =image_tag("/images/material/icon/icon_camera.png",class:"image")
+              .text
+                イメージの選択
+                %span.field-label__any 任意
+              =f.file_field :image
           .field-label
             = f.label :ニックネーム, class: "field-label__name"
             %span.field-label__required 必須
@@ -37,24 +47,10 @@
           .field-label
             = f.label :性別, class: "field-label__name"
             %span.field-label__required 必須
-            = f.select :gender, { '男': :male, '女': :female },prompt: "選択して下さい"
+            = f.select :gender, { '男': :male, '女': :female }
           .field-label
             = f.label :生年月日, class: "field-label__name"
             %span.field-label__required 必須
             = f.text_field :birthday, autofocus: true, class: "field-label__input",placeholder: "例)2000年1月1日"
-          .field-label
-            = f.label :password, class: "field-label__name"
-            %span.field-label__required 必須
-            - if @minimum_password_length
-              %em
-                (#{@minimum_password_length} characters minimum)
-            %br/
-            = f.password_field :password, autocomplete: "new-password", class: "field-label__input",placeholder: "7文字以上"
-          .field-label
-            = f.label :password_confirmation, class: "field-label__name"
-            %span.field-label__required 必須
-            %br/
-            = f.password_field :password_confirmation, autocomplete: "new-password", class: "field-label__input",placeholder: "確認"
           .actions
-            = f.submit "next", class: "actions__btn"
-
+            = f.submit "編集する", class: "actions__btn"

@@ -1,8 +1,10 @@
+#showItems{
 .main {
   background-color:$light-gray;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 5vh 0;
 }
 
 // 商品情報------------------------------------------------
@@ -124,100 +126,6 @@
         font-size: 20px;
       }
     }
-
-    // .form__submit {
-    //   color:red;
-    //   width: 100%;
-    //   height: 10px;
-    // }
-
-    
-// 追加実装------------------------------------------------
-//     &__lower{
-//       height: 30%;
-//       width: 100%;
-//       display: flex;
-//       justify-content: flex-end;
-//       align-items: center;
-//       &--favorite,&--ban {
-//         height: 30px;
-//         width: 130px;
-//         font-size: 10px;
-//         margin:20px 0 30px 10px;
-//         border-radius: 20px;
-//         line-height: 30px;
-//       }
-//       &--favorite{
-//         background-color: $orange;
-//         color: white;
-//       }
-//       &--ban {
-//         background-color: $light-gray;
-//         color: $black;
-//       }
-//     }
   }
 }
-
-// // コメント欄------------------------------------------------
-// .comment {
-//   margin-top: 20px;
-//   height: 40vh;
-//   width: 55%;
-//   background-color: white;
-//   text-align: center;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   &__textArea {
-//     margin: 20px auto 0 ;
-//     height: 40%;
-//     width: 80%;
-//     border: 1px solid $gray;
-//     }
-//   &__alert {
-//     margin: 20px auto 0 ;
-//     height: 20%;
-//     width: 80%;
-//     padding-top: 10px;
-//     line-height: 1.5;
-//     font-size: 15px;
-//     background-color: $light-gray;
-//   }
-//   &__commentBtn {
-//     height: 15%;
-//     width: 50%;
-//     font-size: 15px;
-//     font-weight: bold;
-//     background-color: $blue;
-//     color: white;
-//     margin: 20px auto 0 ;
-//     border-radius: 40px;
-//     line-height: 47px;
-//   }
-// }
-
-// .links {
-//   height: 24px;
-//   width: 700px;
-//   margin: 10px auto;
-//   padding-top: 10px;
-//   ul {
-//     display: flex;
-//     justify-content: space-between;
-//     .product {
-//       color: #3CCACE;
-//       font-size: 16px;
-//     }
-//   }
-// }
-// .related {
-//   height: 24px;
-//   width: 700px;
-//   margin: 10px auto;
-//   padding-top: 24px;
-//   .related {
-//     color: #3CCACE;
-//     font-size: 24px;
-//   }
-// }
+}
