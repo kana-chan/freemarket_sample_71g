@@ -28,6 +28,7 @@
           width: 100%;
           margin: 2vh 0;
           .form-image{
+            text-align: center;
             .box{
               background-color: $light-gray;
               border: $light-gray solid 2px;
@@ -36,10 +37,15 @@
               height: 20vh;
               margin: 3vh auto;
               cursor: pointer;
+              position: relative;
               .image{
                 border-radius: 100%;
-                width:20vh;
-                height:20vh;
+                width:18vh;
+                height:18vh;
+                position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translateX(-50%)translateY(-50%);
               }
             }
             input{

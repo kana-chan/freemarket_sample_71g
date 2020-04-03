@@ -8,7 +8,11 @@
           .field-label
             = f.label :image, class: "form-image" do
               .box
-                =image_tag(@user.image.to_s,class:"image")
+                -if @user.image.present?
+                  =image_tag(@user.image.to_s,class:"image")
+                -else
+                  =image_tag("/images/material/icon/icon_camera.png",class:"image")
+              .text
                 イメージの選択
                 %span.field-label__any 任意
               =f.file_field :image
