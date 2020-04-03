@@ -1,3 +1,5 @@
 = form_with model: @user,local: true do |f|
+  = f.text_field :email
+  = f.text_field :nickname
   = f.file_field :image
   = f.submit

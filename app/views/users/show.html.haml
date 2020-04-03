@@ -1,67 +1,64 @@
-.show-main
-  .show-main-box
-    .show-main-box-left
-      .show-main-box-left-icon
+#showUsers
+  .main
+    .main__leftBox
+      .main__leftBox__icon
         -if @user.image.present?
-          =image_tag @user.image.to_s, class:"show-main-box-left-icon-photo"
+          =image_tag @user.image.to_s, class:"main__leftBox__icon--photo"
         -else 
-          =image_tag "/images/material/icon/icon_camera.png", class:"show-main-box-left-icon-photo"
-      .show-main-box-left-name
+          =image_tag "/images/material/icon/icon_camera.png", class:"main__leftBox__icon--photo"
+      .main__leftBox__name
         = ":#{@user.nickname}"
-      =link_to("#") do
-        .show-main-box-left-item
+      .main__leftBox__menu
+        =link_to(edit_user_path(current_user.id),class:"main__leftBox__menu--item") do
           プロフィール設定
-      =link_to(edit_user_path(current_user.id)) do
-        .show-main-box-left-item
-          アイコン設定
-      =link_to("#") do
-        .show-main-box-left-item
+        =link_to("#",class:"main__leftBox__menu--item") do
           クレジットカード情報登録
-      =link_to("#") do
-        .show-main-box-left-item
+        =link_to("#",class:"main__leftBox__menu--item") do
           クレジットカード情報変更
-      =link_to(destroy_user_session_path,method: :delete) do
-        .show-main-box-left-item
+        =link_to(destroy_user_session_path,method: :delete,class:"main__leftBox__menu--logout") do
           ログアウト
-    .show-main-box-right
-      .show-main-box-right-bottom
-        .show-main-box-right-bottom-title
-          .show-main-box-right-bottom-title-text
+    .main__rightBox
+      .main__rightBox__items
+        .main__rightBox__items__title
+          .main__rightBox__items__title--text
             最近出品した商品 
-          = link_to "出品一覧⇨", "#"
-        .show-main-box-right-bottom-main
+          = link_to "出品一覧⇨", "#",class:"main__rightBox__items__title--link"
+        .main__rightBox__items__contents
           -[0,0,0].zip(@user.selling_items) do |z,item|
             -if item.present? && item.seller_id == current_user.id
-              =link_to(item_path(item.id),class:"show-main-box-right-bottom-main-box")do
-                .show-main-box-right-bottom-main-box-item
-                  =image_tag item.images.first.src.to_s,class:"show-main-box-right-bottom-main-box-item-image"
-                .show-main-box-right-bottom-main-box-name
+              =link_to(item_path(item.id),class:"main__rightBox__items__contents__content")do
+                .main__rightBox__items__contents__content__imageWrapper
+                  =image_tag item.images.first.src.to_s,class:"main__rightBox__items__contents__content__imageWrapper--image"
+                .main__rightBox__items__contents__content--name
                   =item.name
-                .show-main-box-right-bottom-main-box-value
+                .main__rightBox__items__contents__content--price
                   ="#{item.price}円"
             - else
-              .show-main-box-right-bottom-main-box
-                .show-main-box-right-bottom-main-box-item
-                  =image_tag "/images/material/icon/icon_camera.png" ,class:"show-main-box-right-bottom-main-box-item-image"
-                .show-main-box-right-bottom-main-box-name
+              .main__rightBox__items__contents__content
+                .main__rightBox__items__contents__content__imageWrapper
+                  =image_tag "/images/material/icon/icon_camera.png" ,class:"main__rightBox__items__contents__content__imageWrapper--image"
+                .main__rightBox__items__contents__content--name
                   出品されていません
-        .show-main-box-right-bottom-title
-          .show-main-box-right-bottom-title-text
+      .main__rightBox__items
+        .main__rightBox__items__title
+          .main__rightBox__items__title--text
             最近購入した商品 
-          = link_to "購入一覧⇨", "#"
-        .show-main-box-right-bottom-main
+          = link_to "購入一覧⇨", "#",class:"main__rightBox__items__title--link"
+        .main__rightBox__items__contents
           -[0,0,0].zip(@user.buyed_items) do |z,item|
             -if item.present? && item.buyer_id == current_user.id
-              =link_to(item_path(item.id),class:"show-main-box-right-bottom-main-box")do
-                .show-main-box-right-bottom-main-box-item
-                  =image_tag item.images.first.src.to_s,class:"show-main-box-right-bottom-main-box-item-image"
-                .show-main-box-right-bottom-main-box-name
+              =link_to(item_path(item.id),class:"main__rightBox__items__contents__content")do
+                .main__rightBox__items__contents__content__imageWrapper
+                  =image_tag item.images.first.src.to_s,class:"main__rightBox__items__contents__content__imageWrapper--image"
+                .main__rightBox__items__contents__content--name
                   =item.name
-                .show-main-box-right-bottom-main-box-value
+                .main__rightBox__items__contents__content--price
                   ="#{item.price}円"
             - else
-              .show-main-box-right-bottom-main-box
-                .show-main-box-right-bottom-main-box-item
-                  =image_tag "/images/material/icon/icon_camera.png" ,class:"show-main-box-right-bottom-main-box-item-image"
-                .show-main-box-right-bottom-main-box-name
+              .main__rightBox__items__contents__content
+                .main__rightBox__items__contents__content__imageWrapper
+                  =image_tag "/images/material/icon/icon_camera.png" ,class:"main__rightBox__items__contents__content__imageWrapper--image"
+                .main__rightBox__items__contents__content--name
                   購入していません
+
+
