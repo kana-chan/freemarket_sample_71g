@@ -17,10 +17,10 @@
   align-items: center;
   text-align: center;
   &__icon {
-    border: 3px solid $gray;
+    border: 3px solid $light_blue;
     height: 20vh;
     width: 20vh;
-    background-color: $light_gray;
+    background-color: $blue;
     border-radius: 50%;
     position: relative;
     &--photo{
@@ -47,12 +47,13 @@
     flex-direction: column;
     justify-content: space-between;
     &--item {
-      line-height: 4.5;
-      height: 8vh;
-      width: 100%;
-      margin-top: 2vh;
+      line-height: 7vh;
+      height: 7vh;
+      width: 95%;
+      border-radius:30px ;
+      margin: 2vh auto 0;
       &:hover{
-        background-color: $blue;
+        background-color: $light_blue;
       }
       }
       &--logout{
@@ -61,7 +62,7 @@
         margin: auto auto 2vh;
         height: 5vh;
         width: 70%;
-        line-height: 3;
+        line-height: 5vh;
         &:hover{
           background-color: $gray;
         }
