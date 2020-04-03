@@ -137,10 +137,9 @@
 
 
 
-//　SOLD表記小さいーーーーーーーーーーーーーー
+// SOLD表記小さいーーーーーーーーーーーーーー
 .itemsMain__bland__box__content1__upper_soldout{
     position: absolute;
-
     top: 0px;
     border-top: 60px solid #ea352d ;
     border-right: 60px solid transparent;
@@ -181,11 +180,10 @@
 
 
 // カテゴリー別------------------------------------------------
-.itemsMain__newPost,.itemsMain__bland {
+.itemsMain__newPost{
   background-color: $light-gray;
   overflow: scroll;
   height: 500px;
-  //text-align: center;
   &__top {
     padding-top: 50px;
     font-size: 28px;
@@ -199,11 +197,9 @@
     text-align: center;
   }
   &__box {
-    // height: 280px;
     width: 780px;
     margin: 26px auto; 
     justify-content: space-between;
-    // display: flex;
     &__content1,&__content2,&__content3 {
       display:  inline-block;
       margin: 10px;
