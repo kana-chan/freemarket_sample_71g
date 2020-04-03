@@ -27,9 +27,23 @@ Rails.application.routes.draw do
       get :pay
     end
   end
-  
-  resources :cards , only: [:new, :index, :create, :destroy]
 
+  resources :users do
+    member do
+      get :pay
+    end
+  end
+  
+  resources :cards,only:[:index,:new,:show]do
+    collection do
+      #カード削除
+      post 'delete', to: 'cards#delete'
+      #カード情報入力
+      post 'show', to: 'cards#show'
+    end
+  end
+
+  # resources :cards, only: [:new, :index, :show, :create, :destroy]
 
   resources :users, only: [:show, :edit]
 end
