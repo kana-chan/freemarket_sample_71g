@@ -9,7 +9,7 @@
 // ================================================
   &__leftBox {
   background-color: white;
-  width: 20%;
+  width: 23%;
   height: 80vh;
   display:flex;
   flex-direction: column;
@@ -17,10 +17,10 @@
   align-items: center;
   text-align: center;
   &__icon {
-    border: 3px solid $light_blue;
+    border: 3px solid $light_gray;
     height: 20vh;
     width: 20vh;
-    background-color: $blue;
+    background-color: $gray;
     border-radius: 50%;
     position: relative;
     &--photo{
@@ -49,7 +49,7 @@
     &--item {
       line-height: 7vh;
       height: 7vh;
-      width: 95%;
+      width: 90%;
       border-radius:30px ;
       margin: 2vh auto 0;
       &:hover{
