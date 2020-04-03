@@ -21,7 +21,14 @@ Rails.application.routes.draw do
       get :done
     end
   end
+
+  resources :users do
+    member do
+      get :pay
+    end
+  end
   
+  resources :cards , only: [:new, :index, :create, :destroy]
 
 
   resources :users, only: [:show, :edit]

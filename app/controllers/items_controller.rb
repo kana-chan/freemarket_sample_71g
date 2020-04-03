@@ -69,8 +69,19 @@ before_action :set_item, only: [:show, :edit, :update, :done]
    else
     render :show
    end
-
  end
+
+ require 'payjp'
+
+  def pay
+    Payjp.api_key = "sk_test_a61f106182797a9972516b52"
+    Payjp::Charge.create(
+      amount: 1100, # 決済する値段
+      card: params['payjp-token'], # フォームを送信すると生成されるトークン
+      currency: 'jpy'
+    )
+    redirect_to root_path
+  end
 
   def item_params
     params.require(:item).permit(
