@@ -4,12 +4,14 @@
   &__box {
     width: 70vw;
     margin: 0 auto;
-    padding: 10vh 0 20vh;
     &__contents {
       font-size:22px;
       .sign-up-head {
+        background-color: white;
+        height: 10vh;
+        line-height: 10vh;
+        margin-bottom: 2vh;
         text-align: center;
-        padding-bottom:8vh;
         font-weight: 600;
         font-size: 22px;
       }
