@@ -3,7 +3,7 @@
   background: $light-gray;
   &__box {
     width: 70vw;
-    margin: auto;
+    margin: 0 auto;
     &__contents {
       font-size:22px;
       .sign-up-head {
@@ -14,8 +14,7 @@
       }
     }
     &__information {
-      margin: auto;
-      // padding: 20px;
+      padding: 20px;
       background-color: white;
       &__contents {
         max-width: 25vw;
@@ -63,7 +62,7 @@
             font-weight: bold;
             font-size: 15px;
             height: 50px;
-            width: 87%;
+            width: 20vw;
             -webkit-appearance: none;
             margin: 26px;
           }
