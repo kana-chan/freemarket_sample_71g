@@ -13,5 +13,18 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :items do
+    resources :cards, only: [:index] do
+      collection do
+        get 'done', to: 'cards#done'
+      end
+    end
+  end
+
+  resources :items do
+    resources :cards, only: [:]
+  end
+  
+  resources :cards,
   resources :users, only: [:show, :edit] 
 end
