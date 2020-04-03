@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   validates :name, :explaination, :condition_id, :shipment_id, :responsibility_id, :price, :prefecture_id, presence: true 
-  belongs_to :user
+  belongs_to :user,class_name: 'User', :foreign_key => 'seller_id'
   has_many :images,dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
   validates_associated :images
