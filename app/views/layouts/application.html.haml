@@ -10,7 +10,7 @@
   %body
     %header
       =render "items/header"
-    - if user_signed_in? && request.path == root_path || request.path.match(/\/users\/\d+/)
+    - if user_signed_in? && request.path == root_path || request.path.match(/\/users\/\d++$/)
       =render "items/exhibition"
     = yield
     %footer
