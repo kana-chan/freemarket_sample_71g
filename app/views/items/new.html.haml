@@ -1,4 +1,4 @@
-= form_with model:@item do |f|
+= form_with(model:@item, local: true) do |f|
   .new_wrapper
     //ーーヘッダー部分ーー
     .new_content1
@@ -44,7 +44,14 @@
             カテゴリー
           .new_item_right
             必須
-        -# = f.text_field :categorie, class: 'new_form-label__message', placeholder: 'ここにselectが入る'
+        .listing-form-box
+          .listing-product-detail__category
+            .listing-select-wrapper
+              .listing-select-wrapper__box
+                = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+        - if @item.errors[:category].any?
+          %br
+          %p.errors 選択してください
       .new_main-header5    
         .new_items
           .new_items_left
