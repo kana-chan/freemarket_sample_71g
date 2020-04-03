@@ -56,12 +56,14 @@
       }
       }
       &--logout{
-        margin-top:auto;
-        height: 7vh;
-        width: 100%;
-        line-height: 4;
+        background-color: $light_gray;
+        border-radius: 30px;
+        margin: auto auto 2vh;
+        height: 5vh;
+        width: 70%;
+        line-height: 3;
         &:hover{
-          background-color: $blue;
+          background-color: $gray;
         }
       }
     }
