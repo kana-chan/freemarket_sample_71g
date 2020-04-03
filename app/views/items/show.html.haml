@@ -23,37 +23,6 @@
           = "￥#{@item.price} (税込)"
         .content__priceBox__bottom
           = @item.responsibility.name
-      .content__detailBox
-        = @item.explaination
-      %table.content__tableBox
-        %tr.content__tableBox--seller
-          %th 出品者
-          %td 
-            = @item.user.nickname
-        %tr.content__tableBox--category
-          %th カテゴリー
-          %td
-            .content__tableBox--category--parent
-              = @item.category.parent.parent.name
-            .content__tableBox--category--child
-              = @item.category.parent.name
-            .content__tableBox--category--grandChild
-              =@item.category.name
-        %tr.content__tableBox--bland
-          %th ブランド
-          %td 
-            -if @item.brand.present?
-              = @item.brand
-            -else
-              指定なし
-        %tr.content__tableBox--condition
-          %th 商品の状態
-          %td 
-            = @item.condition.name
-        %tr.content__tableBox--sendingFee
-          %th 配送料の負担
-          %td 
-            = @item.responsibility.name
         .content__detailBox
           = @item.explaination
         %table.content__tableBox
