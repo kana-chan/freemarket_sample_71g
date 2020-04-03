@@ -38,12 +38,16 @@ before_action :set_item, only: [:show, :edit, :update, :done]
       redirect_to root_path
     else
       redirect_to new_item_path
+      # @category_parent_array = ["---"]
+      # Category.where(ancestry: nil).each do |parent|
+      #   @category_parent_array << parent.name
+      # end
+      #render :new
     end
   end
 
   def edit
     @item = Item.find(params[:id])
-    #5.times { @item.images.build }
     grandchild_category = @item.category
     child_category = grandchild_category.parent
 
@@ -67,7 +71,12 @@ before_action :set_item, only: [:show, :edit, :update, :done]
     if @item.update(item_params)
       redirect_to root_path
     else 
-      render :edit
+      #@category_parent_array = ["---"]
+      #Category.where(ancestry: nil).each do |parent|
+        #@category_parent_array << parent.name
+      #end
+      redirect_to edit_item_path
+      #render :edit
     end
   end
 

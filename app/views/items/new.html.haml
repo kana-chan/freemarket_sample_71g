@@ -1,4 +1,4 @@
-= form_with model:@item do |f|
+= form_with(model:@item, local: true) do |f|
   .new_wrapper
     //ーーヘッダー部分ーー
     .new_content1
@@ -9,12 +9,12 @@
           .new_item_right
             必須
         .new_exe
-          最大10枚までアップロードできます
+          最大5枚までアップロードできます
         .new_picture
           .new_picture_exe
             = f.fields_for :images do |i|
               = i.file_field :src
-        - if @item.errors[:src].any?
+        - if @item.errors.any?
           %br
           %p.errors 画像がありません
         //-------ここまでcontent1--------
@@ -56,7 +56,7 @@
             .listing-select-wrapper
               .listing-select-wrapper__box
                 = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-        - if @item.errors[:category].any?
+        - if @item.errors[:category_id].any?
           %br
           %p.errors 選択してください
       .new_main-header5    

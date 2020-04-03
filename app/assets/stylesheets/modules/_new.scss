@@ -16,7 +16,9 @@
   margin-top: 10px;
 }
 
-
+.errors {
+  color: red;
+}
   //ーーー-------------------ここまでヘッダー部分ーーー------------------------------
   .new_content1 {
     @include size;
