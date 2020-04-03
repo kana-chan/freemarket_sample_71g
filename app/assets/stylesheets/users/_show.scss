@@ -47,9 +47,10 @@
     flex-direction: column;
     justify-content: space-between;
     &--item {
-      line-height: 5;
-      height: 10vh;
+      line-height: 4.5;
+      height: 8vh;
       width: 100%;
+      margin-top: 2vh;
       &:hover{
         background-color: $blue;
       }
@@ -85,7 +86,7 @@
       display: flex;
       justify-content: space-between;
       &--count{
-        color: $gray;
+        color: $blue;
       }
     }
     &__contents {
