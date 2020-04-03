@@ -34,7 +34,7 @@
                   .main__rightBox__items__contents__content--name
                     =item.name
                   .main__rightBox__items__contents__content--price
-                    ="#{item.price}円"
+                    ="#{item.price.to_s.insert(-4,",")}円"
               - else
                 .main__rightBox__items__contents__content
                   .main__rightBox__items__contents__content__imageWrapper
