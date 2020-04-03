@@ -21,11 +21,29 @@
       .main__rightBox__items
         .main__rightBox__items__title
           .main__rightBox__items__title--text
-            最近出品した商品 
-          = link_to "出品一覧⇨", "#",class:"main__rightBox__items__title--link"
-        .main__rightBox__items__contents
-          -[0,0,0].zip(@user.selling_items) do |z,item|
-            -if item.present? && item.seller_id == current_user.id
+            出品した商品 
+          .main__rightBox__items__title--count
+            ="#{@user.selling_items.count}コ"
+        -if @user.selling_items.count < 3
+          .main__rightBox__items__contents
+            -[0,0,0].zip(@user.selling_items) do |z,item|
+              -if item.present? && item.seller_id == current_user.id
+                =link_to(item_path(item.id),class:"main__rightBox__items__contents__content")do
+                  .main__rightBox__items__contents__content__imageWrapper
+                    =image_tag item.images.first.src.to_s,class:"main__rightBox__items__contents__content__imageWrapper--image"
+                  .main__rightBox__items__contents__content--name
+                    =item.name
+                  .main__rightBox__items__contents__content--price
+                    ="#{item.price}円"
+              - else
+                .main__rightBox__items__contents__content
+                  .main__rightBox__items__contents__content__imageWrapper
+                    =image_tag "/images/material/icon/icon_camera.png" ,class:"main__rightBox__items__contents__content__imageWrapper--image"
+                  .main__rightBox__items__contents__content--name
+                    出品されていません
+        -else
+          .main__rightBox__items__contents
+            -@user.selling_items.each do|item|
               =link_to(item_path(item.id),class:"main__rightBox__items__contents__content")do
                 .main__rightBox__items__contents__content__imageWrapper
                   =image_tag item.images.first.src.to_s,class:"main__rightBox__items__contents__content__imageWrapper--image"
@@ -33,20 +51,32 @@
                   =item.name
                 .main__rightBox__items__contents__content--price
                   ="#{item.price}円"
-            - else
-              .main__rightBox__items__contents__content
-                .main__rightBox__items__contents__content__imageWrapper
-                  =image_tag "/images/material/icon/icon_camera.png" ,class:"main__rightBox__items__contents__content__imageWrapper--image"
-                .main__rightBox__items__contents__content--name
-                  出品されていません
       .main__rightBox__items
         .main__rightBox__items__title
           .main__rightBox__items__title--text
-            最近購入した商品 
-          = link_to "購入一覧⇨", "#",class:"main__rightBox__items__title--link"
-        .main__rightBox__items__contents
-          -[0,0,0].zip(@user.buyed_items) do |z,item|
-            -if item.present? && item.buyer_id == current_user.id
+            購入した商品 
+          .main__rightBox__items__title--count
+            ="#{@user.buyed_items.count}コ"
+        -if @user.buyed_items.count < 3
+          .main__rightBox__items__contents
+            -[0,0,0].zip(@user.buyed_items) do |z,item|
+              -if item.present? && item.buyer_id == current_user.id
+                =link_to(item_path(item.id),class:"main__rightBox__items__contents__content")do
+                  .main__rightBox__items__contents__content__imageWrapper
+                    =image_tag item.images.first.src.to_s,class:"main__rightBox__items__contents__content__imageWrapper--image"
+                  .main__rightBox__items__contents__content--name
+                    =item.name
+                  .main__rightBox__items__contents__content--price
+                    ="#{item.price}円"
+              - else
+                .main__rightBox__items__contents__content
+                  .main__rightBox__items__contents__content__imageWrapper
+                    =image_tag "/images/material/icon/icon_camera.png" ,class:"main__rightBox__items__contents__content__imageWrapper--image"
+                  .main__rightBox__items__contents__content--name
+                    購入していません
+        -else
+          .main__rightBox__items__contents
+            -@user.buyed_items.each do|item|
               =link_to(item_path(item.id),class:"main__rightBox__items__contents__content")do
                 .main__rightBox__items__contents__content__imageWrapper
                   =image_tag item.images.first.src.to_s,class:"main__rightBox__items__contents__content__imageWrapper--image"
@@ -54,11 +84,6 @@
                   =item.name
                 .main__rightBox__items__contents__content--price
                   ="#{item.price}円"
-            - else
-              .main__rightBox__items__contents__content
-                .main__rightBox__items__contents__content__imageWrapper
-                  =image_tag "/images/material/icon/icon_camera.png" ,class:"main__rightBox__items__contents__content__imageWrapper--image"
-                .main__rightBox__items__contents__content--name
-                  購入していません
+
 
 
