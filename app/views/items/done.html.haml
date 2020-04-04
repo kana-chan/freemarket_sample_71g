@@ -9,3 +9,6 @@
       .done-main__box__content__methods
       .done-main__box__content__delivery
       .done-main__box__content__description
+      = form_with model:@item do
+        :plain
+      %script{type: "text/javascript", src: "https://checkout.pay.jp", class:"payjp-button", "data-text": "購入する", "data-key": "pk_test_7cbaf38fc7c7999028ec1ab6"}

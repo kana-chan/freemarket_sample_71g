@@ -67,12 +67,22 @@ before_action :set_item, only: [:show, :edit, :update, :done]
     @item_purchaser= Item.find(params[:id])
   end
 
+  def pay
+    @item = Item.find(params[:id])
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    charge = Payjp::Charge.create(
+    amount: @item.price,
+    card: params['payjp-token'],
+    currency: 'jpy'
+    )
+  end
+
   def item_params
     params.require(:item).permit(
       :name, 
       :explaination, 
       :price, 
-      :brand, 
+      :brand,
       :prefecture_id, 
       :condition_id, 
       :shipment_id, 
