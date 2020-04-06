@@ -1,4 +1,5 @@
-= form_with url:"/", html: {class: "edit_form-label"} do |f|
+//= form_with url:"/", html: {class: "edit_form-label"}, do |f|
+= form_with(model: @item, local: true) do |f|
   .edit_wrapper
     //ーーヘッダー部分ーー
     .edit_content1
@@ -9,11 +10,25 @@
           .edit_item_right
             必須
         .edit_exe
-          最大10枚までアップロードできます
+          最大5枚までアップロードできます
         .edit_picture
           .edit_picture_exe
-            %br ドラッグアンドドロップ
-            またはクリックしてファイルをアップロード
+            #image-box
+              #previews
+                - if @item.persisted?
+                  - @item.images.each_with_index do |image, i|
+                    = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
+              = f.fields_for :images do |image|
+                .js-file_group{"data-index" => "#{image.index}"}
+                  = image.file_field :src, class: 'js-file'
+                  %br/
+                  %span.js-remove 削除
+                - if @item.persisted?
+                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+              - if @item.persisted?
+                .js-file_group{"data-index" => "#{@item.images.count}"}
+                  = file_field_tag :src, name: "product[images_attributes][#{@item.images.count}][src]", class: 'js-file'
+                  .js-remove 削除
         //-------ここまでcontent1--------
     .edit_content2
       .edit_main-header2
@@ -22,15 +37,20 @@
             商品名
           .edit_item_right
             必須
-        = f.text_field :content, class: 'edit_form-label__message', placeholder: '40字まで'
+        = f.text_field :name, class: 'edit_form-label__message', placeholder: '40字まで'
+        - if @item.errors[:name].any?
+          %br
+          %p.errors 入力してください
       .edit_main-header3
         .edit_item
           .edit_item_left
             商品の説明 
           .edit_item_right
             必須 
-        
-        = f.text_area :content, class: 'edit_form-text_area-message', placeholder: '40字まで'
+        = f.text_area :explaination, class: 'edit_form-text_area-message', placeholder: '40字まで'
+        - if @item.errors[:explaination].any?
+          %br
+          %p.errors 入力してください
       .edit_count
         0/1000
         //------------ここまでcontent2-------------
@@ -44,21 +64,39 @@
               カテゴリー
             .edit_item_right
               必須
-          = f.text_field :content, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
+          .listing-form-box
+            .listing-product-detail__category
+              .listing-select-wrapper
+                .listing-select-wrapper__box
+                  = f.select :parent_name, @category_parent_array, {selected:@item.category.parent.parent.name}, { class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+          #children_wrapper.listing-select-wrapper__added
+            .listing-select-wrapper__box
+              = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'child_category', name: "category_id"}
+              %option{"data-category" => "---", :value => "---"}
+          #grandchildren_wrapper.listing-select-wrapper__added
+            .listing-select-wrapper__box
+              = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category', name: "category_id"}
+              %option{"data-category" => "---", :value => "---"}
+            - if @item.errors[:categories].any?
+              %br
+              %p.errors 選択してください
         .edit_main-header5    
           .edit_items
             .edit_items_left
               ブランド
             .edit_items_right
               任意
-          = f.text_field :content, class: 'edit_form-label__message', placeholder: '例）シャネル'
+          = f.text_field :brand, class: 'edit_form-label__message', placeholder: '例）シャネル'
         .edit_main-header6
           .edit_item
             .edit_item_left
               商品の状態
             .edit_item_right
               必須 
-          = f.text_field :content, class: 'edit_form-label__message', placeholder: 'ここにselectが入る.' 
+          = f.collection_select :condition_id, Condition.all, :id, :name,class: 'edit_form-label__message', placeholder: 'ここにselectが入る.' 
+          - if @item.errors[:condition_id].any?
+            %br
+            %p.errors 選択してください
       -# -------------ここまでcontent3---------------
     .edit_content4
       .edit_title
@@ -70,22 +108,28 @@
           配送料の負担
         .edit_item_right
           必須
-      = f.text_field :content, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
-
+      = f.collection_select :responsibility_id, Responsibility.all, :id, :name, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
+      - if @item.errors[:responsibility_id].any?
+        %br
+        %p.errors 選択してください
       .edit_item  
         .edit_item_left
           発送元の地域
         .edit_item_right
           必須
-      = f.text_field :content, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
-
+      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
+      - if @item.errors[:prefecture_id].any?
+        %br
+        %p.errors 選択してください
       .edit_item
         .edit_item_left
           発送までの日数
         .edit_item_right
           必須
-      = f.text_field :content, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
-      
+      = f.collection_select :shipment_id, Shipment.all, :id, :name, class: 'edit_form-label__message', placeholder: 'ここにselectが入る'
+      - if @item.errors[:shipment_id].any?
+        %br
+        %p.errors 選択してください 
     .edit_content5
       .edit_title
         価格（¥300〜9,999,999）
@@ -97,8 +141,10 @@
             販売価格
           .edit_item_right
             必須   
-        = f.text_field :content, class: 'edit_price_input', placeholder: '0'
-
+        = f.text_field :price, class: 'edit_price_input', placeholder: '0'
+      - if @item.errors[:price].any?
+        %br
+        %p.errors 300以上9999999以下で入力してください
       .edit_tax-box
         .edit_tax-box_left
           販売手数料（10%）
@@ -111,13 +157,11 @@
           %p -
       .edit_button
         .edit_button-shipping
-          = link_to('#' , class: "edit_button-shipping") do
-            変更する
-        .edit_button-save
-          = link_to('#' , class: "edit_button-save") do
-            出品を一時停止する
+          = f.submit "変更する", class: "edit_button-shipping"
+          //= link_to(item_path(@item.id), method: :patch , class: "edit_button-shipping") do
+          //変更する
         .edit_button-delete
-          = link_to('#' , class: "edit_button-back") do
+          = link_to(item_path(@item.id),method: :delete ,class: "edit_button-back") do
             この商品を削除する
       .edit_bottom_box
         禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。

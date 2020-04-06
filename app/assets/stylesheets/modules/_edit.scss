@@ -2,7 +2,6 @@
   height: 100%;
   width: 100vw;
   background-color: $light-gray;
-
   //ーーー-------------------ここまでヘッダー部分ーーー------------------------------
   .edit_content1 {
     @include size;
@@ -19,7 +18,6 @@
         align-items: center;
         background-color: rgb(245, 245, 245);
         cursor: pointer;
-        height: 155px;
         border-width: 1px;
         border-top-width: 1px;
         border-right-width: 1px;
@@ -31,10 +29,14 @@
         margin-top: 16px;
         &_exe {
           font-size: 12px;
-          line-height: 1.9em;
-          text-align: center;
           width: 100%;
-          margin-top: 50px;
+
+          .imageSmall {
+            display: inline;
+          }
+
+          
+          }
         }
       }
 
@@ -87,6 +89,23 @@
       .edit_form-label__message {
         @include form;
       }
+      #parent_category {
+        height: 50px;
+        width: 100%;
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+      #child_category {
+        height: 50px;
+        width: 100%;
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+      #grandchild_category {
+        height: 50px;
+        width: 100%;
+        font-size: 15px;
+      }
     }
     .edit_main-header5 {
       .edit_items{
@@ -111,6 +130,11 @@
       .edit_form-label__message{
        @include form;
       }
+      #item_condition_id {
+        height: 50px;
+        width: 100%;
+        font-size: 15px;
+      }
     }
   }
 
@@ -129,6 +153,21 @@
     @include title2;
     .edit_form-label__message{
       @include form;
+    }
+    #item_responsibility_id {
+      height: 50px;
+      width: 100%;
+      font-size: 15px;
+    }
+    #item_prefecture_id {
+      height: 50px;
+      width: 100%;
+      font-size: 15px;
+    }
+    #item_shipment_id {
+      height: 50px;
+      width: 100%;
+      font-size: 15px;
     }
   }
   //-------------ここまでcontent4---------------
@@ -210,7 +249,6 @@
       line-height: 1.4em;
     }
   } 
-}
 //-------------ここまでフッター---------------
 .edit_form-label__message {
   display: block;

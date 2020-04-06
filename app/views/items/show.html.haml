@@ -6,35 +6,18 @@
     .content__photoBox
       .content__photoBox--top
         =image_tag @item.images.first.src.to_s, class:"imageBig"
+        -if @item.buyer_id.present?
+          .itemsMain__bland__box__content1__upper_soldout_big
+          .itemsMain__bland__box__content1__upper_soldout_big_text
+            SOLD    
       .content__photoBox--bottom
         %ul
-          %li
-            -if @item.images.first.present?
-              =image_tag @item.images.first.src.to_s, class:"imageSmall"
-            -else
-              =image_tag "/images/material/icon/icon_camera.png", class:"imageSmall"
-          %li
-            -if @item.images.second.present?
-              =image_tag @item.images.second.src.to_s, class:"imageSmall"
-            -else
-              =image_tag "/images/material/icon/icon_camera.png", class:"imageSmall"
-          %li
-            -if @item.images.third.present?
-              =image_tag @item.images.third.src.to_s, class:"imageSmall"
-            -else
-              =image_tag "/images/material/icon/icon_camera.png", class:"imageSmall"
-          %li
-            -if @item.images.fourth.present?
-              =image_tag @item.images.fourth.src.to_s, class:"imageSmall"
-            -else
-              =image_tag "/images/material/icon/icon_camera.png", class:"imageSmall"
-          %li
-            -if @item.images.fifth.present?
-              =image_tag @item.images.fifth.src.to_s, class:"imageSmall"
-            -else
-              =image_tag "/images/material/icon/icon_camera.png", class:"imageSmall"
-
-        
+          - [0,0,0,0,0].zip(@item.images) do |z,image|
+            %li 
+              -if image.present?
+                =image_tag image.src.to_s, class:"imageSmall"
+              -else 
+                =image_tag "/images/material/icon/icon_camera.png", class:"imageSmall"
     .content__priceBox
       .content__priceBox__top
         = "￥#{@item.price} (税込)"
@@ -51,11 +34,11 @@
         %th カテゴリー
         %td
           .content__tableBox--category--parent
-            メンズ?
+            = @item.category.parent.parent.name
           .content__tableBox--category--child
-            トップス?
+            = @item.category.parent.name
           .content__tableBox--category--grandChild
-            シャツ?
+            =@item.category.name
       %tr.content__tableBox--bland
         %th ブランド
         %td 
@@ -81,11 +64,11 @@
           = @item.shipment.name
     .content__option
       .content__option__upper
-        -# -if user_signed_in? && current_user.id == @item.user_id
+        -if user_signed_in? && current_user.id == @item.user_id
           =link_to(edit_item_path(@item.id)) do
             .content__option__upper--editBtn
               編集する
-        -else
-          =link_to(edit_item_path(@item.id)) do
-            .content__option__upper--buyBtn
-              購入する
+        -elsif user_signed_in? && @item.buyer_id.blank?
+          = form_with url: done_item_path, method: :get, local: true do |form| 
+            = form.submit "購入"
+        

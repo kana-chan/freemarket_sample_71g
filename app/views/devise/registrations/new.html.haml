@@ -9,39 +9,39 @@
           .field-label
             = f.label :ニックネーム, class: "field-label__name"
             %span.field-label__required 必須
-            = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "field-label__input"
+            = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "field-label__input",placeholder: "例)やまーだ"
           .field-label
             = f.label :メールアドレス, class: "field-label__name"
             %span.field-label__required 必須
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: "field-label__input"
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "field-label__input",placeholder: "例)~@~.~"
           .field-label
-            = f.label :名前（苗字）, class: "field-label__name"
+            = f.label :性（全角）, class: "field-label__name"
             %span.field-label__required 必須
-            = f.text_field :last_name, autofocus: true, class: "field-label__input"
+            = f.text_field :last_name, autofocus: true, class: "field-label__input",placeholder: "例)山田"
           .field-label
-            = f.label :名前（名前）, class: "field-label__name"
+            = f.label :名（全角）, class: "field-label__name"
             %span.field-label__required 必須
-            = f.text_field :first_name, autofocus: true, class: "field-label__input"
+            = f.text_field :first_name, autofocus: true, class: "field-label__input",placeholder: "例)太郎"
           .field-label
-            = f.label :ふりがな（苗字）, class: "field-label__name"
+            = f.label :せい（全角）, class: "field-label__name"
             %span.field-label__required 必須
-            = f.text_field :last_furigana, autofocus: true, class: "field-label__input"
+            = f.text_field :last_furigana, autofocus: true, class: "field-label__input",placeholder: "例)やまだ"
           .field-label
-            = f.label :ふりがな（名前）, class: "field-label__name"
+            = f.label :めい（全角）, class: "field-label__name"
             %span.field-label__required 必須
-            = f.text_field :first_furigana, autofocus: true, class: "field-label__input"
+            = f.text_field :first_furigana, autofocus: true, class: "field-label__input",placeholder: "例)たろう"
           .field-label
             = f.label :電話番号, class: "field-label__name"
             %span.field-label__required 必須
-            = f.text_field :phone_number, autofocus: true, class: "field-label__input"
+            = f.text_field :phone_number, autofocus: true, class: "field-label__input",placeholder: "ハイフンなし10~11桁"
           .field-label
             = f.label :性別, class: "field-label__name"
             %span.field-label__required 必須
-            = f.select :gender, { '男': :male, '女': :female }
+            = f.select :gender, { '男': :male, '女': :female },prompt: "選択して下さい"
           .field-label
             = f.label :生年月日, class: "field-label__name"
             %span.field-label__required 必須
-            = f.text_field :birthday, autofocus: true, class: "field-label__input"
+            = f.text_field :birthday, autofocus: true, class: "field-label__input",placeholder: "例)2000年1月1日"
           .field-label
             = f.label :password, class: "field-label__name"
             %span.field-label__required 必須
@@ -49,15 +49,15 @@
               %em
                 (#{@minimum_password_length} characters minimum)
             %br/
-            = f.password_field :password, autocomplete: "new-password", class: "field-label__input"
+            = f.password_field :password, autocomplete: "new-password", class: "field-label__input",placeholder: "7文字以上"
           .field-label
             = f.label :password_confirmation, class: "field-label__name"
             %span.field-label__required 必須
             %br/
-            = f.password_field :password_confirmation, autocomplete: "new-password", class: "field-label__input"
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: "field-label__input",placeholder: "確認"
           .field-label
             = f.label :アイコン, class: "field-label__name"
-            %span.field-label__required 必須
+            %span.field-label__any 任意
             = f.file_field :image, class: "field-label__image"
           .field-label
             = f.label :プロフィール, class: "field-label__name"

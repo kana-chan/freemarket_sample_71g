@@ -134,28 +134,79 @@
     line-height: 1.5;
   }
 }
+
+
+
+//　SOLD表記小さいーーーーーーーーーーーーーー
+.itemsMain__bland__box__content1__upper_soldout{
+    position: absolute;
+
+    top: 0px;
+    border-top: 60px solid #ea352d ;
+    border-right: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-left: 60px solid #ea352d ;
+    &_text {
+      position: absolute;
+      top: 30px;
+      left: 10px;
+      transform: rotate(-45deg);
+      color: white;
+      font-size: 20px;
+    }
+
+}
+
+
+//SOLD表記でかいーーーーーーーーーーーーーーーーーー
+
+.itemsMain__bland__box__content1__upper_soldout_big{
+  position: absolute;
+
+  top: 0px;
+  border-top: 100px solid #ea352d ;
+  border-right: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-left: 100px solid #ea352d ;
+  &_text {
+    position: absolute;
+    top: 51px;
+    left: 20px;
+    transform: rotate(-45deg);
+    color: white;
+    font-size: 33px;
+    letter-spacing: 6px;
+  }
+}
+
+
 // カテゴリー別------------------------------------------------
 .itemsMain__newPost,.itemsMain__bland {
   background-color: $light-gray;
+  overflow: scroll;
   height: 500px;
-  text-align: center;
+  //text-align: center;
   &__top {
     padding-top: 50px;
     font-size: 28px;
     font-weight: bold;
+    text-align: center;
   }
   &__middle {
     padding-top: 10px;
     font-size: 24px;
     color: $blue;
+    text-align: center;
   }
   &__box {
-    height: 280px;
+    // height: 280px;
     width: 780px;
     margin: 26px auto; 
     justify-content: space-between;
-    display: flex;
+    // display: flex;
     &__content1,&__content2,&__content3 {
+      display:  inline-block;
+      margin: 10px;
       background-color: white;
       height: 100%;
       width: 30%;
@@ -165,10 +216,14 @@
       &__upper {
         height: 60%;
         width: 100%;
+        position: relative;
+        text-align: center;
         &__pic {
-          max-height: 168px;
-          min-height: 168px;
+          max-height: 154px;
+          min-height: 154px;
+          max-width:234px;
           width: auto;
+          height: auto;
         }
       }
       &__down {

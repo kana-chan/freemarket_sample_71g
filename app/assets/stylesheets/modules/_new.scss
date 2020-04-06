@@ -3,30 +3,22 @@
   width: 100vw;
   background-color:$light-gray;
 
-#item_condition_id {
+#parent_category {
   height: 50px;
   width: 100%;
   font-size: 15px;
 }
 
-#item_responsibility_id {
+.listing-select-wrapper__box--select {
   height: 50px;
   width: 100%;
   font-size: 15px;
+  margin-top: 10px;
 }
 
-#item_prefecture_id {
-  height: 50px;
-  width: 100%;
-  font-size: 15px;
+.errors {
+  color: red;
 }
-
-#item_shipment_id {
-  height: 50px;
-  width: 100%;
-  font-size: 15px;
-}
-
   //ーーー-------------------ここまでヘッダー部分ーーー------------------------------
   .new_content1 {
     @include size;
@@ -139,6 +131,11 @@
       .new_form-label__message{
         @include form;
       }
+      #item_condition_id {
+        height: 50px;
+        width: 100%;
+        font-size: 15px;
+      }
     }
   }
 
@@ -157,6 +154,21 @@
     @include title;
     .new_form-label__message{
       @include form;
+    }
+    #item_responsibility_id {
+      height: 50px;
+      width: 100%;
+      font-size: 15px;
+    }
+    #item_prefecture_id {
+      height: 50px;
+      width: 100%;
+      font-size: 15px;
+    }
+    #item_shipment_id {
+      height: 50px;
+      width: 100%;
+      font-size: 15px;
     }
   }
   //-------------ここまでcontent4---------------
@@ -213,7 +225,9 @@
       text-align: center;
       margin-top: 30px;
       &-shipping {
+        &__submit{
         height: 40px;
+        width: 360px;
         margin-bottom: 24px;
         padding: 0 24px;
         background-color: #ea352d;
@@ -221,8 +235,7 @@
         font-size: 16px;
         line-height: 2.5;
         border-radius: 4px;
-        
-
+        }
       }
       &-save {
         margin-bottom: 24px;
