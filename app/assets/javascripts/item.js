@@ -1,6 +1,6 @@
-$(document).ready(funciton(){
+$(document).ready(function(){
   // 画像用のinputを生成する関数
-  const buildFileField = (index)=> {
+  const buildFileField = function(index){
     const html = `<div data-index="${index}" class="js-file_group">
                     <input class="js-file" type="file"
                     name="item[images_attributes][${index}][src]"
@@ -8,7 +8,7 @@ $(document).ready(funciton(){
                     <div class="js-remove">削除</div>
                   </div>`;
     return html;
-  }
+  };
   //const buildImg = (index, url)=> {
     //const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
     //return html;
@@ -51,4 +51,5 @@ $(document).ready(funciton(){
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
+
 });
