@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-before_action :set_item, only: [:show, :edit, :update, :done]
+before_action :set_item, only: [:show, :edit, :update, :destroy, :done]
 
   def set_item
     @item = Item.find(params[:id])
