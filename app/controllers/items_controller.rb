@@ -82,6 +82,7 @@ before_action :set_item, only: [:show, :edit, :update, :destroy, :done]
   end
 
   def destroy
+
     if @item.destroy
       redirect_to root_path
     else 
