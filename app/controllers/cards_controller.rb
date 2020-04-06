@@ -11,7 +11,7 @@ class CardsController < ApplicationController
     if @card
       redirect_to cards_path unless @card
     else
-      redirect_to root_path
+      
     end
   end
 
