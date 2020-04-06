@@ -2,7 +2,6 @@
   height: 100%;
   width: 100vw;
   background-color: $light-gray;
-
   //ーーー-------------------ここまでヘッダー部分ーーー------------------------------
   .edit_content1 {
     @include size;
@@ -86,6 +85,23 @@
       text-align: right;
       .edit_form-label__message {
         @include form;
+      }
+      #parent_category {
+        height: 50px;
+        width: 100%;
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+      #child_category {
+        height: 50px;
+        width: 100%;
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+      #grandchild_category {
+        height: 50px;
+        width: 100%;
+        font-size: 15px;
       }
     }
     .edit_main-header5 {

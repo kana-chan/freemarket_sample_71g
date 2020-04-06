@@ -1,4 +1,4 @@
-- if request.path == root_path 
+- if request.path == root_path || request.path.match(/\/items\/\d++$/) || request.path.match(/\/users\/\d++$/)
   =render "items/headers/header_big"
 - else
   =render "items/headers/header_small"
