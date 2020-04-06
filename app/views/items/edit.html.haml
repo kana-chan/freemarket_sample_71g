@@ -1,5 +1,5 @@
 //= form_with url:"/", html: {class: "edit_form-label"}, do |f|
-= form_with model: @item, local: true do |f|
+= form_with model: @item do |f|
   .edit_wrapper
     //ーーヘッダー部分ーー
     .edit_content1
@@ -16,10 +16,10 @@
             - @item.images.each do |image|
               = image_tag image.src.to_s, class:"imageSmall"
             #image-box
-              #previews
-                -# if @item.persisted?
-                  //- @item.images.each_with_index do |image, i|
-                    //= image_tag image.src.url, data: { index: i }, width: "100", height: '100'
+              -# #previews
+                -# -if @item.persisted?
+                -#   -@item.images.each_with_index do |image, i|
+                -#     = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
               = f.fields_for :images do |i|
                 .js-file_group{"data-index" => "#{i.index}"}
                   = i.file_field :src, class: 'js-file'
