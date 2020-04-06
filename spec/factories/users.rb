@@ -12,7 +12,7 @@ FactoryBot.define do
     image                 {"job_takuhaiin_man.png"}
     password              {"00000000"}
     password_confirmation {"00000000"}
-
+    birthday              {"2020-12-12"}
   end
 
 end
