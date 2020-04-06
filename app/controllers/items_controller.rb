@@ -39,11 +39,6 @@ before_action :set_item, only: [:show, :edit, :update, :destroy,:done]
       redirect_to root_path
     else
       redirect_to new_item_path
-      # @category_parent_array = ["---"]
-      # Category.where(ancestry: nil).each do |parent|
-      #   @category_parent_array << parent.name
-      # end
-      #render :new
     end
   end
 
@@ -72,12 +67,7 @@ before_action :set_item, only: [:show, :edit, :update, :destroy,:done]
     if @item.update(item_params)
       redirect_to root_path
     else 
-      #@category_parent_array = ["---"]
-      #Category.where(ancestry: nil).each do |parent|
-        #@category_parent_array << parent.name
-      #end
       redirect_to edit_item_path
-      #render :edit
     end
   end
 
@@ -91,19 +81,9 @@ before_action :set_item, only: [:show, :edit, :update, :destroy,:done]
   end
 
   def done
-   if@item_purchaser= Item.find(params[:id])
-     @item_purchaser.update( buyer_id: current_user.id)
-   else
-    render :show
-   end
+   @item_purchaser= Item.find(params[:id])
  end
-    # @item = Item.find(params[:id])
-    # if @item_purchaser= Item.find(params[:id])
-    #   @item_purchaser.update( buyer_id: current_user.id)
-    #   redirect_to root_path
-    # else
-    #   render :show
-    # end
+   
 
   def purchase
     
@@ -120,8 +100,8 @@ before_action :set_item, only: [:show, :edit, :update, :destroy,:done]
           currency: 'jpy'
         )
     #製品のbuyer_idを付与
-        # @product_buyer= Item.find(params[:id])
-        # @product_buyer.update( buyer_id: current_user.id)
+        @item_purchaser= Item.find(params[:id])
+        @item_purchaser.update( buyer_id: current_user.id)
         redirect_to root_path
       end
 

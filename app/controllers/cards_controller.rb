@@ -30,8 +30,6 @@ class CardsController < ApplicationController
  
 
   def destroy #PayjpとCardデータベースを削除します
-    # binding.pry
-
     card = Card.where(user_id: current_user.id).first
     if card.blank?
     else
