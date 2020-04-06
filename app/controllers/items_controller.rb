@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-before_action :set_item, only: [:show, :edit, :update, :destroy, :done]
+before_action :set_item, only: [:show, :edit, :update, :destroy,:done]
 
   def set_item
     @item = Item.find(params[:id])
@@ -82,7 +82,7 @@ before_action :set_item, only: [:show, :edit, :update, :destroy, :done]
   end
 
   def destroy
-
+    @item = Item.find(params[:id])
     if @item.destroy
       redirect_to root_path
     else 
