@@ -159,8 +159,6 @@
       .edit_button
         .edit_button-shipping
           = f.submit "変更する", class: "edit_button-shipping"
-          //= link_to(item_path(@item.id), method: :patch , class: "edit_button-shipping") do
-          //変更する
         .edit_button-delete
           = link_to(item_path(@item.id),method: :delete ,class: "edit_button-back") do
             この商品を削除する
