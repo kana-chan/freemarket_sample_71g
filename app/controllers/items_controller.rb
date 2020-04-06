@@ -90,11 +90,14 @@ before_action :set_item, only: [:show, :edit, :update, :done]
   end
 
   def done
-    @item_purchaser= Item.find(params[:id])
-  #    @item_purchaser.update( buyer_id: current_user.id)
-    #  redirect_to root_path
-  #  else
-  #   render :show
+
+    if @item_purchaser= Item.find(params[:id])
+      @item_purchaser.update( buyer_id: current_user.id)
+      redirect_to root_path
+    else
+      render :show
+    end
+
   end
 
   def item_params

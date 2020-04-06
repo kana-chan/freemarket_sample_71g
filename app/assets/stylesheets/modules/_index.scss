@@ -137,24 +137,22 @@
 
 
 
-//　SOLD表記小さいーーーーーーーーーーーーーー
-.itemsMain__bland__box__content1__upper_soldout{
-    position: absolute;
-
+// SOLD表記小さいーーーーーーーーーーーーーー
+.soldoutTag{
+  position: absolute;
     top: 0px;
-    border-top: 60px solid #ea352d ;
-    border-right: 60px solid transparent;
-    border-bottom: 60px solid transparent;
-    border-left: 60px solid #ea352d ;
-    &_text {
-      position: absolute;
-      top: 30px;
-      left: 10px;
-      transform: rotate(-45deg);
-      color: white;
-      font-size: 20px;
-    }
-
+  border-top: 5em solid #ea352d ;
+  border-right: 5em solid transparent;
+  border-bottom: 5em solid transparent;
+  border-left: 5em solid #ea352d ;
+}
+.soldoutText {
+  position: absolute;
+    top: 25%;
+    left: 10%;
+  transform: rotate(-45deg);
+  color: white;
+  font-size: 20px;
 }
 
 
@@ -181,11 +179,10 @@
 
 
 // カテゴリー別------------------------------------------------
-.itemsMain__newPost,.itemsMain__bland {
+.itemsMain__newPost{
   background-color: $light-gray;
   overflow: scroll;
   height: 500px;
-  //text-align: center;
   &__top {
     padding-top: 50px;
     font-size: 28px;
@@ -199,11 +196,10 @@
     text-align: center;
   }
   &__box {
-    // height: 280px;
     width: 780px;
+    height:300px;
     margin: 26px auto; 
     justify-content: space-between;
-    // display: flex;
     &__content1,&__content2,&__content3 {
       display:  inline-block;
       margin: 10px;

@@ -1,78 +1,74 @@
-.main
-
-  .content
-    .content__text
-      = @item.name
-    .content__photoBox
-      .content__photoBox--top
-        =image_tag @item.images.first.src.to_s, class:"imageBig"
-        -if @item.buyer_id.present?
-          .itemsMain__bland__box__content1__upper_soldout_big
-          .itemsMain__bland__box__content1__upper_soldout_big_text
-            SOLD    
-      .content__photoBox--bottom
-        %ul
-          - [0,0,0,0,0].zip(@item.images) do |z,image|
-            %li 
-              -if image.present?
-                =image_tag image.src.to_s, class:"imageSmall"
-              -else 
-                =image_tag "/images/material/icon/icon_camera.png", class:"imageSmall"
-    .content__priceBox
-      .content__priceBox__top
-        = "￥#{@item.price} (税込)"
-      .content__priceBox__bottom
-        = @item.responsibility.name
-    .content__detailBox
-      = @item.explaination
-    %table.content__tableBox
-      %tr.content__tableBox--seller
-        %th 出品者
-        %td 
-          = @item.user.nickname
-      %tr.content__tableBox--category
-        %th カテゴリー
-        %td
-          .content__tableBox--category--parent
-            = @item.category.parent.parent.name
-          .content__tableBox--category--child
-            = @item.category.parent.name
-          .content__tableBox--category--grandChild
-            =@item.category.name
-      %tr.content__tableBox--bland
-        %th ブランド
-        %td 
-          -if @item.brand.present?
-            = @item.brand
-          -else
-            指定なし
-      %tr.content__tableBox--condition
-        %th 商品の状態
-        %td 
-          = @item.condition.name
-      %tr.content__tableBox--sendingFee
-        %th 配送料の負担
-        %td 
+#showItems
+  .main
+    .content
+      .content__text
+        = @item.name
+      .content__photoBox
+        .content__photoBox--top
+          =image_tag @item.images.first.src.to_s, class:"imageBig"
+          -if @item.buyer_id.present?
+            .itemsMain__bland__box__content1__upper_soldout_big
+            .itemsMain__bland__box__content1__upper_soldout_big_text
+              SOLD    
+        .content__photoBox--bottom
+          %ul
+            - [0,0,0,0,0].zip(@item.images) do |z,image|
+              %li 
+                -if image.present?
+                  =image_tag image.src.to_s, class:"imageSmall"
+                -else 
+                  =image_tag "/images/material/icon/icon_camera.png", class:"imageSmall"
+      .content__priceBox
+        .content__priceBox__top
+          = "￥#{@item.price} (税込)"
+        .content__priceBox__bottom
           = @item.responsibility.name
-      %tr.content__tableBox--sellerAddress
-        %th 発送元の地域
-        %td 
-          = @item.prefecture.name
-      %tr.content__tableBox--sendDate
-        %th 発送日の目安
-        %td 
-          = @item.shipment.name
-    .content__option
-      .content__option__upper
-        -if user_signed_in? && current_user.id == @item.user_id
-          =link_to(edit_item_path(@item.id)) do
-            .content__option__upper--editBtn
-              編集する
-        -elsif user_signed_in? && @item.buyer_id.blank?
-          =link_to(done_item_path(@item.id)) do
-            .content__option__upper--buyBtn
-              購入する
-          -# =link_to done_item_path(@item.id)
-          -# = form_with url: done_item_path(@item.id), method: :get, local: true do |form| 
-            -# = form.submit "購入"
-        
+        .content__detailBox
+          = @item.explaination
+        %table.content__tableBox
+          %tr.content__tableBox--seller
+            %th 出品者
+            %td 
+              = @item.user.nickname
+          %tr.content__tableBox--category
+            %th カテゴリー
+            %td
+              .content__tableBox--category--parent
+                メンズ?
+              .content__tableBox--category--child
+                トップス?
+              .content__tableBox--category--grandChild
+                シャツ?
+          %tr.content__tableBox--bland
+            %th ブランド
+            %td 
+              -if @item.brand.present?
+                = @item.brand
+              -else
+                指定なし
+          %tr.content__tableBox--condition
+            %th 商品の状態
+            %td 
+              = @item.condition.name
+          %tr.content__tableBox--sendingFee
+            %th 配送料の負担
+            %td 
+              = @item.responsibility.name
+          %tr.content__tableBox--sellerAddress
+            %th 発送元の地域
+            %td 
+              = @item.prefecture.name
+          %tr.content__tableBox--sendDate
+            %th 発送日の目安
+            %td 
+              = @item.shipment.name
+        .content__option
+          .content__option__upper
+            -if user_signed_in? && current_user.id == @item.user_id
+              =link_to(edit_item_path(@item.id)) do
+                .content__option__upper--editBtn
+                  編集する
+            -elsif user_signed_in? && @item.buyer_id.blank?
+              =link_to(done_item_path(@item.id)) do
+                .content__option__upper--buyBtn
+                  購入する
