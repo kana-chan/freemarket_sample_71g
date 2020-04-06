@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
 before_action :set_item, only: [:show, :edit, :update, :done]
+
   def set_item
     @item = Item.find(params[:id])
   end
@@ -38,24 +39,49 @@ before_action :set_item, only: [:show, :edit, :update, :done]
       redirect_to root_path
     else
       redirect_to new_item_path
+      # @category_parent_array = ["---"]
+      # Category.where(ancestry: nil).each do |parent|
+      #   @category_parent_array << parent.name
+      # end
+      #render :new
     end
   end
 
   def edit
     @item = Item.find(params[:id])
-    5.times { @item.images.build }
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+      @category_children_array << children
+    end
+
+    @category_grandchildren_array = []
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+      @category_grandchildren_array << grandchildren
+    end
   end
 
   def update
     if @item.update(item_params)
       redirect_to root_path
     else 
-      render :edit
+      #@category_parent_array = ["---"]
+      #Category.where(ancestry: nil).each do |parent|
+        #@category_parent_array << parent.name
+      #end
+      redirect_to edit_item_path
+      #render :edit
     end
   end
 
   def destroy
-    @item = Item.find(params[:id]) 
     if @item.destroy
       redirect_to root_path
     else 
@@ -64,12 +90,13 @@ before_action :set_item, only: [:show, :edit, :update, :done]
   end
 
   def done
-    if @item_purchaser= Item.find(params[:id])
-      @item_purchaser.update( buyer_id: current_user.id)
-      redirect_to root_path
-    else
-      render :show
-    end
+    @item = Item.find(params[:id])
+    # if @item_purchaser= Item.find(params[:id])
+    #   @item_purchaser.update( buyer_id: current_user.id)
+    #   redirect_to root_path
+    # else
+    #   render :show
+    # end
 
   end
 

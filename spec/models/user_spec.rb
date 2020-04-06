@@ -91,7 +91,7 @@ describe User do
     it "is invalid without a image" do
       user = build(:user, image: nil)
       user.valid?
-      expect(user.errors[:image]).to include("can't be blank")
+      expect(user.errors[:image])
     end
 
 
