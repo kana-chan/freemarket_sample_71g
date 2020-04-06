@@ -15,10 +15,12 @@
         = link_to "評価一覧", "#"
       .show-main-box-left-item
         = link_to "いいね一覧", "#"
+    -if @card == current_user.id
       .show-main-box-left-item
         = link_to "クレジットカード登録", new_card_path
+        
       .show-main-box-left-item
-        = link_to "クレジットカード変更", "#"
+        = link_to "クレジットカード変更", card_path
       .show-main-box-left-item
         = link_to "ログアウト", "#"
     .show-main-box-right
