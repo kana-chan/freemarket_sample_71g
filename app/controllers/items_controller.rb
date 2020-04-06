@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
 before_action :set_item, only: [:show, :edit, :update, :done]
+
   def set_item
     @item = Item.find(params[:id])
   end
@@ -89,7 +90,6 @@ before_action :set_item, only: [:show, :edit, :update, :done]
   end
 
   def done
-    
     @item_purchaser= Item.find(params[:id])
   #    @item_purchaser.update( buyer_id: current_user.id)
     #  redirect_to root_path
