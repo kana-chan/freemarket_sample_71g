@@ -1,18 +1,11 @@
 class CardsController < ApplicationController
   require 'payjp'
+  before_action :set_card, only: [:new, :show, :destroy]
   
-
-  
-  def index
-  end
-
   
   def new
-    if @card
-      redirect_to cards_path unless @card
-    else
-      
-    end
+    card = Card.where(user_id: current_user.id)
+    redirect_to action: 'show', id: card if card.exists?
   end
 
   
@@ -34,8 +27,11 @@ class CardsController < ApplicationController
     end
   end
 
-  
+ 
+
   def destroy #PayjpとCardデータベースを削除します
+    # binding.pry
+
     card = Card.where(user_id: current_user.id).first
     if card.blank?
     else
@@ -60,5 +56,9 @@ class CardsController < ApplicationController
     end
   end
 
-  
+  private
+
+  def set_card
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+  end
 end
