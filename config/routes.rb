@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
     member do
+      post 'purchase'
+      get 'purchased'
+      get 'buy'
       get 'done'
     end
   end

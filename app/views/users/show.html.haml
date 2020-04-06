@@ -11,11 +11,9 @@
       .main__leftBox__menu
         =link_to(edit_user_path(current_user.id),class:"main__leftBox__menu--item") do
           プロフィール設定
-        =link_to("#",class:"main__leftBox__menu--item") do
-          クレジットカード情報登録
-        =link_to("#",class:"main__leftBox__menu--item") do
-          クレジットカード情報変更
-        =link_to(new_card_path,method: :get,class:"main__leftBox__menu--logout") do
+        =link_to(new_card_path,class:"main__leftBox__menu--item") do
+          クレジットカード情報
+        =link_to(destroy_user_session_path,class:"main__leftBox__menu--logout") do
           ログアウト
     .main__rightBox
       .main__rightBox__items
