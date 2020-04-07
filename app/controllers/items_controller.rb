@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
 before_action :set_item, only: [:show, :edit, :update, :destroy, :done, :purchase]
+before_action :move_to_index, only: [:update, :destroy]
 
   def set_item
     @item = Item.find(params[:id])
@@ -90,7 +91,6 @@ before_action :set_item, only: [:show, :edit, :update, :destroy, :done, :purchas
   end
 
   def done
-   
   end
    
 
@@ -117,6 +117,9 @@ before_action :set_item, only: [:show, :edit, :update, :destroy, :done, :purchas
 
   end
 
+  def  move_to_index
+    redirect_to action: :index unless user_signed_in? && current_user.id == @item.user_id
+  end
   
 
   def item_params
