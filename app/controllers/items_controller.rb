@@ -1,19 +1,28 @@
 class ItemsController < ApplicationController
 before_action :set_item, only: [:show, :edit, :update, :destroy, :done, :purchase]
-before_action :move_to_index, only: [:done, :update, :destroy]
+before_action :move_to_index1, only: [:done]
+before_action :move_to_index2, only: [:update, :destroy]
+before_action :move_to_index3, only: [:edit]
 
   def set_item
     @item = Item.find(params[:id])
   end
 
-  def move_to_index
+  def move_to_index1
     redirect_to action: :index  if @item.buyer_id.present? || current_user.id == @item.seller_id
+  end
+
+  def move_to_index2
     redirect_to action: :index unless user_signed_in? && current_user.id == @item.seller_id
+  end
+
+  def move_to_index3
+    redirect_to root_path if current_user.id != @item.user_id
   end
 
 
 
-
+  
   def index
     @items = Item.all.includes(:images).order("created_at DESC")
   end
@@ -50,10 +59,6 @@ before_action :move_to_index, only: [:done, :update, :destroy]
   end
 
   def edit
-    @item = Item.find(params[:id])
-    if current_user.id != @item.user_id
-      redirect_to root_path
-    end
     grandchild_category = @item.category
     child_category = grandchild_category.parent
     @category_parent_array = []
@@ -81,7 +86,6 @@ before_action :move_to_index, only: [:done, :update, :destroy]
   end
 
   def update
-    @item = Item.find(params[:id])
     category_id_params
     if @item.update(item_params)
       redirect_to root_path
@@ -91,7 +95,6 @@ before_action :move_to_index, only: [:done, :update, :destroy]
   end
 
   def destroy
-    @item = Item.find(params[:id])
     if @item.destroy
       redirect_to root_path
     else 
