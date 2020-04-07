@@ -81,7 +81,7 @@ before_action :set_item, only: [:show, :edit, :update, :destroy,:done]
   end
 
   def done
-   @item_purchaser= Item.find(params[:id])    
+    
   end
    
 

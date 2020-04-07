@@ -21,11 +21,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users do
-    member do
-      get :pay
-    end
-  end
+  
   
  
 
