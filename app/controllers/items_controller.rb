@@ -86,22 +86,23 @@ before_action :set_item, only: [:show, :edit, :update, :destroy,:done]
    
 
   def purchase
-    #クレジットカードと製品の変数を設定
-        card = Card.where(user_id: current_user.id).first
-        @item = Item.find(params[:id])
-    #Payjpの秘密鍵を取得
-        Payjp.api_key= ENV['PAYJP_PRIVATE_KEY']
-    #payjp経由で支払いを実行
-        charge = Payjp::Charge.create(
-          amount: @item.price,
-          customer: Payjp::Customer.retrieve(card.customer_id),
-          currency: 'jpy'
+    card = Card.where(user_id: current_user.id).first
+
+    if card.blank?
+      redirect_to controller: "cards", action: "new"
+    else
+      Payjp.api_key= ENV['PAYJP_PRIVATE_KEY']
+    #payjp経由で支払いを実行 
+      charge = Payjp::Charge.create(
+        amount: @item.price,
+        customer: Payjp::Customer.retrieve(card.customer_id),
+        currency: 'jpy'
         )
-    #製品のbuyer_idを付与
         @item_purchaser= Item.find(params[:id])
         @item_purchaser.update( buyer_id: current_user.id)
         redirect_to root_path
       end
+    end
 
   def item_params
     params.require(:item).permit(
