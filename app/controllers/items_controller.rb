@@ -9,7 +9,7 @@ before_action :move_to_index, only: [:done, :update, :destroy]
   def move_to_index
     redirect_to action: :index  if @item.buyer_id.present? || current_user.id == @item.seller_id
     redirect_to action: :index unless user_signed_in? && current_user.id == @item.seller_id
-  end                  
+  end
 
 
 
