@@ -24,9 +24,19 @@ Rails.application.routes.draw do
   resources :items do
 
     member do
+      post 'purchase'
+      get 'purchased'
+      get 'buy'
       get 'done'
     end
   end
+
   
+  
+ 
+
+  resources :cards, only: [:new, :show, :create, :destroy] 
+
+
   resources :users, only: [:show, :edit, :update]
 end

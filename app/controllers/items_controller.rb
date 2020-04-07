@@ -90,15 +90,33 @@ before_action :set_item, only: [:show, :edit, :update, :destroy,:done]
   end
 
   def done
+    
+  end
+   
+
+  def purchase
+    card = Card.where(user_id: current_user.id).first
     @item = Item.find(params[:id])
-    # if @item_purchaser= Item.find(params[:id])
-    #   @item_purchaser.update( buyer_id: current_user.id)
-    #   redirect_to root_path
-    # else
-    #   render :show
-    # end
+    if card.blank?
+      
+      redirect_to controller: "cards", action: "new"
+      
+    else
+      Payjp.api_key= ENV['PAYJP_PRIVATE_KEY']
+      charge = Payjp::Charge.create(
+        amount: @item.price,
+        customer: Payjp::Customer.retrieve(card.customer_id),
+        currency: 'jpy'
+      )
+      @item_purchaser= Item.find(params[:id])
+      @item_purchaser.update( buyer_id: current_user.id)
+      redirect_to root_path
+      
+    end
 
   end
+
+  
 
   def item_params
     params.require(:item).permit(
