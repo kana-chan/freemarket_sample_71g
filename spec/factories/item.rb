@@ -1,7 +1,12 @@
 FactoryBot.define do
 
+   factory :category do
+     name                    {"ジャケット"}
+   end
+   
   factory :item, class: Item do
     user
+    category
     name                    {"test"}
     explaination            {"素晴らしい"}
     user_id                 {1}
