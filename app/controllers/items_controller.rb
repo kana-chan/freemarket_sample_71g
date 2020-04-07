@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 before_action :set_item, only: [:show, :edit, :update, :destroy, :done, :purchase]
-
+before_action :move_to_index, only: [:done]
   def set_item
     @item = Item.find(params[:id])
   end
@@ -140,6 +140,14 @@ before_action :set_item, only: [:show, :edit, :update, :destroy, :done, :purchas
     category = params.permit(:category_id)
     @item[:category_id] = category[:category_id]
   end
+
+  def move_to_index
+    @item = Item.find(params[:id]) 
+    redirect_to action: :index if @item.buyer_id.present?
+    redirect_to action: :index if current_user.id == @item.seller_id
+
+  end
+
 
 
 end
