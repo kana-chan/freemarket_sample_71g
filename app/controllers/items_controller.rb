@@ -102,7 +102,7 @@ before_action :set_item, only: [:show, :edit, :update, :destroy, :done, :purchas
       redirect_to controller: "cards", action: "new"
       
     else
-      Payjp.api_key= ENV['PAYJP_PRIVATE_KEY']
+          Payjp.api_key = "sk_test_a61f106182797a9972516b52"
       charge = Payjp::Charge.create(
         amount: @item.price,
         customer: Payjp::Customer.retrieve(card.customer_id),
