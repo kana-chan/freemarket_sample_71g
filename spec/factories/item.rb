@@ -1,10 +1,6 @@
 FactoryBot.define do
-
-   factory :category do
-     name                    {"ジャケット"}
-   end
    
-  factory :item, class: Item do
+  factory :item do
     user
     category
     name                    {"test"}
@@ -15,6 +11,11 @@ FactoryBot.define do
     condition_id            {1}
     prefecture_id           {1}
     price                   {1000}
-  end
 
+    factory :item_with_image do
+      after(:create) do | item |
+        create(:image, item: item)
+      end
+    end
+  end
 end
