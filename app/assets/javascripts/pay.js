@@ -2,7 +2,7 @@ $(function(){
 
   var submit = document.getElementById("token_submit");
 
-  submit.addEventListener('click', function(e){  // 追加するボタンが押されたらイベント発火
+  submit.addEventListener('click', function(e){
     e.preventDefault();  // ボタンを一旦無効化
     Payjp.setPublicKey("pk_test_e417bc230b8470066f4249e1");
     var card = {  // 入力されたカード情報を取得
