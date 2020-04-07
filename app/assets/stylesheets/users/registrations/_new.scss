@@ -1,54 +1,77 @@
 .sign-up__main {
   display: block;
   background: $light-gray;
-  
   &__box {
-    background-color: #fff;
-    width: 700px;
-    margin: auto;
+    width: 70vw;
+    margin: 0 auto;
     &__contents {
       font-size:22px;
       .sign-up-head {
+        background-color: white;
+        height: 10vh;
+        line-height: 10vh;
+        margin-bottom: 2vh;
         text-align: center;
-        padding: 40px;
-        border-bottom: solid 1px #cccccc;
         font-weight: 600;
         font-size: 22px;
       }
     }
     &__information {
-      margin: auto;
+      padding: 20px;
       background-color: white;
       &__contents {
-        max-width: 360px;
-        margin: auto;
+        max-width: 25vw;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .field-label {
           font-size: 14px;
-          margin: 24px;
+          width: 100%;
+          margin: 2vh 0;
+          .form-image{
+            text-align: center;
+            .box{
+              background-color: $light-gray;
+              border: $light-gray solid 2px;
+              border-radius: 100%;
+              width: 20vh;
+              height: 20vh;
+              margin: 3vh auto;
+              cursor: pointer;
+              position: relative;
+              .image{
+                border-radius: 100%;
+                width:18vh;
+                height:18vh;
+                position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translateX(-50%)translateY(-50%);
+              }
+            }
+            input{
+              display:none;
+            }
+          }
           &__name {
             font-weight: 600;
-          }
-          &__required {
-            background: #ea352d;
-            color: white;
-            font-size: 12px;
-            margin: 0 0 0 8px;
-            padding: 2px 4px;
           }
           &__input {
             height: 50px;
             width: 100%;
             margin: 8px 0 0;
           }
-          &__image {
-            margin-top: 10px;
-          }
         }
         .actions {
           height: 100px;
           &__btn {
+            background-color: $blue;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
             height: 50px;
-            width: 87%;
+            width: 20vw;
             -webkit-appearance: none;
             margin: 26px;
           }
@@ -57,17 +80,19 @@
     }
   }
 }
-.sign-up__footer {
-  height: 200px;
-  background: #f5f5f5;
-
-}
 
 .field-label__any {
-  background: #BFBFBF;
+  background: $gray;
   color: white;
   margin-left: 8px;
-  padding: 0 4px;
+  padding: 2px 4px;
+}
+
+.field-label__required {
+  background: $orange;
+  color: white;
+  font-size: 12px;
+  padding: 2px 4px;
 }
 
 #user_gender {
