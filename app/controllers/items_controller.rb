@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-before_action :set_item, only: [:show, :edit, :update, :destroy,:done]
+before_action :set_item, only: [:show, :edit, :update, :destroy, :done, :purchase]
 
   def set_item
     @item = Item.find(params[:id])
@@ -90,13 +90,13 @@ before_action :set_item, only: [:show, :edit, :update, :destroy,:done]
   end
 
   def done
-    
+   
   end
    
 
   def purchase
     card = Card.where(user_id: current_user.id).first
-    @item = Item.find(params[:id])
+    
     if card.blank?
       
       redirect_to controller: "cards", action: "new"
