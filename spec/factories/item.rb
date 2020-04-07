@@ -12,10 +12,10 @@ FactoryBot.define do
     prefecture_id           {1}
     price                   {1000}
 
-    factory :item_with_image do
-      after(:create) do | item |
-        create(:image, item: item)
-      end
-    end
+    # factory :item_with_image do
+    #   after(:build) do | item |
+    #     build(:image, item: item)
+    #   end
+    # end
   end
 end
