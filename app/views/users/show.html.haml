@@ -13,7 +13,7 @@
           プロフィール設定
         =link_to(new_card_path,class:"main__leftBox__menu--item") do
           クレジットカード情報
-        =link_to(destroy_user_session_path,class:"main__leftBox__menu--logout") do
+        =link_to(destroy_user_session_path,method: :delete,class:"main__leftBox__menu--logout") do
           ログアウト
     .main__rightBox
       .main__rightBox__items

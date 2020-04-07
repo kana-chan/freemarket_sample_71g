@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
 before_action :set_item, only: [:show, :edit, :update, :destroy, :done, :purchase]
+skip_before_action :login_required, only: [:index, :show]
 
   def set_item
     @item = Item.find(params[:id])
