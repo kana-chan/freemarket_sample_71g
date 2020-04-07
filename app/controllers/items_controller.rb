@@ -1,9 +1,17 @@
 class ItemsController < ApplicationController
 before_action :set_item, only: [:show, :edit, :update, :destroy, :done, :purchase]
 before_action :move_to_index, only: [:done]
+
   def set_item
     @item = Item.find(params[:id])
   end
+
+  def move_to_index
+    redirect_to action: :index  if @item.buyer_id.present? || current_user.id == @item.seller_id
+  end
+
+
+
 
 
   def index
@@ -45,7 +53,6 @@ before_action :move_to_index, only: [:done]
     @item = Item.find(params[:id])
     grandchild_category = @item.category
     child_category = grandchild_category.parent
-
     @category_parent_array = []
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
@@ -90,17 +97,12 @@ before_action :move_to_index, only: [:done]
   end
 
   def done
-   
   end
-   
 
   def purchase
     card = Card.where(user_id: current_user.id).first
-    
     if card.blank?
-      
       redirect_to controller: "cards", action: "new"
-      
     else
       Payjp.api_key = Rails.application.credentials.payjp[:sk_test]
       
@@ -112,12 +114,8 @@ before_action :move_to_index, only: [:done]
       @item_purchaser= Item.find(params[:id])
       @item_purchaser.update( buyer_id: current_user.id)
       redirect_to root_path
-      
     end
-
   end
-
-  
 
   def item_params
     params.require(:item).permit(
@@ -135,19 +133,9 @@ before_action :move_to_index, only: [:done]
     )
   end
 
-
   def category_id_params
     category = params.permit(:category_id)
     @item[:category_id] = category[:category_id]
   end
-
-  def move_to_index
-    @item = Item.find(params[:id]) 
-    redirect_to action: :index if @item.buyer_id.present?
-    redirect_to action: :index if current_user.id == @item.seller_id
-
-  end
-
-
 
 end
