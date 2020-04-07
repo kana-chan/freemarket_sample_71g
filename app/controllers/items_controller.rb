@@ -19,7 +19,6 @@ before_action :set_item, only: [:show, :edit, :update, :destroy,:done]
     @category_parent_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
-    # @category_parent_array = Category.where(ancestry: nil).pluck(:name) 
     end
   end
 
@@ -39,11 +38,6 @@ before_action :set_item, only: [:show, :edit, :update, :destroy,:done]
       redirect_to root_path
     else
       redirect_to new_item_path
-      # @category_parent_array = ["---"]
-      # Category.where(ancestry: nil).each do |parent|
-      #   @category_parent_array << parent.name
-      # end
-      #render :new
     end
   end
 
@@ -68,16 +62,21 @@ before_action :set_item, only: [:show, :edit, :update, :destroy,:done]
     end
   end
 
+  def get_category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
   def update
+    @item = Item.find(params[:id])
+    category_id_params
     if @item.update(item_params)
       redirect_to root_path
     else 
-      #@category_parent_array = ["---"]
-      #Category.where(ancestry: nil).each do |parent|
-        #@category_parent_array << parent.name
-      #end
       redirect_to edit_item_path
-      #render :edit
     end
   end
 

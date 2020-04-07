@@ -9,10 +9,10 @@ FactoryBot.define do
     last_furigana         {"たろう"}
     phone_number          {"1234567891"}
     gender                {"male"}
-    image                 {"056_thum-535x356.jpg"}
+    image                 {"job_takuhaiin_man.png"}
     password              {"00000000"}
     password_confirmation {"00000000"}
-
+    birthday              {"2020-12-12"}
   end
 
 end
