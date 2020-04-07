@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 before_action :set_item, only: [:show, :edit, :update, :destroy, :done, :purchase]
-before_action :move_to_index, only: [:done]
+before_action :move_to_index, only: [:done, :update, :destroy]
 
   def set_item
     @item = Item.find(params[:id])
@@ -8,8 +8,8 @@ before_action :move_to_index, only: [:done]
 
   def move_to_index
     redirect_to action: :index  if @item.buyer_id.present? || current_user.id == @item.seller_id
-  end
-
+    redirect_to action: :index unless user_signed_in? && current_user.id == @item.seller_id
+  end                  
 
 
 
@@ -51,6 +51,9 @@ before_action :move_to_index, only: [:done]
 
   def edit
     @item = Item.find(params[:id])
+    if current_user.id != @item.user_id
+      redirect_to root_path
+    end
     grandchild_category = @item.category
     child_category = grandchild_category.parent
     @category_parent_array = []
