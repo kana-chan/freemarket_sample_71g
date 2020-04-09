@@ -115,7 +115,7 @@
       margin:40px 0;
       height: 50%;
       width: 100%;
-      &--buyBtn,&--editBtn{
+      &--buyBtn,&--editBtn,&--deleteBtn{
         width: 90%;
         height: 75%;
         background-color:$blue;
@@ -124,6 +124,17 @@
         color: white;
         line-height: 48px;
         font-size: 20px;
+        
+      }
+      &--deleteBtn{
+        margin-bottom: 24px;
+        background-color: #ccc;
+        color: #222;
+        font-size: 16px;
+        height: 40px;
+        padding: 0 24px;
+        line-height: 2.5;
+        border-radius: 40px;
       }
     }
   }

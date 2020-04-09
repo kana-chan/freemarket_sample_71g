@@ -68,6 +68,9 @@
               =link_to(edit_item_path(@item.id)) do
                 .content__option__upper--editBtn
                   編集する
+              = link_to item_path(@item.id),method: :delete do
+                .content__option__upper--deleteBtn
+                  この商品を削除する
             -elsif user_signed_in? && @item.buyer_id.blank?
               =link_to(done_item_path(@item.id)) do
                 .content__option__upper--buyBtn
